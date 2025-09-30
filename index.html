@@ -747,6 +747,73 @@
             padding: 0 25px 20px;
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 2px 2px 30px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        /* WhatsApp icon SVG styling */
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* Tooltip */
+        .whatsapp-float::before {
+            content: "Chat with us!";
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .whatsapp-float:hover::before {
+            opacity: 1;
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -794,6 +861,22 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            .whatsapp-float::before {
+                display: none;
             }
         }
     </style>
@@ -1271,6 +1354,16 @@
             <p>&copy; 2024 Urban Shopfronts Limited. All rights reserved. | Professional Shutters & Shopfronts Installation Services | Company Registration: England & Wales</p>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20inquire%20about%20your%20services"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.238 1.403 1.424-5.217-0.32-0.537c-1.348-2.263-2.062-4.835-2.062-7.423 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.893 1.123-1.094 1.347c-0.201 0.227-0.401 0.254-0.747 0.080-0.346-0.174-1.461-0.538-2.784-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.401 0.518-0.601 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.227 0.058-0.424-0.028-0.595-0.087-0.174-0.776-1.869-1.063-2.556-0.28-0.672-0.567-0.58-0.776-0.591-0.201-0.010-0.431-0.012-0.661-0.012s-0.603 0.087-0.92 0.424c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.227 2.424 3.763 5.876 5.273 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.661-0.099 2.049-0.835 2.335-1.642 0.288-0.807 0.288-1.501 0.201-1.642-0.086-0.14-0.316-0.227-0.662-0.401z"/>
+        </svg>
+    </a>
 
     <script>
         // Smooth scrolling for navigation links
