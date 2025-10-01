@@ -3,7 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Shopfronts Limited - Expert Installers of Shop Fronts and Shutters</title>
+    <title>Urban Shopfronts Limited - Expert Installers of Shop Fronts, Shutters & Security Doors UK</title>
+    <meta name="description" content="Professional installation of aluminium shop fronts, roller shutters, bi-fold doors, security doors, automatic doors and fire doors across the UK. Free quotes, 24/7 emergency service. Call +44 7459 243174">
+    <meta name="keywords" content="shop fronts, roller shutters, security doors, aluminium shopfronts, automatic doors, fire doors, bi-fold doors, UK, Birmingham, Manchester, London, Liverpool, Leeds">
+    <meta name="author" content="Urban Shopfronts Limited">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0172DD">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Urban Shopfronts Limited - Expert Installers UK">
+    <meta property="og:description" content="Professional installation of shop fronts, shutters, and security doors nationwide. Free quotes and 24/7 emergency service available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hritikch24.github.io/Urban-shopfronts-limited/">
+    <meta property="og:image" content="https://hritikch24.github.io/Urban-shopfronts-limited/assets/aluminium-shopfront-1.jpeg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Urban Shopfronts Limited - Expert Installers UK">
+    <meta name="twitter:description" content="Professional installation of shop fronts, shutters, and security doors nationwide.">
+    <meta name="twitter:image" content="https://hritikch24.github.io/Urban-shopfronts-limited/assets/aluminium-shopfront-1.jpeg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hritikch24.github.io/Urban-shopfronts-limited/">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://formsubmit.co">
+    <link rel="preconnect" href="https://wa.me">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Urban Shopfronts Limited",
+        "image": "https://hritikch24.github.io/Urban-shopfronts-limited/assets/aluminium-shopfront-1.jpeg",
+        "description": "Professional installation of shop fronts, roller shutters, security doors, automatic doors, bi-fold doors and fire doors across the UK",
+        "telephone": "+447459243174",
+        "url": "https://hritikch24.github.io/Urban-shopfronts-limited/",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "West Midlands",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "52.4862",
+            "longitude": "-1.8904"
+        },
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Birmingham"
+            },
+            {
+                "@type": "City",
+                "name": "Manchester"
+            },
+            {
+                "@type": "City",
+                "name": "London"
+            },
+            {
+                "@type": "City",
+                "name": "Liverpool"
+            },
+            {
+                "@type": "City",
+                "name": "Leeds"
+            }
+        ],
+        "priceRange": "££",
+        "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-16:00",
+        "sameAs": [
+            "https://wa.me/447471043827"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Shop Front and Security Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Aluminium Shop Fronts"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Roller Shutters"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Bi-Fold Doors"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Security Doors"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Automatic Doors"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fire Doors"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -753,6 +876,130 @@
             padding: 0 25px 20px;
         }
 
+        /* Quote Modal */
+        .quote-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            animation: fadeIn 0.3s;
+        }
+
+        .quote-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-title {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .modal-service {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .modal-options {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+        }
+
+        .modal-option {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .modal-option:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(1, 114, 221, 0.2);
+        }
+
+        .modal-option-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .modal-option-form .modal-option-icon {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .modal-option-whatsapp .modal-option-icon {
+            background: #25d366;
+            color: white;
+        }
+
+        .modal-option-text h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .modal-option-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
@@ -962,7 +1209,7 @@
                     <div class="service-card-content">
                         <h3>Aluminium Shop Fronts</h3>
                         <p>Modern, durable aluminium shop fronts that enhance your business appearance while providing excellent security and energy efficiency.</p>
-                        <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20Aluminium%20Shop%20Fronts" target="_blank" class="quote-btn">Get Quotation</a>
+                        <a href="#" class="quote-btn" onclick="openQuoteModal('Aluminium Shop Fronts'); return false;">Get Quotation</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -970,7 +1217,7 @@
                     <div class="service-card-content">
                         <h3>Roller Shutters</h3>
                         <p>High-quality roller shutters for maximum security and protection. Available in various materials and finishes to suit your needs.</p>
-                        <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20Roller%20Shutters" target="_blank" class="quote-btn">Get Quotation</a>
+                        <a href="#" class="quote-btn" onclick="openQuoteModal('Roller Shutters'); return false;">Get Quotation</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -978,7 +1225,7 @@
                     <div class="service-card-content">
                         <h3>Bi-Fold Doors</h3>
                         <p>Space-saving bi-fold door solutions that create seamless transitions between indoor and outdoor spaces. Perfect for modern retail and commercial premises.</p>
-                        <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20Bi-Fold%20Doors" target="_blank" class="quote-btn">Get Quotation</a>
+                        <a href="#" class="quote-btn" onclick="openQuoteModal('Bi-Fold Doors'); return false;">Get Quotation</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -986,15 +1233,15 @@
                     <div class="service-card-content">
                         <h3>Security Doors</h3>
                         <p>Robust steel security doors designed to protect your premises without compromising on aesthetics. High-grade materials for maximum protection.</p>
-                        <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20Security%20Doors" target="_blank" class="quote-btn">Get Quotation</a>
+                        <a href="#" class="quote-btn" onclick="openQuoteModal('Security Doors'); return false;">Get Quotation</a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="assets/automatic-door-1.jpeg" alt="Automatic Doors" class="service-card-image">
+                    <video src="assets/Automatic_door.mp4" class="service-card-image" autoplay muted loop playsinline></video>
                     <div class="service-card-content">
                         <h3>Automatic Doors</h3>
                         <p>State-of-the-art automatic door systems for improved accessibility and customer convenience. Perfect for high-traffic commercial areas.</p>
-                        <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20Automatic%20Doors" target="_blank" class="quote-btn">Get Quotation</a>
+                        <a href="#" class="quote-btn" onclick="openQuoteModal('Automatic Doors'); return false;">Get Quotation</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -1002,7 +1249,7 @@
                     <div class="service-card-content">
                         <h3>Fire Doors</h3>
                         <p>Compliant fire doors that meet all UK safety regulations while maintaining security. Essential for commercial premises and building compliance.</p>
-                        <a href="https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20Fire%20Doors" target="_blank" class="quote-btn">Get Quotation</a>
+                        <a href="#" class="quote-btn" onclick="openQuoteModal('Fire Doors'); return false;">Get Quotation</a>
                     </div>
                 </div>
             </div>
@@ -1269,6 +1516,10 @@
                             <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
+                            <label for="location">Location/Address</label>
+                            <input type="text" id="location" name="location" placeholder="e.g., Birmingham, Manchester, or full address" required>
+                        </div>
+                        <div class="form-group">
                             <label for="service">Service Required</label>
                             <input type="text" id="service" name="service" placeholder="e.g., Roller Shutters, Shop Front">
                         </div>
@@ -1378,6 +1629,31 @@
             <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.238 1.403 1.424-5.217-0.32-0.537c-1.348-2.263-2.062-4.835-2.062-7.423 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.893 1.123-1.094 1.347c-0.201 0.227-0.401 0.254-0.747 0.080-0.346-0.174-1.461-0.538-2.784-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.401 0.518-0.601 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.227 0.058-0.424-0.028-0.595-0.087-0.174-0.776-1.869-1.063-2.556-0.28-0.672-0.567-0.58-0.776-0.591-0.201-0.010-0.431-0.012-0.661-0.012s-0.603 0.087-0.92 0.424c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.227 2.424 3.763 5.876 5.273 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.661-0.099 2.049-0.835 2.335-1.642 0.288-0.807 0.288-1.501 0.201-1.642-0.086-0.14-0.316-0.227-0.662-0.401z"/>
         </svg>
     </a>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="quote-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeQuoteModal()">&times;</span>
+            <h2 class="modal-title">Get Your Free Quote</h2>
+            <p class="modal-service">For: <strong id="selectedService"></strong></p>
+            <div class="modal-options">
+                <a href="#contact" class="modal-option modal-option-form" onclick="closeQuoteModal()">
+                    <div class="modal-option-icon">📧</div>
+                    <div class="modal-option-text">
+                        <h3>Fill Out Form</h3>
+                        <p>Get detailed quote via email within 24 hours</p>
+                    </div>
+                </a>
+                <a href="#" id="whatsappLink" target="_blank" class="modal-option modal-option-whatsapp">
+                    <div class="modal-option-icon">💬</div>
+                    <div class="modal-option-text">
+                        <h3>Chat on WhatsApp</h3>
+                        <p>Instant response and quick quotation</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -1539,6 +1815,39 @@
                     answer.classList.add('active');
                 }
             });
+        });
+
+        // Quote Modal Functions
+        function openQuoteModal(service) {
+            const modal = document.getElementById('quoteModal');
+            const selectedService = document.getElementById('selectedService');
+            const whatsappLink = document.getElementById('whatsappLink');
+
+            selectedService.textContent = service;
+            whatsappLink.href = `https://wa.me/447471043827?text=Hi,%20I%20would%20like%20to%20get%20a%20quotation%20for%20${encodeURIComponent(service)}`;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuoteModal() {
+            const modal = document.getElementById('quoteModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('quoteModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuoteModal();
+            }
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeQuoteModal();
+            }
         });
     </script>
 </body>
