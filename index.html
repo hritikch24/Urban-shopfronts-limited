@@ -75,15 +75,35 @@
         "areaServed": [
             {
                 "@type": "City",
+                "name": "London"
+            },
+            {
+                "@type": "City",
+                "name": "Central London"
+            },
+            {
+                "@type": "City",
+                "name": "West London"
+            },
+            {
+                "@type": "City",
+                "name": "East London"
+            },
+            {
+                "@type": "City",
+                "name": "North London"
+            },
+            {
+                "@type": "City",
+                "name": "South London"
+            },
+            {
+                "@type": "City",
                 "name": "Birmingham"
             },
             {
                 "@type": "City",
                 "name": "Manchester"
-            },
-            {
-                "@type": "City",
-                "name": "London"
             },
             {
                 "@type": "City",
@@ -104,34 +124,6 @@
             {
                 "@type": "City",
                 "name": "Glasgow"
-            },
-            {
-                "@type": "City",
-                "name": "Edinburgh"
-            },
-            {
-                "@type": "City",
-                "name": "Cardiff"
-            },
-            {
-                "@type": "City",
-                "name": "Newcastle"
-            },
-            {
-                "@type": "City",
-                "name": "Nottingham"
-            },
-            {
-                "@type": "City",
-                "name": "Leicester"
-            },
-            {
-                "@type": "City",
-                "name": "Coventry"
-            },
-            {
-                "@type": "City",
-                "name": "Bradford"
             }
         ],
         "priceRange": "££",
@@ -237,6 +229,21 @@
                 }
             }
         ]
+    }
+    </script>
+
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ReviewAggregation",
+        "itemReviewed": {
+            "@type": "Organization",
+            "name": "Urban Shopfronts Limited"
+        },
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5"
     }
     </script>
     <style>
