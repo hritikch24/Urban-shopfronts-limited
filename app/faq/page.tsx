@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'Do you offer emergency callout?',
     answer:
-      'Yes — we offer a 24/7 emergency callout service for situations such as break-ins, storm damage, or failed shutters that leave your premises unsecured. We aim to have an operative on site within a few hours in most parts of our coverage area. Call us on 07459 243174 at any time and we will do our utmost to assist you as quickly as possible.',
+      'Yes — we offer a 24/7 emergency callout service for situations such as break-ins, storm damage, or failed shutters that leave your premises unsecured. We aim to have an operative on site within a few hours in most parts of our coverage area. Call us on 07471 043827 at any time and we will do our utmost to assist you as quickly as possible.',
   },
   {
     question: 'What warranty do you provide on your installations?',
@@ -141,7 +141,7 @@ export default function FAQPage() {
               Contact Us Today
             </Link>
             <a href="tel:+447459243174" className="btn-outline">
-              Call 07459 243174
+              Call 07471 043827
             </a>
           </div>
         </div>

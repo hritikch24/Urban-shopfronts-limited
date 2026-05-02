@@ -79,6 +79,10 @@ const images = [
     alt: 'Fire exit door with push-bar hardware fitted to rear of premises',
   },
   {
+    src: '/assets/venue-signage-1.jpeg',
+    alt: 'Commercial venue signage and shopfront installation',
+  },
+  {
     src: '/assets/shopfront-2.jpeg',
     alt: 'Traditional aluminium shopfront with central entrance door',
   },

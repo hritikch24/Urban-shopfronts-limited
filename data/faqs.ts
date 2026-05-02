@@ -34,7 +34,7 @@ export const generalFaqs: FAQ[] = [
   },
   {
     question: 'Do you offer emergency callout services?',
-    answer: 'Yes. We provide a 24/7 emergency callout service for urgent situations such as break-in damage, storm damage, or failed shutters that leave your premises unsecured. Call our emergency line on 07459 243174 and we will get someone to you as quickly as possible — usually within a few hours, depending on your location.',
+    answer: 'Yes. We provide a 24/7 emergency callout service for urgent situations such as break-in damage, storm damage, or failed shutters that leave your premises unsecured. Call our emergency line on 07471 043827 and we will get someone to you as quickly as possible — usually within a few hours, depending on your location.',
   },
   {
     question: 'What warranty do you provide?',

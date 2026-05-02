@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = cities.find((c) => c.slug === citySlug);
   if (!city) return {};
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://urbanshopfronts.co.uk';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
 
   return {
     title: city.metaTitle,
@@ -54,7 +54,28 @@ export default async function CityPage({ params }: PageProps) {
   const city = cities.find((c) => c.slug === citySlug);
   if (!city) notFound();
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://urbanshopfronts.co.uk';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
+
+  const cityGeo: Record<string, { addressLocality: string; addressRegion: string; postalCode: string }> = {
+    london:      { addressLocality: 'London',              addressRegion: 'Greater London',     postalCode: 'EC1A' },
+    birmingham:  { addressLocality: 'Birmingham',          addressRegion: 'West Midlands',      postalCode: 'B1' },
+    manchester:  { addressLocality: 'Manchester',          addressRegion: 'Greater Manchester',  postalCode: 'M1' },
+    leeds:       { addressLocality: 'Leeds',               addressRegion: 'West Yorkshire',     postalCode: 'LS1' },
+    liverpool:   { addressLocality: 'Liverpool',           addressRegion: 'Merseyside',         postalCode: 'L1' },
+    bristol:     { addressLocality: 'Bristol',             addressRegion: 'Bristol',             postalCode: 'BS1' },
+    sheffield:   { addressLocality: 'Sheffield',           addressRegion: 'South Yorkshire',    postalCode: 'S1' },
+    glasgow:     { addressLocality: 'Glasgow',             addressRegion: 'Scotland',           postalCode: 'G1' },
+    cardiff:     { addressLocality: 'Cardiff',             addressRegion: 'Wales',              postalCode: 'CF10' },
+    newcastle:   { addressLocality: 'Newcastle upon Tyne', addressRegion: 'Tyne and Wear',     postalCode: 'NE1' },
+    nottingham:  { addressLocality: 'Nottingham',          addressRegion: 'Nottinghamshire',    postalCode: 'NG1' },
+    leicester:   { addressLocality: 'Leicester',           addressRegion: 'Leicestershire',     postalCode: 'LE1' },
+    edinburgh:   { addressLocality: 'Edinburgh',           addressRegion: 'Scotland',           postalCode: 'EH1' },
+    southampton: { addressLocality: 'Southampton',         addressRegion: 'Hampshire',          postalCode: 'SO14' },
+    brighton:    { addressLocality: 'Brighton',            addressRegion: 'East Sussex',        postalCode: 'BN1' },
+    coventry:    { addressLocality: 'Coventry',            addressRegion: 'West Midlands',      postalCode: 'CV1' },
+  };
+
+  const geo = cityGeo[citySlug] || { addressLocality: city.name, addressRegion: city.region, postalCode: '' };
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -62,11 +83,13 @@ export default async function CityPage({ params }: PageProps) {
     name: 'Urban Shopfronts',
     description: `Professional shopfront installation, roller shutters, and security doors in ${city.name}`,
     url: `${siteUrl}/areas/${citySlug}`,
-    telephone: '+447459243174',
+    telephone: '+447471043827',
     email: 'sales@urbanshopfronts.co.uk',
     address: {
       '@type': 'PostalAddress',
-      addressRegion: 'West Midlands',
+      addressLocality: geo.addressLocality,
+      addressRegion: geo.addressRegion,
+      postalCode: geo.postalCode,
       addressCountry: 'GB',
     },
     areaServed: {
@@ -95,7 +118,7 @@ export default async function CityPage({ params }: PageProps) {
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Areas', href: '/#areas' },
+                { label: 'Areas', href: '/areas' },
                 { label: city.name },
               ]}
             />
@@ -109,8 +132,8 @@ export default async function CityPage({ params }: PageProps) {
               <Link href="/contact" className="btn-gold">
                 Get a Free Quote
               </Link>
-              <a href="tel:07459243174" className="btn-outline">
-                Call 07459 243174
+              <a href="tel:07471043827" className="btn-outline">
+                Call 07471 043827
               </a>
             </div>
           </div>
@@ -180,10 +203,10 @@ export default async function CityPage({ params }: PageProps) {
                     Request a Quote
                   </Link>
                   <a
-                    href="tel:07459243174"
+                    href="tel:07471043827"
                     className="block text-center text-gold-light hover:text-gold text-sm font-medium transition-colors"
                   >
-                    Or call 07459 243174
+                    Or call 07471 043827
                   </a>
                 </div>
 
@@ -304,8 +327,8 @@ export default async function CityPage({ params }: PageProps) {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3">
-                <a href="tel:07459243174" className="btn-gold">
-                  Call 07459 243174
+                <a href="tel:07471043827" className="btn-gold">
+                  Call 07471 043827
                 </a>
                 <a
                   href="https://wa.me/447471043827"

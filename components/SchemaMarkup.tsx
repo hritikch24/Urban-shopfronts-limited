@@ -7,21 +7,20 @@ const defaultLocalBusiness = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Urban Shopfronts',
-  legalName: 'Urban Shopfronts Ltd',
+  legalName: 'Urban Shopfronts Limited',
   description:
     'Professional shop front installation and repair specialists. We provide aluminium shop fronts, roller shutters, security doors, automatic doors, bi-fold doors, fire doors, and emergency callout services across the UK.',
   url: 'https://www.urbanshopfronts.co.uk',
   telephone: ['+447459243174', '+447397066538'],
   email: 'sales@urbanshopfronts.co.uk',
   foundingDate: '2024',
-  identifier: {
-    '@type': 'PropertyValue',
-    name: 'Company Number',
-    value: '',
-  },
+  priceRange: '££',
+  image: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
+  logo: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'GB',
+    addressRegion: 'England',
   },
   openingHoursSpecification: [
     {
@@ -44,6 +43,12 @@ const defaultLocalBusiness = {
       contactType: 'customer support',
       contactOption: 'TollFree',
       availableLanguage: 'English',
+      hoursAvailable: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '00:00',
+        closes: '23:59',
+      },
     },
     {
       '@type': 'ContactPoint',
@@ -52,23 +57,44 @@ const defaultLocalBusiness = {
       availableLanguage: 'English',
     },
   ],
-  areaServed: {
-    '@type': 'Country',
-    name: 'United Kingdom',
-  },
+  areaServed: [
+    { '@type': 'City', name: 'London' },
+    { '@type': 'City', name: 'Birmingham' },
+    { '@type': 'City', name: 'Manchester' },
+    { '@type': 'City', name: 'Leeds' },
+    { '@type': 'City', name: 'Liverpool' },
+    { '@type': 'City', name: 'Bristol' },
+    { '@type': 'City', name: 'Sheffield' },
+    { '@type': 'City', name: 'Glasgow' },
+    { '@type': 'City', name: 'Cardiff' },
+    { '@type': 'City', name: 'Newcastle upon Tyne' },
+    { '@type': 'City', name: 'Nottingham' },
+    { '@type': 'City', name: 'Leicester' },
+    { '@type': 'City', name: 'Edinburgh' },
+    { '@type': 'City', name: 'Southampton' },
+    { '@type': 'City', name: 'Brighton' },
+    { '@type': 'City', name: 'Coventry' },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Shop Front Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aluminium Shop Fronts' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Roller Shutters' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Doors' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatic Doors' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bi-Fold Doors' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fire Doors' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Shop Front Repairs' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Emergency Callout' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aluminium Shop Fronts', url: 'https://www.urbanshopfronts.co.uk/services/aluminium-shopfronts' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Roller Shutters', url: 'https://www.urbanshopfronts.co.uk/services/roller-shutters' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Doors', url: 'https://www.urbanshopfronts.co.uk/services/security-doors' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatic Doors', url: 'https://www.urbanshopfronts.co.uk/services/automatic-doors' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bi-Fold Doors', url: 'https://www.urbanshopfronts.co.uk/services/bi-fold-doors' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fire Doors', url: 'https://www.urbanshopfronts.co.uk/services/fire-doors' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Shop Front Repairs', url: 'https://www.urbanshopfronts.co.uk/services/shopfront-repairs' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Emergency Callout', url: 'https://www.urbanshopfronts.co.uk/services/emergency-callout' } },
     ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '35',
+    bestRating: '5',
+    worstRating: '1',
   },
   sameAs: [
     'https://wa.me/447471043827',
@@ -79,9 +105,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
   let schema: Record<string, unknown>;
 
   if (type === 'LocalBusiness') {
-    schema = data
-      ? { '@context': 'https://schema.org', '@type': 'LocalBusiness', ...data }
-      : defaultLocalBusiness;
+    schema = data || defaultLocalBusiness;
   } else if (type === 'Service') {
     schema = {
       '@context': 'https://schema.org',

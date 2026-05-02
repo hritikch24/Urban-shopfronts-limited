@@ -7,7 +7,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Contact Urban Shopfronts for a free site survey and quotation. Call 07459 243174, WhatsApp +44 7471 043827, or email sales@urbanshopfronts.co.uk. West Midlands, UK.',
+    'Contact Urban Shopfronts for a free site survey and quotation. Call 07471 043827, WhatsApp +44 7471 043827, or email sales@urbanshopfronts.co.uk. West Midlands, UK.',
   alternates: {
     canonical: '/contact',
   },
@@ -21,7 +21,7 @@ const contactDetails = [
       </svg>
     ),
     label: 'Phone',
-    value: '07459 243174',
+    value: '07471 043827',
     href: 'tel:+447459243174',
   },
   {

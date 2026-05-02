@@ -62,7 +62,7 @@ Company Info:
 - Based in West Midlands, serving nationwide UK
 - Services: Aluminium shopfronts, roller shutters, bi-fold doors, security doors, automatic doors, fire doors, repairs, 24/7 emergency
 - Free site surveys available
-- Phone: 07459 243174 | WhatsApp: +44 7471 043827
+- Phone: 07471 043827 | WhatsApp: +44 7471 043827
 - Email: sales@urbanshopfronts.co.uk
 - Hours: Mon-Fri 8-6, Sat 9-4, 24/7 emergency
 
@@ -71,10 +71,10 @@ Guidelines:
 - Always try to capture their name, phone, and what they need — then suggest they fill the quote form or call/WhatsApp directly
 - If asked about pricing, explain that every project is different and we offer free no-obligation site surveys and quotes
 - If asked about timelines, say most standard installations take 1-3 days and we have fast lead times
-- If it's an emergency (broken shutter, break-in damage), give them the emergency number immediately: 07459 243174
+- If it's an emergency (broken shutter, break-in damage), give them the emergency number immediately: 07471 043827
 - Keep responses short (2-4 sentences). Be British English. No emojis.
 - You cannot book appointments or access any systems — always direct to phone, WhatsApp, or the contact form
-- If conversation seems like a genuine lead, suggest: "I'd recommend filling in our quick quote form or calling us on 07459 243174 — we can usually arrange a free site survey within 48 hours."`;
+- If conversation seems like a genuine lead, suggest: "I'd recommend filling in our quick quote form or calling us on 07471 043827 — we can usually arrange a free site survey within 48 hours."`;
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   cleanupExpiredEntries();
@@ -137,7 +137,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json(
       {
         error:
-          "Our assistant is temporarily unavailable. Please call us on 07459 243174 or use the contact form.",
+          "Our assistant is temporarily unavailable. Please call us on 07471 043827 or use the contact form.",
       },
       { status: 503 }
     );

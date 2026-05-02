@@ -41,11 +41,11 @@ export default function StickyDesktopCTA() {
 
           <div className="flex items-center gap-4">
             <a
-              href="tel:07459243174"
+              href="tel:07471043827"
               className="flex items-center gap-2 text-gold-light hover:text-gold transition-colors text-sm font-medium"
             >
               <PhoneIcon />
-              07459 243174
+              07471 043827
             </a>
             <a
               href="tel:07471043827"

@@ -37,7 +37,7 @@ export default function MobileStickyBar() {
     >
       <div className="bg-navy border-t border-navy-light grid grid-cols-2">
         <a
-          href="tel:07459243174"
+          href="tel:07471043827"
           className="flex items-center justify-center gap-2 py-4 px-4 text-gold font-heading font-bold text-sm hover:bg-navy-light transition-colors border-r border-navy-light"
           aria-label="Call Urban Shopfronts"
         >

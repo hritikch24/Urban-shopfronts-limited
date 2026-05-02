@@ -123,11 +123,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:07459243174"
+                  href="tel:07471043827"
                   className="flex items-center gap-2 text-grey-400 hover:text-gold text-sm transition-colors"
                 >
                   <PhoneIcon />
-                  <span>07459 243174 (Office)</span>
+                  <span>07471 043827 (Office)</span>
                 </a>
               </li>
               <li>

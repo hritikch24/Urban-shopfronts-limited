@@ -5,7 +5,7 @@ import { useState, FormEvent } from 'react';
 const cities = [
   'London', 'Birmingham', 'Manchester', 'Leeds', 'Liverpool',
   'Sheffield', 'Bristol', 'Coventry', 'Leicester', 'Nottingham',
-  'Newcastle', 'Cardiff', 'Edinburgh', 'Glasgow', 'Southampton', 'Other',
+  'Newcastle', 'Cardiff', 'Edinburgh', 'Glasgow', 'Southampton', 'Brighton', 'Other',
 ];
 
 const serviceOptions = [
@@ -113,7 +113,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
       setStatus('success');
     } catch {
       setStatus('error');
-      setErrorMsg('Something went wrong. Please try calling us on 07459 243174.');
+      setErrorMsg('Something went wrong. Please try calling us on 07471 043827.');
     }
   }
 
@@ -129,8 +129,8 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         <p className="text-grey-600 mb-1">Thank you! We&apos;ll be in touch within 2 hours.</p>
         <p className="text-grey-500 text-sm">
           For urgent enquiries call{' '}
-          <a href="tel:07459243174" className="text-gold font-semibold hover:underline">
-            07459 243174
+          <a href="tel:07471043827" className="text-gold font-semibold hover:underline">
+            07471 043827
           </a>
         </p>
       </div>
@@ -356,10 +356,14 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         )}
       </button>
 
+      <p className="text-sm text-green-600 font-medium text-center">
+        ⚡ Typical response time: under 2 hours
+      </p>
+
       <p className="text-center text-xs text-grey-400">
         Or call us directly:{' '}
-        <a href="tel:07459243174" className="text-gold font-semibold hover:underline">
-          07459 243174
+        <a href="tel:07471043827" className="text-gold font-semibold hover:underline">
+          07471 043827
         </a>
       </p>
     </form>

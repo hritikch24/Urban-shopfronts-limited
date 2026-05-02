@@ -192,11 +192,11 @@ export default function Header() {
 
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="tel:07459243174"
+                href="tel:07471043827"
                 className="flex items-center gap-2 text-gold-light hover:text-gold transition-colors text-sm font-medium"
               >
                 <PhoneIcon />
-                07459 243174
+                07471 043827
               </a>
               <Link
                 href="/contact"
@@ -292,11 +292,11 @@ export default function Header() {
 
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="tel:07459243174"
+                href="tel:07471043827"
                 className="flex items-center justify-center gap-2 py-3 px-4 border border-gold text-gold rounded-lg text-base font-semibold hover:bg-gold hover:text-navy transition-colors"
               >
                 <PhoneIcon />
-                07459 243174
+                07471 043827
               </a>
               <Link
                 href="/contact"

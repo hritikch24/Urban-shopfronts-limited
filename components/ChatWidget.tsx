@@ -89,7 +89,7 @@ export default function ChatWidget() {
       if (!res.ok) throw new Error(data.error || 'Request failed');
       const assistantMsg: Message = {
         role: 'assistant',
-        content: data.message || 'Sorry, I couldn\'t get a response. Please call us on 07459 243174.',
+        content: data.message || 'Sorry, I couldn\'t get a response. Please call us on 07471 043827.',
       };
       setMessages((prev) => [...prev, assistantMsg]);
     } catch {
@@ -97,7 +97,7 @@ export default function ChatWidget() {
         ...prev,
         {
           role: 'assistant',
-          content: 'Sorry, something went wrong. Please call us on 07459 243174.',
+          content: 'Sorry, something went wrong. Please call us on 07471 043827.',
         },
       ]);
     } finally {
@@ -197,7 +197,7 @@ export default function ChatWidget() {
                       Chat limit reached. Please{' '}
                       <a href="/contact" className="text-gold underline">contact us</a>
                       {' '}or call{' '}
-                      <a href="tel:07459243174" className="text-gold underline">07459 243174</a>.
+                      <a href="tel:07471043827" className="text-gold underline">07471 043827</a>.
                     </p>
                   )}
                   <div ref={messagesEndRef} />

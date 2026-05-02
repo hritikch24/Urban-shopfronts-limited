@@ -6,10 +6,10 @@ import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Urban Shopfronts | Shopfront Installation & Roller Shutters UK',
+  title: 'Aluminium Shopfronts & Roller Shutters UK | Urban Shopfronts',
   description:
     'London & UK shopfront specialists. Aluminium shopfronts, roller shutters, security doors, automatic doors & 24/7 emergency callout. Free site surveys.',
-  alternates: { canonical: 'https://urbanshopfronts.co.uk' },
+  alternates: { canonical: 'https://www.urbanshopfronts.co.uk' },
 };
 
 const services = [
@@ -42,7 +42,7 @@ const testimonials = [
 const areas = [
   'London', 'Birmingham', 'Manchester', 'Leeds', 'Liverpool', 'Bristol',
   'Sheffield', 'Glasgow', 'Cardiff', 'Newcastle', 'Nottingham', 'Leicester',
-  'Edinburgh', 'Southampton', 'Brighton',
+  'Edinburgh', 'Southampton', 'Brighton', 'Coventry',
 ];
 
 export default function HomePage() {
@@ -62,6 +62,7 @@ export default function HomePage() {
                 Commercial Shopfronts,
                 <br />
                 <span className="text-gradient-gold">Built to Last</span>
+                {' '}Across the UK
               </h1>
               <p className="text-grey-300 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
                 Design, fabrication and installation of aluminium shopfronts, roller shutters and security doors. Nationwide coverage with 24/7 emergency response.
@@ -70,8 +71,8 @@ export default function HomePage() {
                 <Link href="/contact" className="btn-gold text-base px-7 py-3.5">
                   Get a Free Quote
                 </Link>
-                <a href="tel:07459243174" className="btn-outline text-base px-7 py-3.5">
-                  Call 07459 243174
+                <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5">
+                  Call 07471 043827
                 </a>
               </div>
               <div className="flex items-center gap-6 text-grey-400 text-sm">
@@ -124,7 +125,7 @@ export default function HomePage() {
       <section className="section-padding bg-grey-50" id="services">
         <div className="container-max">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-3">What We Do</h2>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-3">Our Commercial Shopfront &amp; Security Services</h2>
             <p className="text-grey-600 text-lg max-w-xl mx-auto">Full-service commercial entrance solutions — from concept to completion.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -151,7 +152,7 @@ export default function HomePage() {
       {/* ── How It Works — horizontal timeline ───────────────────────────── */}
       <section className="section-padding bg-white">
         <div className="container-max">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-12">How It Works</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-12">How Our Shopfront Installation Process Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
             {[
               { n: '1', t: 'Survey', d: 'Free site visit to measure and assess your requirements.' },
@@ -173,7 +174,7 @@ export default function HomePage() {
       {/* ── Testimonials — grid layout ───────────────────────────────────── */}
       <section className="section-padding bg-grey-50">
         <div className="container-max">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-3">Trusted by Businesses Across the UK</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-3">What Our Shopfront Installation Clients Say</h2>
           <p className="text-grey-500 text-center mb-10 max-w-lg mx-auto">Real feedback from real clients. No filters.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.map((t) => (
@@ -198,7 +199,7 @@ export default function HomePage() {
       <section className="py-6 bg-white overflow-hidden">
         <div className="flex gap-3 animate-[scroll_30s_linear_infinite] w-max">
           {[...Array(2)].flatMap((_, set) =>
-            ['shopfront-2', 'shopfront-4', 'shopfront-5', 'shopfront-6', 'shopfront-7', 'aluminium-shopfront-1', 'roller-shutter-1', 'bifolding-door-1'].map((img, i) => (
+            ['shopfront-2', 'shopfront-4', 'shopfront-5', 'shopfront-6', 'shopfront-7', 'aluminium-shopfront-1', 'roller-shutter-1', 'bifolding-door-1', 'venue-signage-1'].map((img, i) => (
               <div key={`${set}-${i}`} className="relative w-56 h-40 rounded-xl overflow-hidden flex-shrink-0">
                 <Image src={`/assets/${img}.jpeg`} alt="Urban Shopfronts project" fill className="object-cover" sizes="224px" />
               </div>
@@ -214,7 +215,7 @@ export default function HomePage() {
       {/* ── Service Areas ────────────────────────────────────────────────── */}
       <section className="section-padding bg-navy" id="areas">
         <div className="container-max text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-3">Nationwide Coverage</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-3">Shopfront Installation Across the Whole UK</h2>
           <p className="text-grey-400 mb-10 max-w-lg mx-auto">Installation teams across the UK. Select your city for local information.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {areas.map((city) => (
@@ -231,7 +232,7 @@ export default function HomePage() {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Get Your Free Quote</h2>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Get a Free Shopfront Installation Quote</h2>
               <p className="text-grey-600 text-lg mb-8">No obligations. No hidden costs. Just a straightforward quotation for your project.</p>
               <div className="space-y-4 mb-8">
                 {['Free site survey within 48 hours', 'Detailed written quotation', 'Response within 2 business hours', '24/7 emergency line available'].map((item) => (
@@ -245,7 +246,7 @@ export default function HomePage() {
               </div>
               <div className="bg-navy rounded-xl p-5">
                 <p className="text-grey-400 text-xs uppercase tracking-wider mb-2 font-semibold">Prefer to talk?</p>
-                <a href="tel:07459243174" className="text-gold text-xl font-bold hover:text-gold-light transition-colors">07459 243174</a>
+                <a href="tel:07471043827" className="text-gold text-xl font-bold hover:text-gold-light transition-colors">07471 043827</a>
                 <p className="text-grey-500 text-xs mt-1">Mon–Fri 8am–6pm &bull; Sat 9am–4pm &bull; Emergency 24/7</p>
               </div>
             </div>

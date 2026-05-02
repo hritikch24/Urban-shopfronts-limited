@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://urbanshopfronts.co.uk';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
 
   return {
     title: service.metaTitle,
@@ -43,7 +43,7 @@ export default async function ServicePage({ params }: PageProps) {
   if (!service) notFound();
 
   const related = services.filter((s) => service.relatedServices.includes(s.slug));
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://urbanshopfronts.co.uk';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -53,7 +53,7 @@ export default async function ServicePage({ params }: PageProps) {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Urban Shopfronts',
-      telephone: '+447459243174',
+      telephone: '+447471043827',
       url: siteUrl,
     },
     areaServed: {
@@ -81,7 +81,7 @@ export default async function ServicePage({ params }: PageProps) {
             <Breadcrumbs
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Services', href: '/#services' },
+                { label: 'Services', href: '/services' },
                 { label: service.name },
               ]}
             />
@@ -93,8 +93,8 @@ export default async function ServicePage({ params }: PageProps) {
               <Link href="/contact" className="btn-gold">
                 Get a Free Quote
               </Link>
-              <a href="tel:07459243174" className="btn-outline">
-                Call 07459 243174
+              <a href="tel:07471043827" className="btn-outline">
+                Call 07471 043827
               </a>
             </div>
           </div>
@@ -164,10 +164,10 @@ export default async function ServicePage({ params }: PageProps) {
                     Request a Quote
                   </Link>
                   <a
-                    href="tel:07459243174"
+                    href="tel:07471043827"
                     className="block text-center text-gold-light hover:text-gold text-sm font-medium transition-colors"
                   >
-                    Or call 07459 243174
+                    Or call 07471 043827
                   </a>
                 </div>
 
@@ -232,8 +232,8 @@ export default async function ServicePage({ params }: PageProps) {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3">
-                <a href="tel:07459243174" className="btn-gold">
-                  Call 07459 243174
+                <a href="tel:07471043827" className="btn-gold">
+                  Call 07471 043827
                 </a>
                 <a
                   href="https://wa.me/447471043827"
