@@ -1,33 +1,28 @@
 @import "tailwindcss";
 
-/* ─── Custom Theme ──────────────────────────────────────────────────────── */
 @theme inline {
-  /* Brand colours */
-  --color-navy:        #1a1a2e;
-  --color-navy-light:  #2d2d4a;
-  --color-charcoal:    #2c2c3a;
-  --color-gold:        #d4a843;
-  --color-gold-light:  #e8c876;
+  --color-navy:        #0f172a;
+  --color-navy-light:  #1e293b;
+  --color-charcoal:    #1e2533;
+  --color-gold:        #2563eb;
+  --color-gold-light:  #3b82f6;
 
-  /* Neutrals */
   --color-white:       #ffffff;
-  --color-grey-50:     #f9fafb;
-  --color-grey-100:    #f3f4f6;
-  --color-grey-200:    #e5e7eb;
-  --color-grey-300:    #d1d5db;
-  --color-grey-400:    #9ca3af;
-  --color-grey-500:    #6b7280;
-  --color-grey-600:    #4b5563;
-  --color-grey-700:    #374151;
-  --color-grey-800:    #1f2937;
-  --color-grey-900:    #111827;
+  --color-grey-50:     #f8fafc;
+  --color-grey-100:    #f1f5f9;
+  --color-grey-200:    #e2e8f0;
+  --color-grey-300:    #cbd5e1;
+  --color-grey-400:    #94a3b8;
+  --color-grey-500:    #64748b;
+  --color-grey-600:    #475569;
+  --color-grey-700:    #334155;
+  --color-grey-800:    #1e293b;
+  --color-grey-900:    #0f172a;
 
-  /* Typography */
   --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body:    'Outfit', sans-serif;
 }
 
-/* ─── Base Styles ───────────────────────────────────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -49,7 +44,7 @@
 
   ::selection {
     background-color: var(--color-gold);
-    color: var(--color-navy);
+    color: var(--color-white);
   }
 
   :focus-visible {
@@ -62,9 +57,7 @@
   }
 }
 
-/* ─── Custom Utilities ──────────────────────────────────────────────────── */
 @layer utilities {
-  /* Section padding shorthand */
   .section-padding {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -81,7 +74,6 @@
     }
   }
 
-  /* Constrained container */
   .container-max {
     max-width: 72rem;
     margin-left: auto;
@@ -89,7 +81,6 @@
     width: 100%;
   }
 
-  /* Gold gradient text */
   .text-gradient-gold {
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
     -webkit-background-clip: text;
@@ -97,43 +88,41 @@
     background-clip: text;
   }
 
-  /* Navy-to-charcoal gradient background */
   .bg-gradient-dark {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%);
+    background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
   }
 
-  /* Card surface */
   .card-surface {
     background-color: var(--color-white);
-    border-radius: 0.75rem;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     border: 1px solid var(--color-grey-200);
   }
 
-  /* Gold CTA button base */
   .btn-gold {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     background-color: var(--color-gold);
-    color: var(--color-navy);
+    color: var(--color-white);
     font-family: var(--font-heading);
     font-weight: 700;
     padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
-    transition: background-color 150ms ease, transform 150ms ease;
+    border-radius: 0.75rem;
+    transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
     text-decoration: none;
     cursor: pointer;
     border: none;
+    box-shadow: 0 4px 14px 0 rgb(37 99 235 / 0.3);
   }
 
   .btn-gold:hover {
     background-color: var(--color-gold-light);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgb(37 99 235 / 0.4);
   }
 
-  /* Outline button */
   .btn-outline {
     display: inline-flex;
     align-items: center;
@@ -144,7 +133,7 @@
     font-family: var(--font-heading);
     font-weight: 700;
     padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     transition: background-color 150ms ease, color 150ms ease;
     text-decoration: none;
     cursor: pointer;
@@ -153,6 +142,6 @@
 
   .btn-outline:hover {
     background-color: var(--color-gold);
-    color: var(--color-navy);
+    color: var(--color-white);
   }
 }
