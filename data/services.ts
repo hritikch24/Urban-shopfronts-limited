@@ -206,7 +206,7 @@ All shutters are installed with a weather seal along both side guides and at the
     name: 'Security Doors',
     shortDescription:
       'Steel and composite security doors for commercial premises, rated to STS 202 and LPS 1175 standards. Single and double leaf configurations with multi-point locking.',
-    heroImage: 'sigma-security-door.jpeg',
+    heroImage: 'security-grill-1.jpeg',
     primaryKeyword: 'commercial security doors',
     metaTitle: 'Commercial Security Doors | Steel & Composite | Urban Shopfronts',
     metaDescription:
@@ -656,7 +656,7 @@ We work directly with insurance loss adjusters and brokers, and our documentatio
     name: 'Emergency Callout',
     shortDescription:
       '24/7 emergency response for broken shopfronts, failed shutters, and compromised entrances. We secure your premises, day or night, across the UK.',
-    heroImage: 'sigma-front-wide.jpeg',
+    heroImage: 'shopfront-4.jpeg',
     primaryKeyword: 'emergency shopfront repair',
     metaTitle: '24/7 Emergency Shopfront Callout | Urban Shopfronts',
     metaDescription:

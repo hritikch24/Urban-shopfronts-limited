@@ -12,12 +12,12 @@ import TestimonialCarousel from '@/components/TestimonialCarousel';
 const allServices = [
   { name: 'Aluminium Shopfronts', slug: 'aluminium-shopfronts', image: 'aluminium-shopfront-1.jpeg' },
   { name: 'Roller Shutters', slug: 'roller-shutters', image: 'roller-shutter-1.jpeg' },
-  { name: 'Security Doors', slug: 'security-doors', image: 'sigma-security-door.jpeg' },
+  { name: 'Security Doors', slug: 'security-doors', image: 'security-grill-1.jpeg' },
   { name: 'Automatic Doors', slug: 'automatic-doors', image: 'automatic-door-1.jpeg' },
   { name: 'Bi-Fold Doors', slug: 'bi-fold-doors', image: 'bifolding-door-1.jpeg' },
   { name: 'Fire Doors', slug: 'fire-doors', image: 'fire-door.jpeg' },
   { name: 'Shopfront Repairs', slug: 'shopfront-repairs', image: 'shopfront-3.jpeg' },
-  { name: 'Emergency Callout', slug: 'emergency-callout', image: 'sigma-front-variant.jpeg' },
+  { name: 'Emergency Callout', slug: 'emergency-callout', image: 'shopfront-3.jpeg' },
 ];
 
 interface PageProps {
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: city.metaDescription,
       url: `${siteUrl}/areas/${citySlug}`,
       type: 'website',
-      images: [{ url: '/assets/sigma-hero-1.jpeg', width: 1200, height: 630 }],
+      images: [{ url: '/assets/shopfront-2.jpeg', width: 1200, height: 630 }],
     },
   };
 }
@@ -83,7 +83,7 @@ export default async function CityPage({ params }: PageProps) {
 
       <section className="relative min-h-[45vh] flex items-end bg-navy">
         <Image
-          src="/assets/sigma-front-wide.jpeg"
+          src="/assets/shopfront-4.jpeg"
           alt={`Shopfront installation in ${city.name} by Urban Shopfronts`}
           fill
           className="object-cover opacity-30"

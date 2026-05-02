@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       'Leading UK shopfront specialists — aluminium shopfronts, roller shutters, security & automatic doors. Nationwide installation, 24/7 emergency callout, free site surveys.',
     images: [
       {
-        url: `${siteUrl}/assets/sigma-hero-1.jpeg`,
+        url: `${siteUrl}/assets/shopfront-2.jpeg`,
         width: 1200,
         height: 630,
         alt: 'Urban Shopfronts — Professional Shopfront Installation',

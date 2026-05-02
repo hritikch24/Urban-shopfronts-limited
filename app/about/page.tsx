@@ -111,7 +111,7 @@ export default function AboutPage() {
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-xl aspect-[4/3]">
               <Image
-                src="/assets/sigma-front-wide.jpeg"
+                src="/assets/shopfront-4.jpeg"
                 alt="Urban Shopfronts — wide aluminium shopfront installation"
                 fill
                 className="object-cover"

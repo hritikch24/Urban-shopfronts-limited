@@ -15,39 +15,39 @@ export const metadata: Metadata = {
 
 const images = [
   {
-    src: '/assets/sigma-hero-1.jpeg',
+    src: '/assets/shopfront-2.jpeg',
     alt: 'Modern aluminium shopfront installation by Urban Shopfronts',
   },
   {
-    src: '/assets/sigma-front-wide.jpeg',
+    src: '/assets/shopfront-4.jpeg',
     alt: 'Wide-span aluminium shopfront with full-height glazing',
   },
   {
-    src: '/assets/sigma-mall-front.jpeg',
+    src: '/assets/shopfront-5.jpeg',
     alt: 'Retail mall shopfront unit completed by Urban Shopfronts',
   },
   {
-    src: '/assets/sigma-glass-front.jpeg',
+    src: '/assets/shopfront-6.jpeg',
     alt: 'Floor-to-ceiling glass shopfront for commercial retail unit',
   },
   {
-    src: '/assets/sigma-roller-front.jpeg',
+    src: '/assets/roller-shutter-1.jpeg',
     alt: 'Integrated roller shutter shopfront installation',
   },
   {
-    src: '/assets/sigma-retail-front.jpeg',
+    src: '/assets/shopfront-7.jpeg',
     alt: 'Bespoke retail shopfront with powder-coated aluminium frame',
   },
   {
-    src: '/assets/sigma-security-door.jpeg',
+    src: '/assets/security-grill-1.jpeg',
     alt: 'Heavy-duty security door fitted to commercial premises',
   },
   {
-    src: '/assets/sigma-front-variant.jpeg',
+    src: '/assets/shopfront-3.jpeg',
     alt: 'Contemporary shopfront variant with slim-line aluminium profile',
   },
   {
-    src: '/assets/sigma-modern-front.jpeg',
+    src: '/assets/aluminium-shopfront-1.jpeg',
     alt: 'Modern shopfront design with tinted safety glass panels',
   },
   {
@@ -103,7 +103,7 @@ const images = [
     alt: 'Night-time view of illuminated shopfront with polished aluminium',
   },
   {
-    src: '/assets/sigma-gallery-1.jpeg',
+    src: '/assets/bifolding-door-1.jpeg',
     alt: 'Portfolio showcase — completed shopfront project by Urban Shopfronts',
   },
 ];

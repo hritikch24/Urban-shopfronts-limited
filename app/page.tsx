@@ -37,7 +37,7 @@ const services = [
     title: 'Security Doors',
     description:
       'High-security steel and composite doors with multi-point locking, graded to LPS 1175 standards. Ideal for rear access, plant rooms and retail.',
-    image: '/assets/sigma-security-door.jpeg',
+    image: '/assets/security-grill-1.jpeg',
     href: '/services/security-doors',
   },
   {
@@ -72,7 +72,7 @@ const services = [
     title: 'Emergency Callout',
     description:
       '24/7 emergency boarding, glazing and shutter repairs. Our rapid-response teams are mobilised across the UK to secure your premises at any hour.',
-    image: '/assets/sigma-front-variant.jpeg',
+    image: '/assets/shopfront-3.jpeg',
     href: '/services/emergency-callout',
   },
 ];
@@ -160,10 +160,10 @@ const steps = [
 ];
 
 const galleryImages = [
-  { src: '/assets/sigma-hero-1.jpeg', alt: 'Modern aluminium shopfront installation' },
-  { src: '/assets/sigma-front-wide.jpeg', alt: 'Wide commercial shopfront with full glazing' },
-  { src: '/assets/sigma-mall-front.jpeg', alt: 'Retail mall shopfront installation' },
-  { src: '/assets/sigma-glass-front.jpeg', alt: 'Glass shopfront with slim aluminium frame' },
+  { src: '/assets/shopfront-2.jpeg', alt: 'Modern aluminium shopfront installation' },
+  { src: '/assets/shopfront-4.jpeg', alt: 'Wide commercial shopfront with full glazing' },
+  { src: '/assets/shopfront-5.jpeg', alt: 'Retail mall shopfront installation' },
+  { src: '/assets/shopfront-6.jpeg', alt: 'Glass shopfront with slim aluminium frame' },
   { src: '/assets/shopfront-2.jpeg', alt: 'Frameless glass shopfront project' },
   { src: '/assets/shopfront-4.jpeg', alt: 'High street shopfront renovation' },
   { src: '/assets/shopfront-5.jpeg', alt: 'Contemporary commercial shopfront' },
@@ -229,7 +229,7 @@ export default function HomePage() {
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/sigma-hero-1.jpeg"
+          src="/assets/shopfront-2.jpeg"
           alt="Professional shopfront installation by Urban Shopfronts"
           fill
           priority
@@ -579,7 +579,7 @@ export default function HomePage() {
             <div className="order-1 lg:order-2 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/assets/sigma-company-proof-desktop.png"
+                  src="/assets/shopfront-5.jpeg"
                   alt="Urban Shopfronts Limited — Companies House registration certificate"
                   width={640}
                   height={480}
