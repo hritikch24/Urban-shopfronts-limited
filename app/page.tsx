@@ -199,7 +199,7 @@ export default function HomePage() {
       <section className="py-6 bg-white overflow-hidden">
         <div className="flex gap-3 animate-[scroll_30s_linear_infinite] w-max">
           {[...Array(2)].flatMap((_, set) =>
-            ['shopfront-2', 'shopfront-4', 'shopfront-5', 'shopfront-6', 'shopfront-7', 'aluminium-shopfront-1', 'roller-shutter-1', 'bifolding-door-1', 'venue-signage-1'].map((img, i) => (
+            ['shopfront-2', 'shopfront-4', 'shopfront-5', 'shopfront-6', 'shopfront-7', 'aluminium-shopfront-1', 'roller-shutter-1', 'bifolding-door-1', 'venue-signage-1', 'site-survey-1', 'bay-window-install-1'].map((img, i) => (
               <div key={`${set}-${i}`} className="relative w-56 h-40 rounded-xl overflow-hidden flex-shrink-0">
                 <Image src={`/assets/${img}.jpeg`} alt="Urban Shopfronts project" fill className="object-cover" sizes="224px" />
               </div>

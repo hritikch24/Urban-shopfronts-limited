@@ -98,6 +98,7 @@ const defaultLocalBusiness = {
   },
   sameAs: [
     'https://wa.me/447471043827',
+    'https://g.co/kgs/urbanshopfronts',
   ],
 };
 
