@@ -74,6 +74,11 @@ const faqs = [
     answer:
       'We install a full range of roller shutters including solid steel (galvanised or powder-coated), perforated steel (for ventilation and partial visibility), polycarbonate (for maximum light transmission), and aluminium lath. Shutters can be operated manually (spring-balanced or hand-crank), electrically (via push-button, key switch, or remote control), or with battery backup systems. We can also retrofit electric operators to existing manual shutters.',
   },
+  {
+    question: 'Urban Shopfronts is a newer company — why should I trust you?',
+    answer:
+      'Urban Shopfronts Limited is a newer company, but our team is not. Our installation crews, surveyors, and project managers bring over 10 years of combined experience in the commercial shopfront and security door industry. Before Urban, our people were fitting shopfronts, roller shutters, and security systems for businesses across the UK. We are Companies House registered, fully insured, and every project comes with a written workmanship guarantee. We are happy to share references and photos of completed work before you commit.',
+  },
 ];
 
 const schemaData = {

@@ -24,10 +24,10 @@ const services = [
 ];
 
 const stats = [
+  { value: '10+', label: 'Years Trade Experience' },
   { value: '500+', label: 'Projects Delivered' },
   { value: '24/7', label: 'Emergency Cover' },
-  { value: '48hr', label: 'Survey Response' },
-  { value: '15+', label: 'Cities Covered' },
+  { value: '16', label: 'UK Cities Covered' },
 ];
 
 const testimonials = [
