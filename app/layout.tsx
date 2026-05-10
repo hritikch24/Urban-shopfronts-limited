@@ -111,6 +111,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
         )}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16801337867" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16801337867');
+function gtagSendEvent(url){var callback=function(){if(typeof url==='string'){window.location=url;}};gtag('event','ads_conversion_Book_appointment_1',{'event_callback':callback,'event_timeout':2000});return false;}`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-body bg-white text-charcoal">
         {gtmId && (
