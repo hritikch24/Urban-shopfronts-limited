@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     'Explore our full range of commercial shopfront services: aluminium shopfronts, roller shutters, security doors, automatic doors, bi-fold doors, fire doors, repairs and 24/7 emergency callout.',
   alternates: { canonical: 'https://www.urbanshopfronts.co.uk/services' },
+  openGraph: {
+    title: 'Commercial Shopfront & Security Services — Urban Shopfronts',
+    description: 'Aluminium shopfronts, roller shutters, security doors, automatic doors, bi-fold doors, fire doors, repairs and 24/7 emergency callout.',
+    url: 'https://www.urbanshopfronts.co.uk/services',
+  },
 };
 
 const services = [

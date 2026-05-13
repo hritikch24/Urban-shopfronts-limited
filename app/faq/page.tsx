@@ -9,7 +9,12 @@ export const metadata: Metadata = {
   description:
     'Answers to the most common questions about shopfront installation, costs, materials, planning permission, warranties, and more from Urban Shopfronts.',
   alternates: {
-    canonical: '/faq',
+    canonical: 'https://www.urbanshopfronts.co.uk/faq',
+  },
+  openGraph: {
+    title: 'Shopfront Installation FAQ — Urban Shopfronts',
+    description: 'Answers to common questions about shopfront costs, materials, planning permission, warranties, and emergency callout.',
+    url: 'https://www.urbanshopfronts.co.uk/faq',
   },
 };
 

@@ -3,13 +3,15 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
+const slug = 'what-is-lps-1175-security-rating';
+const pageTitle = 'What Is the LPS 1175 Security Rating? A Business Owner\'s Guide';
+const pageDesc = 'Learn what the LPS 1175 security rating means, how the rating levels work, what insurers require, and how to choose the right security door for your commercial premises.';
+
 export const metadata: Metadata = {
-  title: 'What Is the LPS 1175 Security Rating? A Business Owner\'s Guide',
-  description:
-    'Learn what the LPS 1175 security rating means, how the rating levels work, what insurers require, and how to choose the right security door for your commercial premises.',
-  alternates: {
-    canonical: 'https://www.urbanshopfronts.co.uk/blog/what-is-lps-1175-security-rating',
-  },
+  title: pageTitle,
+  description: pageDesc,
+  alternates: { canonical: `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, type: 'article' },
 };
 
 const faqs = [
@@ -46,6 +48,18 @@ export default function LPS1175Page() {
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
+            url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, datePublished: '2025-04-10', dateModified: '2025-04-10',
+            author: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
+            publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+          }),
         }}
       />
 

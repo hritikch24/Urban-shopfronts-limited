@@ -5,11 +5,16 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Project Gallery',
+  title: 'Project Gallery — Shopfront & Shutter Installations',
   description:
     'Browse Urban Shopfronts\' portfolio of completed projects — aluminium shopfronts, roller shutters, security doors, automatic doors, and more across the United Kingdom.',
   alternates: {
-    canonical: '/gallery',
+    canonical: 'https://www.urbanshopfronts.co.uk/gallery',
+  },
+  openGraph: {
+    title: 'Project Gallery — Urban Shopfronts',
+    description: 'Browse our portfolio of completed shopfront, roller shutter, and security door installations across the UK.',
+    url: 'https://www.urbanshopfronts.co.uk/gallery',
   },
 };
 
@@ -124,6 +129,25 @@ export default function GalleryPage() {
   return (
     <>
       <SchemaMarkup type="LocalBusiness" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            { src: '/assets/project-video-1.mp4', name: 'Shopfront Installation in Progress', desc: 'Watch our team installing an aluminium shopfront for a commercial premises in the UK.' },
+            { src: '/assets/project-video-2.mp4', name: 'On-Site Survey and Assessment', desc: 'Urban Shopfronts engineer conducting a free site survey and taking measurements for a shopfront project.' },
+            { src: '/assets/project-video-3.mp4', name: 'Completed Project Walkthrough', desc: 'A walkthrough of a recently completed shopfront installation by Urban Shopfronts.' },
+          ].map((v) => ({
+            '@context': 'https://schema.org',
+            '@type': 'VideoObject',
+            name: v.name,
+            description: v.desc,
+            contentUrl: `https://www.urbanshopfronts.co.uk${v.src}`,
+            thumbnailUrl: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
+            uploadDate: '2025-01-15',
+            publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
+          }))),
+        }}
+      />
 
       {/* Hero */}
       <section className="bg-gradient-dark section-padding">

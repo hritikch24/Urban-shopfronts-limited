@@ -5,11 +5,16 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About Us — 10+ Years Trade Experience',
   description:
-    'Learn about Urban Shopfronts — a West Midlands-based shopfront specialist with a passion for quality craftsmanship, reliability, and competitive pricing. Companies House registered (No. ).',
+    'Learn about Urban Shopfronts — a West Midlands-based shopfront specialist with a passion for quality craftsmanship, reliability, and competitive pricing. Companies House registered.',
   alternates: {
-    canonical: '/about',
+    canonical: 'https://www.urbanshopfronts.co.uk/about',
+  },
+  openGraph: {
+    title: 'About Urban Shopfronts — West Midlands Shopfront Specialists',
+    description: 'Companies House registered shopfront company with 10+ years of trade experience. Quality craftsmanship, nationwide coverage.',
+    url: 'https://www.urbanshopfronts.co.uk/about',
   },
 };
 

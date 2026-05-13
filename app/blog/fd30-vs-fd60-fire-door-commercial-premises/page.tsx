@@ -3,13 +3,15 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
+const slug = 'fd30-vs-fd60-fire-door-commercial-premises';
+const pageTitle = 'FD30 vs FD60 Fire Doors: Which Does Your Business Need?';
+const pageDesc = 'Understand the difference between FD30 and FD60 fire doors, UK Building Regulations requirements, and how to choose the correct fire resistance rating for commercial premises.';
+
 export const metadata: Metadata = {
-  title: 'FD30 vs FD60 Fire Doors: Which Does Your Business Need?',
-  description:
-    'Understand the difference between FD30 and FD60 fire doors, UK Building Regulations requirements, and how to choose the correct fire resistance rating for commercial premises.',
-  alternates: {
-    canonical: 'https://www.urbanshopfronts.co.uk/blog/fd30-vs-fd60-fire-door-commercial-premises',
-  },
+  title: pageTitle,
+  description: pageDesc,
+  alternates: { canonical: `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, type: 'article' },
 };
 
 const faqs = [
@@ -46,6 +48,18 @@ export default function FD30vsFD60Page() {
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
+            url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, datePublished: '2025-04-01', dateModified: '2025-04-01',
+            author: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
+            publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+          }),
         }}
       />
 

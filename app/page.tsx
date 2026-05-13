@@ -49,6 +49,19 @@ export default function HomePage() {
   return (
     <>
       <SchemaMarkup type="LocalBusiness" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(testimonials.map((t) => ({
+            '@context': 'https://schema.org',
+            '@type': 'Review',
+            itemReviewed: { '@type': 'LocalBusiness', name: 'Urban Shopfronts' },
+            author: { '@type': 'Person', name: t.name },
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+            reviewBody: t.text,
+          }))),
+        }}
+      />
 
       {/* ── Hero — split layout ──────────────────────────────────────────── */}
       <section className="relative bg-navy overflow-hidden">
@@ -199,9 +212,21 @@ export default function HomePage() {
       <section className="py-6 bg-white overflow-hidden">
         <div className="flex gap-3 animate-[scroll_30s_linear_infinite] w-max">
           {[...Array(2)].flatMap((_, set) =>
-            ['shopfront-2', 'shopfront-4', 'shopfront-5', 'shopfront-6', 'shopfront-7', 'aluminium-shopfront-1', 'roller-shutter-1', 'bifolding-door-1', 'venue-signage-1', 'site-survey-1', 'bay-window-install-1'].map((img, i) => (
+            [
+              { file: 'shopfront-2', alt: 'Modern aluminium shopfront installation' },
+              { file: 'shopfront-4', alt: 'Wide-span glazed shopfront for retail unit' },
+              { file: 'shopfront-5', alt: 'Commercial shopfront with toughened glass' },
+              { file: 'shopfront-6', alt: 'Floor-to-ceiling glass shopfront' },
+              { file: 'shopfront-7', alt: 'Powder-coated aluminium shopfront at night' },
+              { file: 'aluminium-shopfront-1', alt: 'Aluminium shopfront with tinted glass panels' },
+              { file: 'roller-shutter-1', alt: 'Commercial roller shutter installation' },
+              { file: 'bifolding-door-1', alt: 'Bi-fold door system for restaurant frontage' },
+              { file: 'venue-signage-1', alt: 'Venue signage and shopfront fitout' },
+              { file: 'site-survey-1', alt: 'Engineer arriving for free site survey' },
+              { file: 'bay-window-install-1', alt: 'Bay window aluminium frame installation' },
+            ].map((img, i) => (
               <div key={`${set}-${i}`} className="relative w-56 h-40 rounded-xl overflow-hidden flex-shrink-0">
-                <Image src={`/assets/${img}.jpeg`} alt="Urban Shopfronts project" fill className="object-cover" sizes="224px" />
+                <Image src={`/assets/${img.file}.jpeg`} alt={img.alt} fill className="object-cover" sizes="224px" />
               </div>
             ))
           )}

@@ -5,11 +5,16 @@ import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us — Free Shopfront Survey & Quote',
   description:
     'Contact Urban Shopfronts for a free site survey and quotation. Call 07471 043827, WhatsApp +44 7471 043827, or email sales@urbanshopfronts.co.uk. West Midlands, UK.',
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://www.urbanshopfronts.co.uk/contact',
+  },
+  openGraph: {
+    title: 'Contact Urban Shopfronts — Free Survey & Quote',
+    description: 'Get a free site survey and detailed quotation for your shopfront project. Call, WhatsApp, or fill in our form.',
+    url: 'https://www.urbanshopfronts.co.uk/contact',
   },
 };
 

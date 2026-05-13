@@ -3,13 +3,15 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
+const slug = 'emergency-shopfront-boarding-what-to-do';
+const pageTitle = 'Emergency Shopfront Boarding: What to Do When Your Shop Is Broken Into';
+const pageDesc = 'Step-by-step guide on what to do after a shopfront break-in, including securing your premises with emergency boarding, dealing with police and insurers, and arranging permanent repairs.';
+
 export const metadata: Metadata = {
-  title: 'Emergency Shopfront Boarding: What to Do When Your Shop Is Broken Into',
-  description:
-    'Step-by-step guide on what to do after a shopfront break-in, including securing your premises with emergency boarding, dealing with police and insurers, and arranging permanent repairs.',
-  alternates: {
-    canonical: 'https://www.urbanshopfronts.co.uk/blog/emergency-shopfront-boarding-what-to-do',
-  },
+  title: pageTitle,
+  description: pageDesc,
+  alternates: { canonical: `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, type: 'article' },
 };
 
 const faqs = [
@@ -46,6 +48,18 @@ export default function EmergencyBoardingPage() {
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
+            url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, datePublished: '2025-04-20', dateModified: '2025-04-20',
+            author: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
+            publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+          }),
         }}
       />
 

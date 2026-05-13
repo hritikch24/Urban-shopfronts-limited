@@ -3,13 +3,15 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
+const slug = 'how-to-maintain-commercial-roller-shutters';
+const pageTitle = 'How to Maintain Commercial Roller Shutters: A Complete Guide';
+const pageDesc = 'Learn how to maintain commercial roller shutters with our complete guide covering inspection schedules, lubrication, cleaning, common faults, and when to call a professional.';
+
 export const metadata: Metadata = {
-  title: 'How to Maintain Commercial Roller Shutters: A Complete Guide',
-  description:
-    'Learn how to maintain commercial roller shutters with our complete guide covering inspection schedules, lubrication, cleaning, common faults, and when to call a professional.',
-  alternates: {
-    canonical: 'https://www.urbanshopfronts.co.uk/blog/how-to-maintain-commercial-roller-shutters',
-  },
+  title: pageTitle,
+  description: pageDesc,
+  alternates: { canonical: `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, type: 'article' },
 };
 
 const faqs = [
@@ -46,6 +48,23 @@ export default function RollerShutterMaintenancePage() {
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: pageTitle,
+            description: pageDesc,
+            url: `https://www.urbanshopfronts.co.uk/blog/${slug}`,
+            datePublished: '2025-03-10',
+            dateModified: '2025-03-10',
+            author: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
+            publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+          }),
         }}
       />
 

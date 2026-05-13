@@ -64,6 +64,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Urban Shopfronts | Professional Shopfront Installation UK',
+    description:
+      'Leading UK shopfront specialists — aluminium shopfronts, roller shutters, security & automatic doors. Nationwide installation, 24/7 emergency callout.',
+    images: [`${siteUrl}/assets/shopfront-2.jpeg`],
+  },
   robots: {
     index: true,
     follow: true,

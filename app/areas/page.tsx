@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: 'Shopfront Installation Areas Across the UK',
   description: 'Urban Shopfronts operates across 16 major UK cities. Find your local shopfront installation team.',
   alternates: { canonical: 'https://www.urbanshopfronts.co.uk/areas' },
+  openGraph: {
+    title: 'Shopfront Installation Areas — Urban Shopfronts',
+    description: 'We operate across 16 major UK cities. Find your local shopfront installation team in London, Birmingham, Manchester, and more.',
+    url: 'https://www.urbanshopfronts.co.uk/areas',
+  },
 };
 
 export default function AreasPage() {

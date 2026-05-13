@@ -3,13 +3,15 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
+const slug = 'aluminium-shopfront-planning-permission-uk';
+const pageTitle = 'Do You Need Planning Permission for an Aluminium Shopfront?';
+const pageDesc = 'Find out whether your aluminium shopfront project needs planning permission in the UK, including rules for conservation areas, listed buildings, and the application process.';
+
 export const metadata: Metadata = {
-  title: 'Do You Need Planning Permission for an Aluminium Shopfront?',
-  description:
-    'Find out whether your aluminium shopfront project needs planning permission in the UK, including rules for conservation areas, listed buildings, and the application process.',
-  alternates: {
-    canonical: 'https://www.urbanshopfronts.co.uk/blog/aluminium-shopfront-planning-permission-uk',
-  },
+  title: pageTitle,
+  description: pageDesc,
+  alternates: { canonical: `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+  openGraph: { title: pageTitle, description: pageDesc, url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, type: 'article' },
 };
 
 const faqs = [
@@ -46,6 +48,18 @@ export default function PlanningPermissionPage() {
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle, description: pageDesc,
+            url: `https://www.urbanshopfronts.co.uk/blog/${slug}`, datePublished: '2025-03-15', dateModified: '2025-03-15',
+            author: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
+            publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk', logo: { '@type': 'ImageObject', url: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.urbanshopfronts.co.uk/blog/${slug}` },
+          }),
         }}
       />
 

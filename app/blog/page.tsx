@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.urbanshopfronts.co.uk/blog',
   },
+  openGraph: {
+    title: 'Shopfront Guides & Articles — Urban Shopfronts',
+    description: 'Expert guides on shopfront maintenance, planning permission, fire doors, security ratings, and emergency boarding.',
+    url: 'https://www.urbanshopfronts.co.uk/blog',
+  },
 };
 
 const posts = [
