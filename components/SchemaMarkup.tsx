@@ -100,6 +100,28 @@ const defaultLocalBusiness = {
     'https://wa.me/447471043827',
     'https://g.co/kgs/urbanshopfronts',
   ],
+  knowsAbout: [
+    'Aluminium shopfront installation',
+    'Commercial roller shutter installation',
+    'Security door installation LPS 1175',
+    'Automatic door systems BS EN 16005',
+    'Bi-fold door systems',
+    'Fire door installation FD30 FD60',
+    'Shopfront repairs and emergency glazing',
+    'Emergency shopfront boarding',
+    'Conservation area shopfront planning',
+    'Listed building shopfront consent',
+    'Building Regulations Part L compliance',
+    'PAS 24 security glazing',
+    'DDA compliant entrances',
+    'Thermally broken aluminium profiles',
+    'Commercial entrance solutions UK',
+  ],
+  slogan: 'Commercial Shopfronts, Built to Last',
+  numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 10, maxValue: 25 },
+  paymentAccepted: 'Cash, Bank Transfer, Card',
+  currenciesAccepted: 'GBP',
+  isicV4: '4330',
 };
 
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {

@@ -42,6 +42,18 @@ const posts = [
       'Demystifying the LPS 1175 standard — what the security rating levels mean, how they affect insurance, and which level your business should target.',
   },
   {
+    slug: 'shopfront-installation-cost-uk-2025',
+    title: 'Shopfront Installation Costs in the UK (2025): What to Expect',
+    description:
+      'A detailed breakdown of shopfront installation costs across the UK in 2025, covering aluminium shopfronts, roller shutters, security doors, and what factors affect pricing.',
+  },
+  {
+    slug: 'best-shopfront-company-uk-how-to-choose',
+    title: 'How to Choose the Best Shopfront Company in the UK',
+    description:
+      'A practical checklist for finding a reliable, professional shopfront installation company. What to look for, red flags to avoid, and questions to ask before signing.',
+  },
+  {
     slug: 'emergency-shopfront-boarding-what-to-do',
     title: 'Emergency Shopfront Boarding: What to Do When Your Shop Is Broken Into',
     description:
