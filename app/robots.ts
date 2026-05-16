@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/metrics'],
       },
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: 'https://www.urbanshopfronts.co.uk/sitemap.xml',
   };
 }

@@ -85,6 +85,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
+    languages: {
+      'en-GB': siteUrl,
+    },
   },
   metadataBase: new URL(siteUrl),
 };
@@ -108,6 +111,9 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${outfit.variable} h-full scroll-smooth antialiased`}
     >
       <head>
+        <meta name="geo.region" content="GB" />
+        <meta name="geo.placename" content="United Kingdom" />
+        <link rel="alternate" hrefLang="en-gb" href="https://www.urbanshopfronts.co.uk" />
         {gtmId && (
           <script
             dangerouslySetInnerHTML={{

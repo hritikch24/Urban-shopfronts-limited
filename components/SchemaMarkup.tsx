@@ -11,7 +11,7 @@ const defaultLocalBusiness = {
   description:
     'Professional shop front installation and repair specialists. We provide aluminium shop fronts, roller shutters, security doors, automatic doors, bi-fold doors, fire doors, and emergency callout services across the UK.',
   url: 'https://www.urbanshopfronts.co.uk',
-  telephone: ['+447459243174', '+447397066538'],
+  telephone: '+447471043827',
   email: 'sales@urbanshopfronts.co.uk',
   foundingDate: '2024',
   priceRange: '££',
@@ -19,6 +19,9 @@ const defaultLocalBusiness = {
   logo: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '128 City Road',
+    addressLocality: 'London',
+    postalCode: 'EC1V 2NX',
     addressCountry: 'GB',
     addressRegion: 'England',
   },
@@ -52,7 +55,7 @@ const defaultLocalBusiness = {
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+447459243174',
+      telephone: '+447471043827',
       contactType: 'sales',
       availableLanguage: 'English',
     },
@@ -98,7 +101,9 @@ const defaultLocalBusiness = {
   },
   sameAs: [
     'https://wa.me/447471043827',
-    'https://g.co/kgs/urbanshopfronts',
+    'https://www.yell.com/biz/urban-shopfronts-london/',
+    'https://www.bark.com/en/gb/company/urban-shopfronts/',
+    'https://www.freeindex.co.uk/profile(urban-shopfronts)/',
   ],
   knowsAbout: [
     'Aluminium shopfront installation',
