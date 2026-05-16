@@ -36,6 +36,21 @@ interface MetricsData {
       createdAt: string;
     }[];
   };
+  callClicks: {
+    total: number;
+    byPage: { page: string; count: number }[];
+    daily: { date: string; count: number }[];
+    recent: {
+      session_id: string;
+      phone: string;
+      page: string;
+      device: string;
+      browser: string;
+      ip: string;
+      country: string;
+      created_at: string;
+    }[];
+  };
 }
 
 const STATUS_COLORS: Record<string, string> = {
@@ -312,7 +327,7 @@ export default function MetricsPage() {
   const [data, setData] = useState<MetricsData | null>(null);
   const [period, setPeriod] = useState('30d');
   const [expandedLead, setExpandedLead] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'overview' | 'traffic' | 'leads'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'traffic' | 'leads' | 'calls'>('overview');
 
   useEffect(() => {
     const saved = sessionStorage.getItem('_urban_metrics_key');
@@ -483,7 +498,7 @@ export default function MetricsPage() {
 
             {/* Tabs */}
             <nav className="hidden md:flex items-center gap-1 bg-navy-light/50 rounded-lg p-1">
-              {(['overview', 'traffic', 'leads'] as const).map((tab) => (
+              {(['overview', 'traffic', 'leads', 'calls'] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -493,7 +508,7 @@ export default function MetricsPage() {
                       : 'text-grey-300 hover:text-white'
                   }`}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === 'calls' ? 'Call Clicks' : tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </button>
               ))}
             </nav>
@@ -547,7 +562,7 @@ export default function MetricsPage() {
       {/* Mobile Tabs */}
       <div className="md:hidden sticky top-16 z-40 bg-white border-b border-grey-200">
         <div className="flex">
-          {(['overview', 'traffic', 'leads'] as const).map((tab) => (
+          {(['overview', 'traffic', 'leads', 'calls'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -557,7 +572,7 @@ export default function MetricsPage() {
                   : 'text-grey-400 border-transparent'
               }`}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === 'calls' ? 'Calls' : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
@@ -587,7 +602,11 @@ export default function MetricsPage() {
               <StatCard label="Pages / Session" value={pagesPerSession} />
               <StatCard label="Total Leads" value={data.leads.total} sub={periodLabels[period]} icon={<LeadsIcon />} />
               <StatCard label="Conversion" value={`${conversionRate}%`} sub="Leads / Sessions" icon={<ConversionIcon />} />
-              <StatCard label="New Leads" value={newLeads} sub="Awaiting action" trend={newLeads > 0 ? 'up' : 'neutral'} />
+              <StatCard label="Call Clicks" value={data.callClicks?.total || 0} sub="Phone taps" icon={
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+              } />
             </div>
 
             {/* Charts */}
@@ -716,6 +735,120 @@ export default function MetricsPage() {
                             </svg>
                           </div>
                           <p className="text-grey-400 text-sm">No leads in this period</p>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+        {/* Call Clicks tab */}
+        {(activeTab === 'overview' || activeTab === 'calls') && data.callClicks && (
+          <div className={`space-y-6 ${activeTab === 'overview' ? 'mt-8' : ''}`}>
+            {/* Call stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <StatCard
+                label="Call Clicks"
+                value={data.callClicks.total}
+                sub={periodLabels[period]}
+                icon={
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                }
+              />
+              <StatCard
+                label="Calls / Day"
+                value={data.callClicks.daily.length > 0
+                  ? (data.callClicks.total / data.callClicks.daily.length).toFixed(1)
+                  : '0'}
+                sub="Average"
+              />
+              <StatCard
+                label="Call Rate"
+                value={data.traffic.uniqueSessions > 0
+                  ? `${((data.callClicks.total / data.traffic.uniqueSessions) * 100).toFixed(1)}%`
+                  : '0%'}
+                sub="Clicks / Sessions"
+              />
+              <StatCard
+                label="Top Page"
+                value={data.callClicks.byPage[0]?.page || '—'}
+                sub={data.callClicks.byPage[0] ? `${data.callClicks.byPage[0].count} clicks` : ''}
+              />
+            </div>
+
+            {/* Call charts */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <SectionCard title="Daily Call Clicks">
+                <MiniChart data={data.callClicks.daily} valueKey="count" height={120} />
+              </SectionCard>
+              <SectionCard title="Calls by Page">
+                <BarChart data={data.callClicks.byPage} labelKey="page" valueKey="count" color="bg-orange-500" />
+              </SectionCard>
+            </div>
+
+            {/* Recent call clicks table */}
+            <div className="bg-white rounded-2xl border border-grey-200/60 overflow-hidden">
+              <div className="px-6 py-5 border-b border-grey-100">
+                <h2 className="font-heading font-bold text-navy">Recent Call Clicks</h2>
+                <p className="text-xs text-grey-400 mt-0.5">
+                  {data.callClicks.recent.length} shown &middot; Each row = someone tapped/clicked a phone number
+                </p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left">
+                  <thead>
+                    <tr className="bg-grey-50/80">
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">Phone Clicked</th>
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">Page</th>
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">Device</th>
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">Browser</th>
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">IP</th>
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">Country</th>
+                      <th className="py-3 px-4 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">When</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.callClicks.recent.map((click, i) => {
+                      const date = new Date(click.created_at);
+                      return (
+                        <tr key={i} className="border-b border-grey-100/60 hover:bg-grey-50/50 transition-colors">
+                          <td className="py-3 px-4">
+                            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-navy">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-emerald-500 flex-shrink-0">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                              </svg>
+                              {click.phone}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 text-sm text-charcoal max-w-[200px] truncate">{click.page}</td>
+                          <td className="py-3 px-4">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded bg-grey-100 text-xs font-medium text-grey-600">
+                              {click.device || '—'}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 text-sm text-charcoal">{click.browser || '—'}</td>
+                          <td className="py-3 px-4 text-xs text-grey-500 font-mono">{click.ip || '—'}</td>
+                          <td className="py-3 px-4 text-sm text-charcoal">{click.country || '—'}</td>
+                          <td className="py-3 px-4 text-xs text-grey-400" title={date.toLocaleString('en-GB')}>
+                            {getTimeAgo(date)}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                    {data.callClicks.recent.length === 0 && (
+                      <tr>
+                        <td colSpan={7} className="py-12 text-center">
+                          <div className="text-grey-300 mb-2">
+                            <svg className="w-10 h-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
+                              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                          </div>
+                          <p className="text-grey-400 text-sm">No call clicks recorded yet</p>
+                          <p className="text-grey-300 text-xs mt-1">Clicks will appear here when visitors tap a phone number</p>
                         </td>
                       </tr>
                     )}

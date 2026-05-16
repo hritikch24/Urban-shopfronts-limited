@@ -8,6 +8,7 @@ import ChatWidget from '@/components/ChatWidget';
 import MobileStickyBar from '@/components/MobileStickyBar';
 import StickyDesktopCTA from '@/components/StickyDesktopCTA';
 import Analytics from '@/components/Analytics';
+import CallTracker from '@/components/CallTracker';
 import SiteChrome from '@/components/SiteChrome';
 import { Suspense } from 'react';
 
@@ -149,6 +150,7 @@ function gtagSendEvent(url){var callback=function(){if(typeof url==='string'){wi
         </SiteChrome>
         <Suspense fallback={null}>
           <Analytics />
+          <CallTracker />
         </Suspense>
       </body>
     </html>
