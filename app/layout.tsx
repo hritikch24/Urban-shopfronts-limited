@@ -26,7 +26,7 @@ const outfit = Outfit({
   weight: ['300', '400', '500', '600', '700'],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
+const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
 export const metadata: Metadata = {
   title: {

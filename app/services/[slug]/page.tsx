@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
+  const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
   return {
     title: service.metaTitle,
@@ -43,7 +43,7 @@ export default async function ServicePage({ params }: PageProps) {
   if (!service) notFound();
 
   const related = services.filter((s) => service.relatedServices.includes(s.slug));
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
+  const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
   const serviceSchema = {
     '@context': 'https://schema.org',

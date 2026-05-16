@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = cities.find((c) => c.slug === citySlug);
   if (!city) return {};
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
+  const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
   return {
     title: city.metaTitle,
@@ -54,7 +54,7 @@ export default async function CityPage({ params }: PageProps) {
   const city = cities.find((c) => c.slug === citySlug);
   if (!city) notFound();
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.urbanshopfronts.co.uk';
+  const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
   const cityGeo: Record<string, { addressLocality: string; addressRegion: string; postalCode: string }> = {
     london:      { addressLocality: 'London',              addressRegion: 'Greater London',     postalCode: 'EC1A' },
