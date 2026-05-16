@@ -4,7 +4,7 @@
  * Run after deploy: node scripts/index-now.js
  */
 
-const KEY = 'a1b2c3d4e5f6g7h8';
+const KEY = 'a1b2c3d4e5f6a7b8';
 const HOST = 'www.urbanshopfronts.co.uk';
 
 const urls = [
