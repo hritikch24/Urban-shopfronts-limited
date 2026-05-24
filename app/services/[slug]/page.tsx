@@ -55,12 +55,31 @@ export default async function ServicePage({ params }: PageProps) {
       name: 'Urban Shopfronts',
       telephone: '+447471043827',
       url: siteUrl,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '128 City Road',
+        addressLocality: 'London',
+        postalCode: 'EC1V 2NX',
+        addressCountry: 'GB',
+        addressRegion: 'England',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 51.5267,
+        longitude: -0.0888,
+      },
     },
     areaServed: {
       '@type': 'Country',
       name: 'United Kingdom',
     },
     url: `${siteUrl}/services/${slug}`,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+      url: `${siteUrl}/services/${slug}`,
+    },
   };
 
   return (
