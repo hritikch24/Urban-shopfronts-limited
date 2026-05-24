@@ -25,6 +25,11 @@ const defaultLocalBusiness = {
     addressCountry: 'GB',
     addressRegion: 'England',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.5267,
+    longitude: -0.0888,
+  },
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
