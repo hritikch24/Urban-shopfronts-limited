@@ -194,6 +194,7 @@ const defaultLocalBusiness = {
   },
   sameAs: [
     'https://wa.me/447471043827',
+    'https://share.google/IvMAmHyNVnS6hMCdh',
     'https://www.yell.com/biz/urban-shopfronts-london/',
     'https://www.bark.com/en/gb/company/urban-shopfronts/',
     'https://www.freeindex.co.uk/profile(urban-shopfronts)/',
@@ -242,6 +243,7 @@ const defaultOrganization = {
   },
   sameAs: [
     'https://wa.me/447471043827',
+    'https://share.google/IvMAmHyNVnS6hMCdh',
     'https://www.yell.com/biz/urban-shopfronts-london/',
     'https://www.bark.com/en/gb/company/urban-shopfronts/',
     'https://www.freeindex.co.uk/profile(urban-shopfronts)/',
