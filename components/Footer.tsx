@@ -184,6 +184,9 @@ export default function Footer() {
             <Link href="/why-choose-us" className="text-grey-500 hover:text-gold text-sm transition-colors">
               Why Choose Us
             </Link>
+            <Link href="/areas" className="text-grey-500 hover:text-gold text-sm transition-colors">
+              Areas We Cover
+            </Link>
             <Link href="/blog" className="text-grey-500 hover:text-gold text-sm transition-colors">
               Blog
             </Link>

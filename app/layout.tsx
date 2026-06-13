@@ -116,6 +116,36 @@ export default function RootLayout({
         <meta name="geo.position" content="51.5267;-0.0888" />
         <meta name="ICBM" content="51.5267, -0.0888" />
         <link rel="alternate" hrefLang="en-gb" href="https://www.urbanshopfronts.co.uk" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/assets/shopfront-2.jpeg" />
+        <link rel="apple-touch-icon" href="/assets/shopfront-2.jpeg" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              '@id': 'https://www.urbanshopfronts.co.uk/#website',
+              name: 'Urban Shopfronts',
+              url: 'https://www.urbanshopfronts.co.uk',
+              publisher: {
+                '@id': 'https://www.urbanshopfronts.co.uk/#organization',
+              },
+              inLanguage: 'en-GB',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate:
+                    'https://www.urbanshopfronts.co.uk/services?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
         {gtmId && (
           <script
             dangerouslySetInnerHTML={{

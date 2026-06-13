@@ -20,6 +20,25 @@ const allServices = [
   { name: 'Emergency Callout', slug: 'emergency-callout', image: 'shopfront-3.jpeg' },
 ];
 
+const cityGeo: Record<string, { addressLocality: string; addressRegion: string; postalCode: string; latitude: number; longitude: number }> = {
+  london:      { addressLocality: 'London',              addressRegion: 'Greater London',      postalCode: 'EC1A',  latitude: 51.5074, longitude: -0.1278 },
+  birmingham:  { addressLocality: 'Birmingham',          addressRegion: 'West Midlands',       postalCode: 'B1',    latitude: 52.4862, longitude: -1.8904 },
+  manchester:  { addressLocality: 'Manchester',          addressRegion: 'Greater Manchester',   postalCode: 'M1',    latitude: 53.4808, longitude: -2.2426 },
+  leeds:       { addressLocality: 'Leeds',               addressRegion: 'West Yorkshire',      postalCode: 'LS1',   latitude: 53.8008, longitude: -1.5491 },
+  liverpool:   { addressLocality: 'Liverpool',           addressRegion: 'Merseyside',          postalCode: 'L1',    latitude: 53.4084, longitude: -2.9916 },
+  bristol:     { addressLocality: 'Bristol',             addressRegion: 'Bristol',              postalCode: 'BS1',   latitude: 51.4545, longitude: -2.5879 },
+  sheffield:   { addressLocality: 'Sheffield',           addressRegion: 'South Yorkshire',     postalCode: 'S1',    latitude: 53.3811, longitude: -1.4701 },
+  glasgow:     { addressLocality: 'Glasgow',             addressRegion: 'Scotland',            postalCode: 'G1',    latitude: 55.8642, longitude: -4.2518 },
+  cardiff:     { addressLocality: 'Cardiff',             addressRegion: 'Wales',               postalCode: 'CF10',  latitude: 51.4816, longitude: -3.1791 },
+  newcastle:   { addressLocality: 'Newcastle upon Tyne', addressRegion: 'Tyne and Wear',      postalCode: 'NE1',   latitude: 54.9783, longitude: -1.6178 },
+  nottingham:  { addressLocality: 'Nottingham',          addressRegion: 'Nottinghamshire',     postalCode: 'NG1',   latitude: 52.9548, longitude: -1.1581 },
+  leicester:   { addressLocality: 'Leicester',           addressRegion: 'Leicestershire',      postalCode: 'LE1',   latitude: 52.6369, longitude: -1.1398 },
+  edinburgh:   { addressLocality: 'Edinburgh',           addressRegion: 'Scotland',            postalCode: 'EH1',   latitude: 55.9533, longitude: -3.1883 },
+  southampton: { addressLocality: 'Southampton',         addressRegion: 'Hampshire',           postalCode: 'SO14',  latitude: 50.9097, longitude: -1.4044 },
+  brighton:    { addressLocality: 'Brighton',            addressRegion: 'East Sussex',         postalCode: 'BN1',   latitude: 50.8225, longitude: -0.1372 },
+  coventry:    { addressLocality: 'Coventry',            addressRegion: 'West Midlands',       postalCode: 'CV1',   latitude: 52.4068, longitude: -1.5197 },
+};
+
 interface PageProps {
   params: Promise<{ city: string }>;
 }
@@ -34,6 +53,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return {};
 
   const siteUrl = 'https://www.urbanshopfronts.co.uk';
+  const geo = cityGeo[citySlug] || { addressLocality: city.name, addressRegion: city.region, postalCode: '', latitude: 51.5074, longitude: -0.1278 };
 
   return {
     title: city.metaTitle,
@@ -46,6 +66,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'website',
       images: [{ url: '/assets/shopfront-2.jpeg', width: 1200, height: 630 }],
     },
+    other: {
+      'geo.region': 'GB',
+      'geo.placename': `${city.name}, United Kingdom`,
+      'geo.position': `${geo.latitude};${geo.longitude}`,
+      'ICBM': `${geo.latitude}, ${geo.longitude}`,
+    },
   };
 }
 
@@ -56,35 +82,18 @@ export default async function CityPage({ params }: PageProps) {
 
   const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
-  const cityGeo: Record<string, { addressLocality: string; addressRegion: string; postalCode: string; latitude: number; longitude: number }> = {
-    london:      { addressLocality: 'London',              addressRegion: 'Greater London',      postalCode: 'EC1A',  latitude: 51.5074, longitude: -0.1278 },
-    birmingham:  { addressLocality: 'Birmingham',          addressRegion: 'West Midlands',       postalCode: 'B1',    latitude: 52.4862, longitude: -1.8904 },
-    manchester:  { addressLocality: 'Manchester',          addressRegion: 'Greater Manchester',   postalCode: 'M1',    latitude: 53.4808, longitude: -2.2426 },
-    leeds:       { addressLocality: 'Leeds',               addressRegion: 'West Yorkshire',      postalCode: 'LS1',   latitude: 53.8008, longitude: -1.5491 },
-    liverpool:   { addressLocality: 'Liverpool',           addressRegion: 'Merseyside',          postalCode: 'L1',    latitude: 53.4084, longitude: -2.9916 },
-    bristol:     { addressLocality: 'Bristol',             addressRegion: 'Bristol',              postalCode: 'BS1',   latitude: 51.4545, longitude: -2.5879 },
-    sheffield:   { addressLocality: 'Sheffield',           addressRegion: 'South Yorkshire',     postalCode: 'S1',    latitude: 53.3811, longitude: -1.4701 },
-    glasgow:     { addressLocality: 'Glasgow',             addressRegion: 'Scotland',            postalCode: 'G1',    latitude: 55.8642, longitude: -4.2518 },
-    cardiff:     { addressLocality: 'Cardiff',             addressRegion: 'Wales',               postalCode: 'CF10',  latitude: 51.4816, longitude: -3.1791 },
-    newcastle:   { addressLocality: 'Newcastle upon Tyne', addressRegion: 'Tyne and Wear',      postalCode: 'NE1',   latitude: 54.9783, longitude: -1.6178 },
-    nottingham:  { addressLocality: 'Nottingham',          addressRegion: 'Nottinghamshire',     postalCode: 'NG1',   latitude: 52.9548, longitude: -1.1581 },
-    leicester:   { addressLocality: 'Leicester',           addressRegion: 'Leicestershire',      postalCode: 'LE1',   latitude: 52.6369, longitude: -1.1398 },
-    edinburgh:   { addressLocality: 'Edinburgh',           addressRegion: 'Scotland',            postalCode: 'EH1',   latitude: 55.9533, longitude: -3.1883 },
-    southampton: { addressLocality: 'Southampton',         addressRegion: 'Hampshire',           postalCode: 'SO14',  latitude: 50.9097, longitude: -1.4044 },
-    brighton:    { addressLocality: 'Brighton',            addressRegion: 'East Sussex',         postalCode: 'BN1',   latitude: 50.8225, longitude: -0.1372 },
-    coventry:    { addressLocality: 'Coventry',            addressRegion: 'West Midlands',       postalCode: 'CV1',   latitude: 52.4068, longitude: -1.5197 },
-  };
-
   const geo = cityGeo[citySlug] || { addressLocality: city.name, addressRegion: city.region, postalCode: '', latitude: 51.5074, longitude: -0.1278 };
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${siteUrl}/areas/${citySlug}/#localbusiness`,
     name: 'Urban Shopfronts',
     description: `Professional shopfront installation, roller shutters, and security doors in ${city.name}`,
     url: `${siteUrl}/areas/${citySlug}`,
     telephone: '+447471043827',
     email: 'sales@urbanshopfronts.co.uk',
+    image: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
     address: {
       '@type': 'PostalAddress',
       addressLocality: geo.addressLocality,
@@ -103,6 +112,22 @@ export default async function CityPage({ params }: PageProps) {
     },
     openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-16:00'],
     priceRange: '££',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '35',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    parentOrganization: {
+      '@id': 'https://www.urbanshopfronts.co.uk/#organization',
+    },
+    sameAs: [
+      'https://wa.me/447471043827',
+      'https://share.google/IvMAmHyNVnS6hMCdh',
+      'https://www.yell.com/biz/urban-shopfronts-london/',
+    ],
+    hasMap: `https://www.google.com/maps/search/shopfront+installation+${encodeURIComponent(city.name)}`,
   };
 
   const breadcrumbSchema = {

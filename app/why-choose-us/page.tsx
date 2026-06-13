@@ -61,6 +61,7 @@ const standards = [
 export default function WhyChooseUsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.urbanshopfronts.co.uk"},{"@type":"ListItem","position":2,"name":"Why Choose Us","item":"https://www.urbanshopfronts.co.uk/why-choose-us"}]}) }} />
       <SchemaMarkup type="LocalBusiness" />
 
       {/* Hero */}

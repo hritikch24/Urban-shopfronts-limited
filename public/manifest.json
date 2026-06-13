@@ -1,0 +1,24 @@
+{
+  "name": "Urban Shopfronts",
+  "short_name": "Urban Shopfronts",
+  "description": "Professional shopfront installation and repair specialists across the UK. Aluminium shopfronts, roller shutters, security doors, and 24/7 emergency callout.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/shopfront-2.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/assets/shopfront-2.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["business", "construction"],
+  "lang": "en-GB"
+}

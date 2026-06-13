@@ -252,6 +252,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Latest Guides ────────────────────────────────────────────── */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-3">Expert Shopfront Guides</h2>
+            <p className="text-grey-600 text-lg max-w-xl mx-auto">Practical advice from our installation team to help you make informed decisions.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: 'Shopfront Installation Costs UK 2026', desc: 'Transparent pricing for aluminium shopfronts, roller shutters, security doors and more.', href: '/blog/shopfront-installation-cost-uk-2026' },
+              { title: 'How to Choose the Best Shopfront Company', desc: 'A practical checklist — what to look for, red flags, and questions to ask.', href: '/blog/best-shopfront-company-uk-how-to-choose' },
+              { title: 'Shopfront Design Trends 2026', desc: 'From slimline aluminium frames to smart glass — what is changing in UK retail.', href: '/blog/shopfront-design-trends-uk-2026' },
+            ].map((post) => (
+              <Link key={post.href} href={post.href} className="card-surface rounded-xl p-6 hover:shadow-md transition-shadow group">
+                <h3 className="font-heading font-bold text-navy group-hover:text-gold transition-colors mb-2">{post.title}</h3>
+                <p className="text-grey-600 text-sm leading-relaxed mb-3">{post.desc}</p>
+                <span className="text-gold text-sm font-bold">Read guide &rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA / Quote ──────────────────────────────────────────────────── */}
       <section className="section-padding bg-grey-50" id="quote">
         <div className="container-max">

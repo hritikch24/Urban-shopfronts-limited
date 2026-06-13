@@ -4,13 +4,13 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Shopfront Cost in 2025? UK Price Guide',
+  title: 'How Much Does a Shopfront Cost in 2026? UK Price Guide',
   description:
-    'Transparent UK shopfront installation prices for 2025. Aluminium shopfronts from £2,000, roller shutters from £800, security doors, automatic doors, bi-fold doors, and fire doors. Free quotes nationwide.',
+    'Transparent UK shopfront installation prices for 2026. Aluminium shopfronts from £2,000, roller shutters from £800, security doors, automatic doors, bi-fold doors, and fire doors. Free quotes nationwide.',
   alternates: { canonical: 'https://www.urbanshopfronts.co.uk/cost-guide' },
   openGraph: {
-    title: 'How Much Does a Shopfront Cost in 2025? UK Price Guide',
-    description: 'Detailed UK shopfront cost breakdown — aluminium fronts, roller shutters, security doors, automatic doors, bi-folds, and fire doors. Realistic 2025 prices from Urban Shopfronts.',
+    title: 'How Much Does a Shopfront Cost in 2026? UK Price Guide',
+    description: 'Detailed UK shopfront cost breakdown — aluminium fronts, roller shutters, security doors, automatic doors, bi-folds, and fire doors. Realistic 2026 prices from Urban Shopfronts.',
     url: 'https://www.urbanshopfronts.co.uk/cost-guide',
   },
 };
@@ -37,9 +37,9 @@ const schemaData = {
 const blogPosting = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'How Much Does a Shopfront Cost in 2025? UK Price Guide',
-  datePublished: '2025-05-01',
-  dateModified: '2025-05-01',
+  headline: 'How Much Does a Shopfront Cost in 2026? UK Price Guide',
+  datePublished: '2026-06-13',
+  dateModified: '2026-06-13',
   author: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
   publisher: { '@type': 'Organization', name: 'Urban Shopfronts', url: 'https://www.urbanshopfronts.co.uk' },
   mainEntityOfPage: 'https://www.urbanshopfronts.co.uk/cost-guide',
@@ -58,6 +58,7 @@ function PriceCard({ title, price, note }: { title: string; price: string; note?
 export default function CostGuidePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.urbanshopfronts.co.uk"},{"@type":"ListItem","position":2,"name":"Cost Guide","item":"https://www.urbanshopfronts.co.uk/cost-guide"}]}) }} />
       <SchemaMarkup type="FAQPage" data={schemaData} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPosting) }} />
 
@@ -66,10 +67,10 @@ export default function CostGuidePage() {
         <div className="container-max">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cost Guide' }]} />
           <h1 className="mt-6 text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
-            How Much Does a Shopfront Cost in <span className="text-gradient-gold">2025</span>?
+            How Much Does a Shopfront Cost in <span className="text-gradient-gold">2026</span>?
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-grey-300 leading-relaxed">
-            A transparent, no-nonsense guide to UK shopfront installation prices. All figures are realistic 2025 supply-and-install estimates including VAT where applicable.
+            A transparent, no-nonsense guide to UK shopfront installation prices. All figures are realistic 2026 supply-and-install estimates including VAT where applicable.
           </p>
         </div>
       </section>

@@ -48,6 +48,7 @@ export default async function ServicePage({ params }: PageProps) {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${siteUrl}/services/${slug}/#service`,
     name: service.name,
     description: service.shortDescription,
     provider: {
@@ -69,10 +70,20 @@ export default async function ServicePage({ params }: PageProps) {
         longitude: -0.0888,
       },
     },
-    areaServed: {
-      '@type': 'Country',
-      name: 'United Kingdom',
-    },
+    areaServed: [
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'City', name: 'London' },
+      { '@type': 'City', name: 'Birmingham' },
+      { '@type': 'City', name: 'Manchester' },
+      { '@type': 'City', name: 'Leeds' },
+      { '@type': 'City', name: 'Liverpool' },
+      { '@type': 'City', name: 'Bristol' },
+      { '@type': 'City', name: 'Sheffield' },
+      { '@type': 'City', name: 'Glasgow' },
+      { '@type': 'City', name: 'Cardiff' },
+      { '@type': 'City', name: 'Newcastle upon Tyne' },
+      { '@type': 'City', name: 'Edinburgh' },
+    ],
     url: `${siteUrl}/services/${slug}`,
     offers: {
       '@type': 'Offer',
@@ -82,8 +93,19 @@ export default async function ServicePage({ params }: PageProps) {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}` },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+      { '@type': 'ListItem', position: 3, name: service.name, item: `${siteUrl}/services/${slug}` },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <SchemaMarkup type="Service" data={serviceSchema} />
 
       <section className="relative min-h-[50vh] flex items-end bg-navy">

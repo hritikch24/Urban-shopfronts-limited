@@ -18,6 +18,24 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'shopfront-design-trends-uk-2026',
+    title: 'Shopfront Design Trends for 2026: What\'s Changing in UK Retail',
+    description:
+      'Discover the top commercial shopfront design trends for 2026 in the UK. From minimalist aluminium frames to smart glass technology and sustainable materials.',
+  },
+  {
+    slug: 'commercial-security-shutters-guide-uk',
+    title: 'The Complete Guide to Commercial Security Shutters in the UK (2026)',
+    description:
+      'Everything UK business owners need to know about commercial security shutters in 2026. Types, security ratings, costs, insurance requirements, and installation.',
+  },
+  {
+    slug: 'shopfront-regulations-building-standards-uk-2026',
+    title: 'UK Shopfront Regulations & Building Standards: A 2026 Guide for Business Owners',
+    description:
+      'Navigate UK shopfront regulations in 2026. Covers Building Regulations Part L, Part M, Part B, planning permission, conservation areas, and DDA compliance.',
+  },
+  {
     slug: 'how-to-maintain-commercial-roller-shutters',
     title: 'How to Maintain Commercial Roller Shutters: A Complete Guide',
     description:
@@ -42,10 +60,10 @@ const posts = [
       'Demystifying the LPS 1175 standard — what the security rating levels mean, how they affect insurance, and which level your business should target.',
   },
   {
-    slug: 'shopfront-installation-cost-uk-2025',
-    title: 'Shopfront Installation Costs in the UK (2025): What to Expect',
+    slug: 'shopfront-installation-cost-uk-2026',
+    title: 'Shopfront Installation Costs in the UK (2026): What to Expect',
     description:
-      'A detailed breakdown of shopfront installation costs across the UK in 2025, covering aluminium shopfronts, roller shutters, security doors, and what factors affect pricing.',
+      'A detailed breakdown of shopfront installation costs across the UK in 2026, covering aluminium shopfronts, roller shutters, security doors, and what factors affect pricing.',
   },
   {
     slug: 'best-shopfront-company-uk-how-to-choose',
@@ -64,6 +82,7 @@ const posts = [
 export default function BlogIndex() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.urbanshopfronts.co.uk"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.urbanshopfronts.co.uk/blog"}]}) }} />
       <section className="section-padding bg-white">
         <div className="container-max">
           <Breadcrumbs

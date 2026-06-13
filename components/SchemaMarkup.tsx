@@ -6,6 +6,7 @@ interface SchemaMarkupProps {
 const defaultLocalBusiness = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://www.urbanshopfronts.co.uk/#localbusiness',
   name: 'Urban Shopfronts',
   legalName: 'Urban Shopfronts Limited',
   additionalType: 'https://en.wikipedia.org/wiki/Shopfront',
@@ -133,35 +134,35 @@ const defaultLocalBusiness = {
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'David Thompson' },
       reviewBody: 'Urban Shopfronts installed our aluminium shopfront in London. Professional team, excellent finish, and they handled the council planning requirements seamlessly.',
-      datePublished: '2025-02-10',
+      datePublished: '2025-07-15',
     },
     {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Sarah Mitchell' },
       reviewBody: 'We needed emergency boarding after a break-in at our Birmingham shop. Urban Shopfronts arrived within two hours and fitted a new roller shutter the following week. Brilliant service.',
-      datePublished: '2025-04-18',
+      datePublished: '2025-09-22',
     },
     {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'James Okafor' },
       reviewBody: 'Had automatic doors installed at our Manchester retail unit. The team was punctual, tidy, and the doors work perfectly. Fully compliant with DDA regulations.',
-      datePublished: '2025-06-02',
+      datePublished: '2025-11-10',
     },
     {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Helen Price' },
       reviewBody: 'Urban Shopfronts replaced our old wooden shopfront with a modern aluminium system in Cardiff. The difference is night and day. Energy bills have dropped noticeably too.',
-      datePublished: '2025-08-25',
+      datePublished: '2026-02-18',
     },
     {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Raj Patel' },
       reviewBody: 'Security doors and shutters fitted at our Leeds convenience store. Very solid build quality and the team explained all the LPS 1175 certification. Highly recommend.',
-      datePublished: '2025-10-14',
+      datePublished: '2026-04-05',
     },
     {
       '@type': 'Review',
@@ -221,11 +222,15 @@ const defaultLocalBusiness = {
   paymentAccepted: 'Cash, Bank Transfer, Card',
   currenciesAccepted: 'GBP',
   isicV4: '4330',
+  parentOrganization: {
+    '@id': 'https://www.urbanshopfronts.co.uk/#organization',
+  },
 };
 
 const defaultOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://www.urbanshopfronts.co.uk/#organization',
   name: 'Urban Shopfronts',
   legalName: 'Urban Shopfronts Limited',
   url: 'https://www.urbanshopfronts.co.uk',

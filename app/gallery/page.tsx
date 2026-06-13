@@ -128,6 +128,7 @@ const images = [
 export default function GalleryPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.urbanshopfronts.co.uk"},{"@type":"ListItem","position":2,"name":"Gallery","item":"https://www.urbanshopfronts.co.uk/gallery"}]}) }} />
       <SchemaMarkup type="LocalBusiness" />
       <script
         type="application/ld+json"

@@ -64,6 +64,7 @@ const pillars = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.urbanshopfronts.co.uk"},{"@type":"ListItem","position":2,"name":"About Us","item":"https://www.urbanshopfronts.co.uk/about"}]}) }} />
       <SchemaMarkup type="LocalBusiness" />
 
       {/* Hero / Intro */}
