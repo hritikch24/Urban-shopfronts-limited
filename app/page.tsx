@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import QuoteCalculator from '@/components/QuoteCalculator';
 
 export const metadata: Metadata = {
   title: 'Aluminium Shopfronts & Roller Shutters UK | Urban Shopfronts',
@@ -251,6 +252,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Quote Calculator ──────────────────────────────────────────── */}
+      <QuoteCalculator />
 
       {/* ── Latest Guides ────────────────────────────────────────────── */}
       <section className="section-padding bg-white">
