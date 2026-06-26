@@ -178,6 +178,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Urban Shopfronts Ltd. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4">
+            <Link href="/reviews" className="text-grey-500 hover:text-gold text-sm transition-colors">
+              Reviews
+            </Link>
             <Link href="/cost-guide" className="text-grey-500 hover:text-gold text-sm transition-colors">
               Cost Guide
             </Link>
