@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/metrics'],
+        disallow: ['/api/', '/admin', '/metrics'],
       },
     ],
     sitemap: 'https://www.urbanshopfronts.co.uk/sitemap.xml',
