@@ -49,6 +49,14 @@ export const generalFaqs: FAQ[] = [
     answer: 'We install a full range of roller shutters including solid steel security shutters, perforated shutters (for visibility when closed), aluminium insulated shutters, continental-style shutters, and fire-rated shutters. All are available with manual or electric operation, and we can integrate them with your existing alarm or access control systems.',
   },
   {
+    question: 'Do you repair roller shutters?',
+    answer: 'Yes. We provide a dedicated roller shutter repair service covering jammed shutters, broken springs, motor failure, damaged curtain laths, and bent guide rails. Our engineers carry the most commonly needed spare parts to enable same-day repair in most cases. We repair shutters of all makes and ages, regardless of the original installer. For emergency shutter repairs where your premises is left unsecured, we offer 24/7 callout attendance.',
+  },
+  {
+    question: 'Can you replace broken shopfront glass?',
+    answer: 'Yes. We provide a commercial glass replacement service covering toughened safety glass, laminated security glass, sealed double-glazed units (DGUs), and specialist glazing. Standard toughened glass replacements are typically available within 24–48 hours, and DGU replacements within three to five working days. Where the glass cannot be replaced immediately, we install temporary boarding to secure the premises. All replacement glass is installed to BS 6262 and complies with the relevant safety and thermal performance standards.',
+  },
+  {
     question: 'Do your shopfronts comply with DDA requirements?',
     answer: 'Yes. We design all entrance systems to comply with the Equality Act 2010 (which replaced the DDA) and the guidance in Approved Document M of the Building Regulations. This includes level or ramped thresholds, minimum clear opening widths of 1000 mm, colour-contrasted manifestation on glazing, and appropriate door furniture. Where automatic doors are specified, we ensure they meet BS EN 16005 for pedestrian safety.',
   },

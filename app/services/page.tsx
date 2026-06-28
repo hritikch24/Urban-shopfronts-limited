@@ -24,6 +24,8 @@ const services = [
   { name: 'Fire Doors', slug: 'fire-doors', image: 'fire-door.jpeg', desc: 'FD30 and FD60 certified fire doors for commercial premises. UK Building Regulations compliant.' },
   { name: 'Shopfront Repairs', slug: 'shopfront-repairs', image: 'shopfront-3.jpeg', desc: 'Fast, affordable repairs to broken glass, damaged frames, faulty locks, and mechanisms.' },
   { name: 'Emergency Callout', slug: 'emergency-callout', image: 'shopfront-7.jpeg', desc: '24/7 emergency boarding, glazing, and shutter repairs. Rapid-response teams across the UK.' },
+  { name: 'Shutter Repair', slug: 'shutter-repair', image: 'roller-shutter-1.jpeg', desc: 'Jammed shutters, broken springs, motor failure & damaged laths. Fast professional repair.' },
+  { name: 'Glass Replacement', slug: 'glass-replacement', image: 'aluminium-shopfront-1.jpeg', desc: 'Toughened, laminated & DGU glass replacement for commercial premises. Fast turnaround.' },
 ];
 
 export default function ServicesPage() {

@@ -22,6 +22,8 @@ const services = [
   { title: 'Fire Doors', image: '/assets/fire-door.jpeg', href: '/services/fire-doors', desc: 'FD30 & FD60 certified fire-rated doorsets.' },
   { title: 'Shopfront Repairs', image: '/assets/shopfront-3.jpeg', href: '/services/shopfront-repairs', desc: 'Same-day glass, frame & mechanism repairs.' },
   { title: 'Emergency Callout', image: '/assets/shopfront-7.jpeg', href: '/services/emergency-callout', desc: '24/7 rapid response — boarding & glazing.' },
+  { title: 'Shutter Repair', image: '/assets/roller-shutter-1.jpeg', href: '/services/shutter-repair', desc: 'Spring, motor & curtain repairs — fast response.' },
+  { title: 'Glass Replacement', image: '/assets/aluminium-shopfront-1.jpeg', href: '/services/glass-replacement', desc: 'Toughened, laminated & DGU commercial glazing.' },
 ];
 
 const stats = [

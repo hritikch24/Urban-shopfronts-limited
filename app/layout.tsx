@@ -7,9 +7,7 @@ import Footer from '@/components/Footer';
 import ChatWidget from '@/components/ChatWidget';
 import MobileStickyBar from '@/components/MobileStickyBar';
 import StickyDesktopCTA from '@/components/StickyDesktopCTA';
-import ExitIntentPopup from '@/components/ExitIntentPopup';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import OfferBanner from '@/components/OfferBanner';
 import Analytics from '@/components/Analytics';
 import CallTracker from '@/components/CallTracker';
 import SiteChrome from '@/components/SiteChrome';
@@ -181,7 +179,6 @@ function gtag_report_conversion(url){var callback=function(){if(typeof url!=='un
           </noscript>
         )}
         <SiteChrome>
-          <OfferBanner />
           <Header />
         </SiteChrome>
         <main className="flex-1">{children}</main>
@@ -191,7 +188,6 @@ function gtag_report_conversion(url){var callback=function(){if(typeof url!=='un
           <MobileStickyBar />
           <StickyDesktopCTA />
           <FloatingWhatsApp />
-          <ExitIntentPopup />
         </SiteChrome>
         <Suspense fallback={null}>
           <Analytics />
