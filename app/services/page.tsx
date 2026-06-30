@@ -31,6 +31,31 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Shopfront Services',
+            description: 'Professional shopfront installation and repair services across the UK',
+            numberOfItems: 10,
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Aluminium Shopfronts', url: 'https://www.urbanshopfronts.co.uk/services/aluminium-shopfronts' },
+              { '@type': 'ListItem', position: 2, name: 'Roller Shutters', url: 'https://www.urbanshopfronts.co.uk/services/roller-shutters' },
+              { '@type': 'ListItem', position: 3, name: 'Security Doors', url: 'https://www.urbanshopfronts.co.uk/services/security-doors' },
+              { '@type': 'ListItem', position: 4, name: 'Automatic Doors', url: 'https://www.urbanshopfronts.co.uk/services/automatic-doors' },
+              { '@type': 'ListItem', position: 5, name: 'Bi-Fold Doors', url: 'https://www.urbanshopfronts.co.uk/services/bi-fold-doors' },
+              { '@type': 'ListItem', position: 6, name: 'Fire Doors', url: 'https://www.urbanshopfronts.co.uk/services/fire-doors' },
+              { '@type': 'ListItem', position: 7, name: 'Shopfront Repairs', url: 'https://www.urbanshopfronts.co.uk/services/shopfront-repairs' },
+              { '@type': 'ListItem', position: 8, name: 'Emergency Callout', url: 'https://www.urbanshopfronts.co.uk/services/emergency-callout' },
+              { '@type': 'ListItem', position: 9, name: 'Shutter Repair', url: 'https://www.urbanshopfronts.co.uk/services/shutter-repair' },
+              { '@type': 'ListItem', position: 10, name: 'Glass Replacement', url: 'https://www.urbanshopfronts.co.uk/services/glass-replacement' },
+            ],
+          }),
+        }}
+      />
+
       <section className="relative min-h-[35vh] flex items-end bg-navy">
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 to-navy/70" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-32">

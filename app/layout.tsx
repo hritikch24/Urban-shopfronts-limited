@@ -147,6 +147,29 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'SiteNavigationElement',
+              '@id': 'https://www.urbanshopfronts.co.uk/#navigation',
+              name: 'Main Navigation',
+              url: 'https://www.urbanshopfronts.co.uk',
+              hasPart: [
+                { '@type': 'SiteNavigationElement', name: 'Services', url: 'https://www.urbanshopfronts.co.uk/services' },
+                { '@type': 'SiteNavigationElement', name: 'Areas We Cover', url: 'https://www.urbanshopfronts.co.uk/areas' },
+                { '@type': 'SiteNavigationElement', name: 'About Us', url: 'https://www.urbanshopfronts.co.uk/about' },
+                { '@type': 'SiteNavigationElement', name: 'Gallery', url: 'https://www.urbanshopfronts.co.uk/gallery' },
+                { '@type': 'SiteNavigationElement', name: 'Blog', url: 'https://www.urbanshopfronts.co.uk/blog' },
+                { '@type': 'SiteNavigationElement', name: 'Cost Guide', url: 'https://www.urbanshopfronts.co.uk/cost-guide' },
+                { '@type': 'SiteNavigationElement', name: 'FAQ', url: 'https://www.urbanshopfronts.co.uk/faq' },
+                { '@type': 'SiteNavigationElement', name: 'Reviews', url: 'https://www.urbanshopfronts.co.uk/reviews' },
+                { '@type': 'SiteNavigationElement', name: 'Contact', url: 'https://www.urbanshopfronts.co.uk/contact' },
+              ],
+            }),
+          }}
+        />
         {gtmId && (
           <script
             dangerouslySetInnerHTML={{

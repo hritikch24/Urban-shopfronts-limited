@@ -1198,4 +1198,308 @@ We operate across the full Coventry area, including Earlsdon, Tile Hill, Canley,
       },
     ],
   },
+
+  {
+    slug: 'reading',
+    name: 'Reading',
+    region: 'Berkshire',
+    areas: [
+      'Town Centre',
+      'Caversham',
+      'Tilehurst',
+      'Woodley',
+      'Earley',
+      'Whitley',
+      'Southcote',
+      'Calcot',
+      'Shinfield',
+      'Wokingham',
+    ],
+    postcodeAreas: ['RG1', 'RG2', 'RG4', 'RG5', 'RG6', 'RG30', 'RG31'],
+    primaryKeyword: 'shopfronts Reading',
+    metaTitle: 'Shopfronts in Reading | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Reading and Berkshire. Aluminium shopfronts, roller shutters, security doors and 24/7 emergency callout. Free site survey.',
+    description: `Reading is one of the most commercially significant towns in the south-east of England, with a thriving retail core anchored by The Oracle shopping centre and a diverse independent business community spread across the town centre and surrounding suburbs. The town's strong economic base, driven by the technology and professional services sectors, supports sustained demand for quality commercial shopfront installation.
+
+The Oracle and the Broad Street Mall represent Reading's managed retail environments, where shopfront installations must comply with centre management contractor protocols and design standards. We have experience working within these environments, coordinating with managing agents and programming installations outside of trading hours.
+
+Caversham, Tilehurst, and the surrounding residential areas have active neighbourhood shopping parades where independent retailers invest in quality shopfronts that serve their communities for decades. We provide the same standard of specification and installation across all of these locations.
+
+Reading's position on the M4 corridor and its excellent rail connections make it a natural hub for businesses serving the wider Thames Valley, and we cover the full Berkshire area including Wokingham, Bracknell, Maidenhead, and Newbury from our south-east operations.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover the wider Berkshire area from Reading?',
+        answer:
+          'Yes. We cover the full Berkshire area including Wokingham, Bracknell, Maidenhead, Windsor, Newbury, and Slough. Our south-east teams operate across the county and into Oxfordshire and Hampshire.',
+      },
+    ],
+  },
+
+  {
+    slug: 'wolverhampton',
+    name: 'Wolverhampton',
+    region: 'West Midlands',
+    areas: [
+      'City Centre',
+      'Bilston',
+      'Wednesfield',
+      'Tettenhall',
+      'Penn',
+      'Blakenhall',
+      'Heath Town',
+      'Whitmore Reans',
+      'Fordhouses',
+      'Bushbury',
+    ],
+    postcodeAreas: ['WV1', 'WV2', 'WV3', 'WV4', 'WV6', 'WV10', 'WV11', 'WV14'],
+    primaryKeyword: 'shopfronts Wolverhampton',
+    metaTitle: 'Shopfronts in Wolverhampton | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Wolverhampton. Aluminium shopfronts, roller shutters, security doors and emergency repairs across the West Midlands. Free survey.',
+    description: `Wolverhampton is a major commercial centre in the Black Country with a city centre undergoing significant regeneration. The Mander Centre, Victoria Street, and the surrounding retail core provide the main shopping environment, while the diverse suburban commercial corridors of Bilston, Wednesfield, and Tettenhall serve their local communities with a broad range of independent businesses.
+
+The city's regeneration programme has brought new investment to the commercial core, creating demand for modern aluminium shopfronts, automatic entrance systems, and upgraded security solutions. We work across the full Wolverhampton area, from city centre retail units to neighbourhood parades.
+
+Wolverhampton's strong South Asian business community, particularly along the Dudley Road and in Blakenhall, has specific shopfront requirements including illuminated signage integration, wide display windows, and security-rated shutters. We have extensive experience delivering these specifications across the West Midlands.
+
+We cover the wider Black Country area including Dudley, Walsall, West Bromwich, and Sandwell, providing consistent quality across the region.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Dudley, Walsall, and the wider Black Country?',
+        answer:
+          'Yes. We cover the full Black Country and wider West Midlands area including Dudley, Walsall, West Bromwich, Sandwell, and Solihull.',
+      },
+    ],
+  },
+
+  {
+    slug: 'derby',
+    name: 'Derby',
+    region: 'Derbyshire',
+    areas: [
+      'City Centre',
+      'Cathedral Quarter',
+      'Sadler Gate',
+      'Allestree',
+      'Littleover',
+      'Chellaston',
+      'Spondon',
+      'Normanton',
+      'Chaddesden',
+      'Mickleover',
+    ],
+    postcodeAreas: ['DE1', 'DE3', 'DE21', 'DE22', 'DE23', 'DE24', 'DE65', 'DE73'],
+    primaryKeyword: 'shopfronts Derby',
+    metaTitle: 'Shopfronts in Derby | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Derby and Derbyshire. Aluminium shopfronts, roller shutters, security doors and 24/7 emergency callout. Free site survey.',
+    description: `Derby combines a rich industrial heritage with a modern commercial economy, and its city centre has benefited from sustained regeneration investment. The Cathedral Quarter, centred on Sadler Gate and Iron Gate, is Derby's most architecturally significant commercial area, with a mix of medieval, Georgian, and Victorian buildings housing independent retailers, cafes, and professional services businesses.
+
+The Derbion shopping centre (formerly Intu Derby) anchors the city's managed retail offer, with demanding contractor management requirements for shopfront installations within the centre. We have experience working within these environments and can provide all required compliance documentation.
+
+Normanton Road is one of Derby's most vibrant and diverse commercial corridors, with a dense concentration of independent retail and food businesses. Shopfront work here ranges from new aluminium installations to roller shutter replacements and emergency glazing.
+
+We cover the full Derbyshire area including Chesterfield, Buxton, Matlock, and the surrounding towns, and are familiar with the planning requirements of Derby City Council and Derbyshire County Council.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Chesterfield, Buxton, and the wider Derbyshire area?',
+        answer:
+          'Yes. We cover the full Derbyshire area including Chesterfield, Buxton, Matlock, Ilkeston, Long Eaton, and Swadlincote. Our East Midlands teams operate across the county.',
+      },
+    ],
+  },
+
+  {
+    slug: 'northampton',
+    name: 'Northampton',
+    region: 'Northamptonshire',
+    areas: [
+      'Town Centre',
+      'Abington',
+      'Kingsthorpe',
+      'Weston Favell',
+      'Far Cotton',
+      'Duston',
+      'Moulton',
+      'Billing',
+      'Ecton Brook',
+      'Northampton Gateway',
+    ],
+    postcodeAreas: ['NN1', 'NN2', 'NN3', 'NN4', 'NN5', 'NN6', 'NN7'],
+    primaryKeyword: 'shopfronts Northampton',
+    metaTitle: 'Shopfronts in Northampton | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Northampton. Aluminium shopfronts, roller shutters, security doors and emergency callout across Northamptonshire. Free survey.',
+    description: `Northampton is one of the largest towns in England and a significant commercial centre for the East Midlands. The town centre, anchored by the Grosvenor Shopping Centre and the Market Square — one of the largest in England — has a diverse mix of national retailers and independent businesses that rely on quality shopfront installations to present their premises professionally.
+
+The town has seen substantial growth in recent years, with new residential and commercial developments increasing the demand for shopfront services. The Northampton Waterside Enterprise Zone and other regeneration areas are bringing new commercial tenants who require modern aluminium shopfronts, automatic doors, and integrated security systems.
+
+Kingsthorpe, Abington, and the surrounding suburban centres have well-established independent retail communities where practical, durable shopfronts are valued. We provide the full range of shopfront services across all Northampton postcodes.
+
+We cover the wider Northamptonshire area including Kettering, Corby, Wellingborough, Daventry, and Towcester, and extend into Buckinghamshire and Bedfordshire for clients in Milton Keynes and surrounding towns.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Kettering, Corby, and the wider Northamptonshire area?',
+        answer:
+          'Yes. We cover the full Northamptonshire area including Kettering, Corby, Wellingborough, Daventry, Towcester, and Brackley, as well as Milton Keynes in neighbouring Buckinghamshire.',
+      },
+    ],
+  },
+
+  {
+    slug: 'luton',
+    name: 'Luton',
+    region: 'Bedfordshire',
+    areas: [
+      'Town Centre',
+      'Bury Park',
+      'Dunstable',
+      'Houghton Regis',
+      'Leagrave',
+      'Stopsley',
+      'Farley Hill',
+      'Limbury',
+      'Sundon Park',
+      'Marsh Farm',
+    ],
+    postcodeAreas: ['LU1', 'LU2', 'LU3', 'LU4', 'LU5', 'LU6', 'LU7'],
+    primaryKeyword: 'shopfronts Luton',
+    metaTitle: 'Shopfronts in Luton | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Luton and Bedfordshire. Aluminium shopfronts, roller shutters, security doors and emergency callout. Free site survey.',
+    description: `Luton is a commercially active town in Bedfordshire with a diverse business community and a town centre that is undergoing significant regeneration. The Mall Luton and the surrounding retail streets provide the main shopping environment, while the culturally diverse Bury Park area is one of the most vibrant independent commercial corridors in the region.
+
+Bury Park's dense concentration of South Asian retail, food, and textile businesses creates specific shopfront requirements including wide display frontages, security-rated shutters, and illuminated signage integration. We have extensive experience working with businesses along Dunstable Road and the surrounding streets.
+
+The town's proximity to London and its position on the M1 corridor make it a strategic commercial location, and the ongoing investment in the Power Court and Napier Park regeneration projects is creating new demand for modern shopfront installations.
+
+We cover the full Bedfordshire area including Dunstable, Houghton Regis, Leighton Buzzard, and Bedford, as well as extending into Hertfordshire for clients in Hitchin, Stevenage, and St Albans.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Dunstable, Bedford, and the wider Bedfordshire area?',
+        answer:
+          'Yes. We cover the full Bedfordshire area including Dunstable, Houghton Regis, Leighton Buzzard, Bedford, and Biggleswade, as well as Hertfordshire towns including Hitchin, Stevenage, and Welwyn Garden City.',
+      },
+    ],
+  },
+
+  {
+    slug: 'swindon',
+    name: 'Swindon',
+    region: 'Wiltshire',
+    areas: [
+      'Town Centre',
+      'Old Town',
+      'Highworth',
+      'Wroughton',
+      'Stratton',
+      'Gorse Hill',
+      'Rodbourne',
+      'West Swindon',
+      'North Swindon',
+      'South Marston',
+    ],
+    postcodeAreas: ['SN1', 'SN2', 'SN3', 'SN4', 'SN5', 'SN6', 'SN25', 'SN26'],
+    primaryKeyword: 'shopfronts Swindon',
+    metaTitle: 'Shopfronts in Swindon | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Swindon and Wiltshire. Aluminium shopfronts, roller shutters, security doors and emergency callout. Free site survey.',
+    description: `Swindon is a major commercial centre in Wiltshire with a growing economy driven by technology, financial services, and logistics. The town centre, anchored by the Brunel Shopping Centre and the Parade, provides the main retail environment, while the Designer Outlet and the expanding commercial parks around the town create additional demand for quality shopfront installations.
+
+The Old Town area has a distinct character with its Victorian and Edwardian commercial buildings housing independent retailers, restaurants, and professional services businesses. Shopfront installations here need to respect the conservation area context while delivering modern performance standards.
+
+Swindon's rapid growth, with substantial new residential and commercial development across North Swindon and West Swindon, is driving demand for new shopfront installations in retail and mixed-use developments. We work with developers, landlords, and owner-occupiers across all parts of the town.
+
+We cover the wider Wiltshire area including Chippenham, Devizes, Marlborough, Trowbridge, and Salisbury, as well as extending into Gloucestershire and Oxfordshire.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Chippenham, Salisbury, and the wider Wiltshire area?',
+        answer:
+          'Yes. We cover the full Wiltshire area including Chippenham, Devizes, Marlborough, Trowbridge, Salisbury, and Warminster, as well as Cirencester and Cheltenham in neighbouring Gloucestershire.',
+      },
+    ],
+  },
+
+  {
+    slug: 'stoke-on-trent',
+    name: 'Stoke-on-Trent',
+    region: 'Staffordshire',
+    areas: [
+      'Hanley',
+      'Stoke',
+      'Burslem',
+      'Tunstall',
+      'Longton',
+      'Fenton',
+      'Newcastle-under-Lyme',
+      'Meir',
+      'Trentham',
+      'Kidsgrove',
+    ],
+    postcodeAreas: ['ST1', 'ST2', 'ST3', 'ST4', 'ST5', 'ST6', 'ST7'],
+    primaryKeyword: 'shopfronts Stoke-on-Trent',
+    metaTitle: 'Shopfronts in Stoke-on-Trent | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Stoke-on-Trent. Aluminium shopfronts, roller shutters, security doors and emergency callout across Staffordshire. Free survey.',
+    description: `Stoke-on-Trent is a unique federation of six towns — Hanley, Stoke, Burslem, Tunstall, Longton, and Fenton — each with its own commercial centre and character. Hanley serves as the primary retail destination with the Potteries Centre and the surrounding pedestrianised shopping streets, while the individual town centres maintain their own independent retail communities.
+
+The city's ceramic heritage has left a distinctive architectural legacy, and the ongoing regeneration of areas like Burslem and the Ceramic Quarter is creating new opportunities for quality shopfront installation. The conversion of former industrial premises into retail, hospitality, and creative workspace creates non-standard shopfront requirements that we handle regularly across other UK cities.
+
+Newcastle-under-Lyme, immediately adjacent to Stoke-on-Trent, has a well-established independent high street with Victorian and Edwardian commercial buildings that benefit from sympathetically designed aluminium shopfronts and security systems.
+
+We cover the full Staffordshire area including Stafford, Burton upon Trent, Leek, and the surrounding towns, providing consistent quality across the region.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Newcastle-under-Lyme, Stafford, and the wider Staffordshire area?',
+        answer:
+          'Yes. We cover the full Staffordshire area including Newcastle-under-Lyme, Stafford, Burton upon Trent, Leek, Stone, and Uttoxeter, as well as Crewe and Nantwich in neighbouring Cheshire.',
+      },
+    ],
+  },
+
+  {
+    slug: 'plymouth',
+    name: 'Plymouth',
+    region: 'Devon',
+    areas: [
+      'City Centre',
+      'Barbican',
+      'Mutley Plain',
+      'Plympton',
+      'Plymstock',
+      'Devonport',
+      'Stonehouse',
+      'Efford',
+      'Estover',
+      'Saltash',
+    ],
+    postcodeAreas: ['PL1', 'PL2', 'PL3', 'PL4', 'PL5', 'PL6', 'PL7', 'PL9'],
+    primaryKeyword: 'shopfronts Plymouth',
+    metaTitle: 'Shopfronts in Plymouth | Aluminium Shopfronts & Roller Shutters',
+    metaDescription:
+      'Professional shopfront installation in Plymouth and Devon. Aluminium shopfronts, roller shutters, security doors and 24/7 emergency callout. Free site survey.',
+    description: `Plymouth is the largest city in Devon and a major commercial centre for the south-west peninsula. The city centre, substantially rebuilt after the devastating Blitz damage of 1941, has a distinctive planned character with its Royal Parade and New George Street forming the primary retail axis. Drake Circus Shopping Centre anchors the managed retail offer.
+
+The Barbican and Sutton Harbour area represents Plymouth's historic quarter, with a concentration of independent retailers, restaurants, and galleries housed in buildings dating from the Elizabethan period onwards. Shopfront installations here must respect the conservation area status and the historic character of the buildings, and we have experience working within heritage-sensitive commercial environments across the UK.
+
+Mutley Plain is Plymouth's busiest independent retail strip, serving the university population and the surrounding residential areas with a diverse mix of businesses. The Victorian commercial buildings along the Plain have a consistent scale that benefits from well-proportioned shopfront installations.
+
+Plymouth's coastal location requires attention to marine corrosion protection, and we specify marine-grade materials and enhanced finishes for all installations within the city. We cover the wider Devon and Cornwall area including Exeter, Torquay, Barnstaple, and Truro.`,
+    testimonials: [],
+    faqs: [
+      {
+        question: 'Do you cover Exeter, Torquay, and the wider Devon area?',
+        answer:
+          'Yes. We cover the full Devon and Cornwall area including Exeter, Torquay, Paignton, Barnstaple, Truro, and St Austell. Our south-west teams cover the peninsula and are experienced with the planning requirements of all local authorities in the region.',
+      },
+    ],
+  },
 ];

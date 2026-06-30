@@ -100,6 +100,20 @@ export default async function ServicePage({ params }: PageProps) {
     },
   };
 
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${siteUrl}/services/${slug}/#webpage`,
+    name: service.metaTitle,
+    url: `${siteUrl}/services/${slug}`,
+    isPartOf: { '@id': 'https://www.urbanshopfronts.co.uk/#website' },
+    about: { '@id': `${siteUrl}/services/${slug}/#service` },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.service-description', '.benefits-section h3'],
+    },
+  };
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -114,6 +128,7 @@ export default async function ServicePage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <SchemaMarkup type="Service" data={serviceSchema} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <section className="relative min-h-[50vh] flex items-end bg-navy">
         <Image

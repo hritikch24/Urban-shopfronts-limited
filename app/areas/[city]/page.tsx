@@ -39,6 +39,14 @@ const cityGeo: Record<string, { addressLocality: string; addressRegion: string; 
   southampton: { addressLocality: 'Southampton',         addressRegion: 'Hampshire',           postalCode: 'SO14',  latitude: 50.9097, longitude: -1.4044 },
   brighton:    { addressLocality: 'Brighton',            addressRegion: 'East Sussex',         postalCode: 'BN1',   latitude: 50.8225, longitude: -0.1372 },
   coventry:    { addressLocality: 'Coventry',            addressRegion: 'West Midlands',       postalCode: 'CV1',   latitude: 52.4068, longitude: -1.5197 },
+  reading:         { addressLocality: 'Reading',             addressRegion: 'Berkshire',           postalCode: 'RG1',   latitude: 51.4543, longitude: -0.9781 },
+  wolverhampton:   { addressLocality: 'Wolverhampton',       addressRegion: 'West Midlands',       postalCode: 'WV1',   latitude: 52.5870, longitude: -2.1288 },
+  derby:           { addressLocality: 'Derby',               addressRegion: 'Derbyshire',          postalCode: 'DE1',   latitude: 52.9225, longitude: -1.4746 },
+  northampton:     { addressLocality: 'Northampton',         addressRegion: 'Northamptonshire',    postalCode: 'NN1',   latitude: 52.2405, longitude: -0.9027 },
+  luton:           { addressLocality: 'Luton',               addressRegion: 'Bedfordshire',        postalCode: 'LU1',   latitude: 51.8787, longitude: -0.4200 },
+  swindon:         { addressLocality: 'Swindon',             addressRegion: 'Wiltshire',           postalCode: 'SN1',   latitude: 51.5558, longitude: -1.7797 },
+  'stoke-on-trent': { addressLocality: 'Stoke-on-Trent',    addressRegion: 'Staffordshire',       postalCode: 'ST1',   latitude: 53.0027, longitude: -2.1794 },
+  plymouth:        { addressLocality: 'Plymouth',            addressRegion: 'Devon',               postalCode: 'PL1',   latitude: 50.3755, longitude: -4.1427 },
 };
 
 interface PageProps {
@@ -130,6 +138,18 @@ export default async function CityPage({ params }: PageProps) {
       'https://www.yell.com/biz/urban-shopfronts-london/',
     ],
     hasMap: `https://www.google.com/maps/search/shopfront+installation+${encodeURIComponent(city.name)}`,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `Shopfront Services in ${city.name}`,
+      itemListElement: allServices.map(s => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.name,
+          url: `${siteUrl}/services/${s.slug}`,
+        },
+      })),
+    },
   };
 
   const breadcrumbSchema = {

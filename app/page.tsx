@@ -65,6 +65,29 @@ export default function HomePage() {
           }))),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': 'https://www.urbanshopfronts.co.uk/#webpage',
+            name: 'Urban Shopfronts | Professional Shopfront Installation UK',
+            url: 'https://www.urbanshopfronts.co.uk',
+            isPartOf: { '@id': 'https://www.urbanshopfronts.co.uk/#website' },
+            about: { '@id': 'https://www.urbanshopfronts.co.uk/#organization' },
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', '.hero-description', '.services-section h2'],
+            },
+            significantLink: [
+              'https://www.urbanshopfronts.co.uk/services',
+              'https://www.urbanshopfronts.co.uk/contact',
+              'https://www.urbanshopfronts.co.uk/areas',
+            ],
+          }),
+        }}
+      />
 
       {/* ── Hero — split layout ──────────────────────────────────────────── */}
       <section className="relative bg-navy overflow-hidden">

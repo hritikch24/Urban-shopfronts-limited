@@ -1,14 +1,36 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = 'https://www.urbanshopfronts.co.uk';
-
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
         disallow: ['/api/', '/admin', '/metrics'],
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Anthropic-ai',
+        allow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        allow: '/',
       },
     ],
     sitemap: 'https://www.urbanshopfronts.co.uk/sitemap.xml',
