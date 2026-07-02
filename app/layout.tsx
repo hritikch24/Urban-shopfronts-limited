@@ -186,7 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16801337867');
 function gtagSendEvent(url){var callback=function(){if(typeof url==='string'){window.location=url;}};gtag('event','ads_conversion_Book_appointment_1',{'event_callback':callback,'event_timeout':2000});return false;}
-function gtag_report_conversion(url){var callback=function(){if(typeof url!=='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-16801337867/TcCuCK3Jk7IcEIukwMs-','event_callback':callback});return false;}`,
+function gtag_report_conversion(url){var callback=function(){if(typeof url!=='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-16801337867/TcCuCK3Jk7IcEIukwMs-','event_callback':callback});gtag('event','conversion',{'send_to':'AW-16801337867/u-x7CNe428gcEIukwMs-'});return false;}`,
           }}
         />
       </head>

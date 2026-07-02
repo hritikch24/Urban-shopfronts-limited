@@ -114,6 +114,9 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         window.gtag('event', 'conversion', {
           send_to: 'AW-16801337867/TcCuCK3Jk7IcEIukwMs-',
         });
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-16801337867/u-x7CNe428gcEIukwMs-',
+        });
       }
       setStatus('success');
     } catch {
