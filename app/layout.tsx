@@ -113,9 +113,9 @@ export default function RootLayout({
     >
       <head>
         <meta name="geo.region" content="GB" />
-        <meta name="geo.placename" content="London, United Kingdom" />
-        <meta name="geo.position" content="51.5267;-0.0888" />
-        <meta name="ICBM" content="51.5267, -0.0888" />
+        <meta name="geo.placename" content="Smethwick, West Midlands, United Kingdom" />
+        <meta name="geo.position" content="52.4897;-1.9718" />
+        <meta name="ICBM" content="52.4897, -1.9718" />
         <link rel="alternate" hrefLang="en-gb" href="https://www.urbanshopfronts.co.uk" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
