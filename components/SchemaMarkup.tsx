@@ -127,6 +127,8 @@ const defaultLocalBusiness = {
     { '@type': 'City', name: 'Wolverhampton' },
     { '@type': 'City', name: 'Worcester' },
     { '@type': 'City', name: 'York' },
+    { '@type': 'City', name: 'Belfast' },
+    { '@type': 'City', name: 'Middlesbrough' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
