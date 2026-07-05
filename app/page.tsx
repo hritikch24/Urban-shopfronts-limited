@@ -55,19 +55,6 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(testimonials.map((t) => ({
-            '@context': 'https://schema.org',
-            '@type': 'Review',
-            itemReviewed: { '@type': 'LocalBusiness', name: 'Urban Shopfronts' },
-            author: { '@type': 'Person', name: t.name },
-            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-            reviewBody: t.text,
-          }))),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',

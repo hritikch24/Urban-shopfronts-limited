@@ -122,13 +122,6 @@ export default async function CityPage({ params }: PageProps) {
     },
     openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-16:00'],
     priceRange: '££',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '35',
-      bestRating: '5',
-      worstRating: '1',
-    },
     parentOrganization: {
       '@id': 'https://www.urbanshopfronts.co.uk/#organization',
     },

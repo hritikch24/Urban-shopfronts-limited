@@ -85,13 +85,6 @@ export default async function ServicePage({ params }: PageProps) {
       { '@type': 'City', name: 'Edinburgh' },
     ],
     url: `${siteUrl}/services/${slug}`,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '35',
-      bestRating: '5',
-      worstRating: '1',
-    },
     offers: {
       '@type': 'Offer',
       priceCurrency: 'GBP',
