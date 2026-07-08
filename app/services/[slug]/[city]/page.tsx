@@ -167,6 +167,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${service.name} in ${city.name} | Urban Shopfronts`,
     description: `Professional ${service.name.toLowerCase()} installation in ${city.name} covering ${topAreas} and surrounding areas. Free site survey and no-obligation quote. Call 07471 043827.`,
+    robots: { index: false, follow: true },
     alternates: { canonical: `${siteUrl}/services/${slug}/${citySlug}` },
     openGraph: {
       title: `${service.name} in ${city.name} | Urban Shopfronts`,
