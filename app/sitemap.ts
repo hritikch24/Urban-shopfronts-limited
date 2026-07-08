@@ -15,24 +15,24 @@ const serviceSlugs = [
   'glass-replacement',
 ];
 
-// Core cities only — where the business has real presence
+// Urban core cities — south/central England focus
 const citySlugs = [
   'london',
   'birmingham',
   'manchester',
-  'leeds',
-  'liverpool',
   'bristol',
   'sheffield',
-  'glasgow',
-  'cardiff',
-  'newcastle',
-  'nottingham',
+  'coventry',
   'leicester',
-  'edinburgh',
+  'nottingham',
   'southampton',
   'brighton',
-  'coventry',
+  'wolverhampton',
+  'derby',
+  'reading',
+  'northampton',
+  'milton-keynes',
+  'bournemouth',
 ];
 
 const blogSlugs = [

@@ -165,7 +165,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const topAreas = city.areas.slice(0, 3).join(', ');
 
   // Only core cities should be indexed — extra cities are noindex (PPC only)
-  const coreCities = ['london','birmingham','manchester','leeds','liverpool','bristol','sheffield','glasgow','cardiff','newcastle','nottingham','leicester','edinburgh','southampton','brighton','coventry'];
+  const coreCities = ['london','birmingham','manchester','bristol','sheffield','coventry','leicester','nottingham','southampton','brighton','wolverhampton','derby','reading','northampton','milton-keynes','bournemouth'];
   const isCore = coreCities.includes(citySlug);
 
   return {
