@@ -85,13 +85,13 @@ export default function HomePage() {
                 London & UK Specialists
               </div>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-                Commercial Shopfronts,
+                Aluminium Shopfronts,
                 <br />
-                <span className="text-gradient-gold">Built to Last</span>
+                <span className="text-gradient-gold">Roller Shutters &amp; Security Doors</span>
                 {' '}Across the UK
               </h1>
               <p className="text-grey-300 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
-                Design, fabrication and installation of aluminium shopfronts, roller shutters and security doors. Nationwide coverage with 24/7 emergency response.
+                Professional aluminium shopfront installation, roller shutter fitting and security door supply for commercial premises across London and the UK. We handle the complete process from design and fabrication through to expert installation, with nationwide coverage and 24/7 emergency response available when you need it most.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
                 <Link href="/contact" className="btn-gold text-base px-7 py-3.5">
