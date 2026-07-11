@@ -15,7 +15,7 @@ const serviceSlugs = [
   'glass-replacement',
 ];
 
-// Urban core cities — south/central England focus
+// Urban core cities — must match coreCities in areas/[city]/page.tsx and services/[slug]/[city]/page.tsx
 const citySlugs = [
   'london',
   'birmingham',
@@ -33,6 +33,20 @@ const citySlugs = [
   'northampton',
   'milton-keynes',
   'bournemouth',
+  'leeds',
+  'liverpool',
+  'glasgow',
+  'cardiff',
+  'newcastle',
+  'edinburgh',
+  'bradford',
+  'stoke-on-trent',
+  'swansea',
+  'york',
+  'oxford',
+  'cambridge',
+  'middlesbrough',
+  'plymouth',
 ];
 
 const blogSlugs = [
@@ -81,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Core city combo pages only (16 cities × 10 services = 160 pages)
+  // Core city combo pages only (30 cities × 10 services = 300 pages)
   const serviceCityPages: MetadataRoute.Sitemap = serviceSlugs.flatMap((service) =>
     citySlugs.map((city) => ({
       url: `${siteUrl}/services/${service}/${city}`,
