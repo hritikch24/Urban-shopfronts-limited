@@ -47,13 +47,6 @@ export default function StickyDesktopCTA() {
               <PhoneIcon />
               07471 043827
             </a>
-            <a
-              href="tel:07471043827"
-              className="flex items-center gap-2 text-grey-400 hover:text-gold transition-colors text-sm hidden lg:flex"
-            >
-              <PhoneIcon />
-              07471 043827
-            </a>
             <Link
               href="/contact"
               className="bg-gold hover:bg-gold-light text-navy font-semibold text-xs px-4 py-1.5 rounded-lg transition-colors whitespace-nowrap"

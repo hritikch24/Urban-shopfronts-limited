@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import QuoteCalculator from '@/components/QuoteCalculator';
-import AIRecommenderWrapper from '@/components/AIRecommenderWrapper';
 
 export const metadata: Metadata = {
   title: 'Aluminium Shopfronts & Roller Shutters UK | Urban Shopfronts',
@@ -34,12 +32,9 @@ const stats = [
 ];
 
 const testimonials = [
-  { name: 'James Whitfield', business: 'Whitfield & Sons Butchers', location: 'Leeds', text: 'Urban replaced our roller shutter in under a day. Genuinely one of the best trade experiences we have had.' },
-  { name: 'Priya Sharma', business: 'Prestige Dental Clinic', location: 'Birmingham', text: 'Surveyed within 48 hours, competitive quote, installed within the week. Exceptional service.' },
   { name: "Daniel O'Brien", business: "O'Brien Electronics", location: 'Manchester', text: 'Called at 2am after a break-in. Team on site within the hour, premises secured, full replacement next morning.' },
-  { name: 'Sarah Hennessy', business: 'The Brasserie Bar & Kitchen', location: 'Bristol', text: 'Our bi-fold shopfront has transformed the restaurant. Footfall is up and the finish is outstanding.' },
   { name: 'Raj Patel', business: 'Patel Mini Market', location: 'London', text: 'Third time using Urban. Consistent quality, fair prices, and they always leave the site spotless.' },
-  { name: 'Fiona Campbell', business: 'Campbell Opticians', location: 'Edinburgh', text: 'Listed building constraints made this tricky. Urban navigated planning approval and delivered beautifully.' },
+  { name: 'Sarah Hennessy', business: 'The Brasserie Bar & Kitchen', location: 'Bristol', text: 'Our bi-fold shopfront has transformed the restaurant. Footfall is up and the finish is outstanding.' },
 ];
 
 const areas = [
@@ -175,36 +170,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── How It Works — horizontal timeline ───────────────────────────── */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-12">How Our Shopfront Installation Process Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
-            {[
-              { n: '1', t: 'Survey', d: 'Free site visit to measure and assess your requirements.' },
-              { n: '2', t: 'Design', d: 'Full specifications and drawings for your approval.' },
-              { n: '3', t: 'Build', d: 'Precision fabrication using quality UK materials.' },
-              { n: '4', t: 'Install', d: 'Expert fitting with full handover and warranty.' },
-            ].map((step, i) => (
-              <div key={step.n} className="relative flex flex-col items-center text-center px-6 py-8 md:py-0">
-                {i < 3 && <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-grey-200" />}
-                <div className="relative z-10 w-12 h-12 rounded-full bg-gold text-white font-heading font-bold text-lg flex items-center justify-center mb-4">{step.n}</div>
-                <h3 className="font-heading font-bold text-navy mb-2">{step.t}</h3>
-                <p className="text-grey-500 text-sm">{step.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── AI Recommender (lazy-loaded, client-only) ────────────────────── */}
-      <AIRecommenderWrapper />
 
       {/* ── Testimonials — grid layout ───────────────────────────────────── */}
       <section className="section-padding bg-grey-50">
         <div className="container-max">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-3">What Our Shopfront Installation Clients Say</h2>
-          <p className="text-grey-500 text-center mb-10 max-w-lg mx-auto">Real feedback from real clients. No filters.</p>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy text-center mb-10">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.map((t) => (
               <div key={t.name} className="bg-white rounded-xl p-6 border border-grey-200 hover:shadow-md transition-shadow">
@@ -262,32 +232,6 @@ export default function HomePage() {
             {areas.map((city) => (
               <Link key={city} href={`/areas/${city.toLowerCase()}`} className="px-4 py-2 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-gold hover:border-gold hover:text-white transition-all">
                 {city}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Quote Calculator ──────────────────────────────────────────── */}
-      <QuoteCalculator />
-
-      {/* ── Latest Guides ────────────────────────────────────────────── */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-3">Expert Shopfront Guides</h2>
-            <p className="text-grey-600 text-lg max-w-xl mx-auto">Practical advice from our installation team to help you make informed decisions.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: 'Shopfront Installation Costs UK 2026', desc: 'Transparent pricing for aluminium shopfronts, roller shutters, security doors and more.', href: '/blog/shopfront-installation-cost-uk-2026' },
-              { title: 'How to Choose the Best Shopfront Company', desc: 'A practical checklist — what to look for, red flags, and questions to ask.', href: '/blog/best-shopfront-company-uk-how-to-choose' },
-              { title: 'Shopfront Design Trends 2026', desc: 'From slimline aluminium frames to smart glass — what is changing in UK retail.', href: '/blog/shopfront-design-trends-uk-2026' },
-            ].map((post) => (
-              <Link key={post.href} href={post.href} className="card-surface rounded-xl p-6 hover:shadow-md transition-shadow group">
-                <h3 className="font-heading font-bold text-navy group-hover:text-gold transition-colors mb-2">{post.title}</h3>
-                <p className="text-grey-600 text-sm leading-relaxed mb-3">{post.desc}</p>
-                <span className="text-gold text-sm font-bold">Read guide &rarr;</span>
               </Link>
             ))}
           </div>
