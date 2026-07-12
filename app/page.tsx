@@ -1,10 +1,16 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
 import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import QuoteCalculator from '@/components/QuoteCalculator';
+
+const AIRecommender = dynamic(() => import('@/components/AIRecommender'), {
+  ssr: false,
+  loading: () => null,
+});
 
 export const metadata: Metadata = {
   title: 'Aluminium Shopfronts & Roller Shutters UK | Urban Shopfronts',
@@ -196,6 +202,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── AI Recommender (lazy-loaded, client-only) ────────────────────── */}
+      <AIRecommender />
 
       {/* ── Testimonials — grid layout ───────────────────────────────────── */}
       <section className="section-padding bg-grey-50">
