@@ -118,8 +118,8 @@ export default function RootLayout({
         <meta name="ICBM" content="52.4897, -1.9718" />
         <link rel="alternate" hrefLang="en-gb" href="https://www.urbanshopfronts.co.uk" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script
