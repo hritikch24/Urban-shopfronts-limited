@@ -89,8 +89,8 @@ export default function HomePage() {
                 Professional aluminium shopfront installation, roller shutter fitting and security door supply for commercial premises across London and the UK. We handle the complete process from design and fabrication through to expert installation, with nationwide coverage and 24/7 emergency response available when you need it most.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Link href="/contact" className="btn-gold text-base px-7 py-3.5">
-                  Get a Free Quote
+                <Link href="/quote" className="btn-gold text-base px-7 py-3.5">
+                  Get an Instant Quote
                 </Link>
                 <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5">
                   Call 07471 043827
@@ -244,7 +244,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Get a Free Shopfront Installation Quote</h2>
-              <p className="text-grey-600 text-lg mb-8">No obligations. No hidden costs. Just a straightforward quotation for your project.</p>
+              <p className="text-grey-600 text-lg mb-4">No obligations. No hidden costs. Just a straightforward quotation for your project.</p>
+              <p className="text-sm mb-8">
+                <Link href="/quote" className="text-gold font-semibold hover:underline">Want a ballpark price first? Try the 30-second instant estimator &rarr;</Link>
+              </p>
               <div className="space-y-4 mb-8">
                 {['Free site survey within 48 hours', 'Detailed written quotation', 'Response within 2 business hours', '24/7 emergency line available'].map((item) => (
                   <div key={item} className="flex items-center gap-3">
