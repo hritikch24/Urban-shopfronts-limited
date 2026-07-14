@@ -74,7 +74,7 @@ export default function HomePage() {
       {/* ── Hero — split layout ──────────────────────────────────────────── */}
       <section className="relative bg-navy overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center min-h-[85vh] lg:min-h-[90vh] pt-24 pb-16 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center min-h-[85vh] lg:min-h-[90vh] pt-24 pb-16 lg:pt-28 lg:pb-10">
             <div className="relative z-10 lg:pr-12">
               <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
                 London & UK Specialists
