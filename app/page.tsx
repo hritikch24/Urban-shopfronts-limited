@@ -73,6 +73,10 @@ export default function HomePage() {
 
       {/* ── Hero — split layout ──────────────────────────────────────────── */}
       <section className="relative bg-navy overflow-hidden">
+        <div className="absolute inset-0 lg:hidden" aria-hidden="true">
+          <Image src="/assets/shopfront-2.jpeg" alt="" fill priority className="object-cover" sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/75 to-navy/90" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center min-h-[85vh] lg:min-h-[90vh] pt-24 pb-16 lg:pt-28 lg:pb-10">
             <div className="relative z-10 lg:pr-12">
@@ -120,9 +124,6 @@ export default function HomePage() {
                   <p className="text-grey-500 text-xs">15+ cities across the UK</p>
                 </div>
               </div>
-            </div>
-            <div className="lg:hidden relative rounded-2xl overflow-hidden -mx-4">
-              <Image src="/assets/shopfront-2.jpeg" alt="Modern aluminium shopfront by Urban Shopfronts" width={800} height={500} className="object-cover w-full h-64" priority sizes="100vw" />
             </div>
           </div>
         </div>
