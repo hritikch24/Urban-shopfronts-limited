@@ -90,5 +90,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages];
+  const videoSlugs = ['shopfront-installation', 'site-survey', 'completed-project'];
+  const videoPages: MetadataRoute.Sitemap = videoSlugs.map((slug) => ({
+    url: `${siteUrl}/gallery/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
 }

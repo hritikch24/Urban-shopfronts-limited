@@ -214,15 +214,18 @@ export default function GalleryPage() {
           <p className="text-grey-600 text-center max-w-xl mx-auto mb-10">See our team in action — from site surveys to completed installations.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress' },
-              { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment' },
-              { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough' },
+              { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress', slug: 'shopfront-installation' },
+              { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment', slug: 'site-survey' },
+              { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough', slug: 'completed-project' },
             ].map((v) => (
               <div key={v.src} className="rounded-xl overflow-hidden shadow-md bg-white">
                 <video controls preload="metadata" className="w-full aspect-video object-cover" playsInline>
                   <source src={v.src} type="video/mp4" />
                 </video>
-                <p className="px-3 py-2 text-xs text-grey-500">{v.title}</p>
+                <div className="px-3 py-2 flex items-center justify-between">
+                  <p className="text-xs text-grey-500">{v.title}</p>
+                  <a href={`/gallery/${v.slug}`} className="text-xs text-blue-600 hover:underline">Watch full video →</a>
+                </div>
               </div>
             ))}
           </div>
