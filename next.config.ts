@@ -38,6 +38,21 @@ const nextConfig: NextConfig = {
         destination: 'https://www.urbanshopfronts.co.uk/:path*',
         permanent: true,
       },
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/shopfronts-north-london',
+        destination: '/areas/london',
+        permanent: true,
+      },
+      {
+        source: '/shopfronts-west-london',
+        destination: '/areas/london',
+        permanent: true,
+      },
     ];
   },
 
