@@ -80,14 +80,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = 'https://www.urbanshopfronts.co.uk';
   const geo = cityGeo[citySlug] || { addressLocality: city.name, addressRegion: city.region, postalCode: '', latitude: 51.5074, longitude: -0.1278 };
 
-  // Only core cities should be indexed — extra cities are noindex
-  const coreCities = ['london','birmingham','manchester','bristol','sheffield','coventry','leicester','nottingham','southampton','brighton','wolverhampton','derby','reading','northampton','milton-keynes','bournemouth','leeds','liverpool','glasgow','cardiff','newcastle','edinburgh','bradford','stoke-on-trent','swansea','york','oxford','cambridge','middlesbrough','plymouth'];
-  const isCore = coreCities.includes(citySlug);
-
   return {
     title: city.metaTitle,
     description: city.metaDescription,
-    ...(!isCore && { robots: { index: false, follow: true } }),
     alternates: { canonical: `${siteUrl}/areas/${citySlug}` },
     openGraph: {
       title: city.metaTitle,
