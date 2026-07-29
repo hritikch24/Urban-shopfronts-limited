@@ -106,14 +106,16 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-navy/95 backdrop-blur-md shadow-lg' : 'bg-navy'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? 'bg-obsidian/85 backdrop-blur-xl shadow-[0_1px_30px_rgba(0,255,136,0.04)] border-b border-gold/10'
+            : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/" className="flex-shrink-0 group">
-              <span className="font-heading font-bold text-lg lg:text-xl tracking-wide text-gold group-hover:text-gold-light transition-colors">
+              <span className="font-heading font-bold text-lg lg:text-xl tracking-[0.2em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(0,255,136,0.25)]">
                 URBAN SHOPFRONTS
               </span>
             </Link>
@@ -121,14 +123,14 @@ export default function Header() {
             <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
               <Link
                 href="/"
-                className="px-3 py-2 text-sm font-medium text-white hover:text-gold transition-colors rounded"
+                className="px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded"
               >
                 Home
               </Link>
 
               <div className="relative" ref={servicesRef}>
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white hover:text-gold transition-colors rounded"
+                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded"
                   onClick={() => { setServicesOpen(!servicesOpen); setAreasOpen(false); }}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
@@ -137,12 +139,12 @@ export default function Header() {
                   <ChevronDown className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-xl border border-grey-100 py-1 z-50">
+                  <div className="absolute top-full left-0 mt-2 w-56 glass-panel py-1 z-50">
                     {services.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="block px-4 py-2.5 text-sm text-charcoal hover:bg-grey-50 hover:text-navy font-medium transition-colors"
+                        className="block px-4 py-2.5 text-sm text-grey-600 hover:bg-gold/5 hover:text-gold font-medium transition-colors"
                         onClick={() => setServicesOpen(false)}
                       >
                         {s.label}
@@ -154,7 +156,7 @@ export default function Header() {
 
               <div className="relative" ref={areasRef}>
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white hover:text-gold transition-colors rounded"
+                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded"
                   onClick={() => { setAreasOpen(!areasOpen); setServicesOpen(false); }}
                   aria-expanded={areasOpen}
                   aria-haspopup="true"
@@ -163,15 +165,15 @@ export default function Header() {
                   <ChevronDown className={`transition-transform duration-200 ${areasOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {areasOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl border border-grey-100 py-1 z-50">
+                  <div className="absolute top-full left-0 mt-2 w-48 glass-panel py-1 z-50">
                     {areas.map((a) => (
                       <Link
                         key={a.href}
                         href={a.href}
                         className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
                           a.label === 'View All Areas'
-                            ? 'text-gold border-t border-grey-100 mt-1 pt-3 hover:text-gold-light'
-                            : 'text-charcoal hover:bg-grey-50 hover:text-navy'
+                            ? 'text-gold border-t border-white/10 mt-1 pt-3 hover:text-gold-light'
+                            : 'text-grey-600 hover:bg-gold/5 hover:text-gold'
                         }`}
                         onClick={() => setAreasOpen(false)}
                       >
@@ -186,7 +188,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-white hover:text-gold transition-colors rounded"
+                  className="px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded"
                 >
                   {link.label}
                 </Link>
@@ -196,14 +198,14 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:07471043827"
-                className="flex items-center gap-2 text-gold-light hover:text-gold transition-colors text-sm font-medium"
+                className="flex items-center gap-2 text-grey-500 hover:text-gold transition-colors text-sm font-medium"
               >
                 <PhoneIcon />
                 07471 043827
               </a>
               <Link
                 href="/contact"
-                className="bg-gold hover:bg-gold-light text-navy font-semibold text-sm px-4 py-2.5 rounded-lg transition-colors"
+                className="relative bg-gold hover:bg-gold-light text-obsidian font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(0,255,136,0.2)] hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] hover:-translate-y-0.5"
               >
                 Get Free Quote
               </Link>
@@ -222,11 +224,11 @@ export default function Header() {
       </header>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-navy flex flex-col pt-16 overflow-y-auto lg:hidden">
+        <div className="fixed inset-0 z-40 bg-obsidian/98 backdrop-blur-xl flex flex-col pt-16 overflow-y-auto lg:hidden">
           <nav className="flex flex-col p-6 gap-1" aria-label="Mobile navigation">
             <Link
               href="/"
-              className="py-3 px-2 text-lg font-semibold text-white border-b border-navy-light hover:text-gold transition-colors"
+              className="py-3 px-2 text-lg font-semibold text-grey-700 border-b border-white/5 hover:text-gold transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Home
@@ -234,7 +236,7 @@ export default function Header() {
 
             <div>
               <button
-                className="w-full flex items-center justify-between py-3 px-2 text-lg font-semibold text-white border-b border-navy-light hover:text-gold transition-colors"
+                className="w-full flex items-center justify-between py-3 px-2 text-lg font-semibold text-grey-700 border-b border-white/5 hover:text-gold transition-colors"
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 aria-expanded={mobileServicesOpen}
               >
@@ -247,7 +249,7 @@ export default function Header() {
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="py-2 px-2 text-base text-grey-300 hover:text-gold transition-colors"
+                      className="py-2 px-2 text-base text-grey-500 hover:text-gold transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {s.label}
@@ -259,7 +261,7 @@ export default function Header() {
 
             <div>
               <button
-                className="w-full flex items-center justify-between py-3 px-2 text-lg font-semibold text-white border-b border-navy-light hover:text-gold transition-colors"
+                className="w-full flex items-center justify-between py-3 px-2 text-lg font-semibold text-grey-700 border-b border-white/5 hover:text-gold transition-colors"
                 onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
                 aria-expanded={mobileAreasOpen}
               >
@@ -272,7 +274,7 @@ export default function Header() {
                     <Link
                       key={a.href}
                       href={a.href}
-                      className="py-2 px-2 text-base text-grey-300 hover:text-gold transition-colors"
+                      className="py-2 px-2 text-base text-grey-500 hover:text-gold transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {a.label}
@@ -286,7 +288,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-3 px-2 text-lg font-semibold text-white border-b border-navy-light hover:text-gold transition-colors"
+                className="py-3 px-2 text-lg font-semibold text-grey-700 border-b border-white/5 hover:text-gold transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -296,14 +298,14 @@ export default function Header() {
             <div className="mt-6 flex flex-col gap-3">
               <a
                 href="tel:07471043827"
-                className="flex items-center justify-center gap-2 py-3 px-4 border border-gold text-gold rounded-lg text-base font-semibold hover:bg-gold hover:text-navy transition-colors"
+                className="flex items-center justify-center gap-2 py-3 px-4 border border-gold/30 text-gold rounded-lg text-base font-semibold hover:bg-gold/10 hover:border-gold transition-all"
               >
                 <PhoneIcon />
                 07471 043827
               </a>
               <Link
                 href="/contact"
-                className="flex items-center justify-center py-3 px-4 bg-gold text-navy rounded-lg text-base font-semibold hover:bg-gold-light transition-colors"
+                className="flex items-center justify-center py-3 px-4 bg-gold text-obsidian rounded-lg text-base font-semibold hover:bg-gold-light transition-all"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Free Quote
