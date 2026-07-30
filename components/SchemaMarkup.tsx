@@ -190,6 +190,7 @@ const defaultOrganization = {
   legalName: 'Urban Shopfronts Limited',
   url: 'https://www.urbanshopfronts.co.uk',
   logo: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
+  image: 'https://www.urbanshopfronts.co.uk/assets/shopfront-2.jpeg',
   telephone: '+447471043827',
   email: 'sales@urbanshopfronts.co.uk',
   foundingDate: '2024',

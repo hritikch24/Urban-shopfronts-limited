@@ -40,6 +40,7 @@ export default function MobileStickyBar() {
           href="tel:07471043827"
           className="flex items-center justify-center gap-2 py-4 px-4 text-gold font-heading font-bold text-sm hover:bg-navy-light transition-colors border-r border-navy-light"
           aria-label="Call Urban Shopfronts"
+          tabIndex={visible ? 0 : -1}
         >
           <PhoneIcon />
           Call Now
@@ -50,6 +51,7 @@ export default function MobileStickyBar() {
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 py-4 px-4 text-gold font-heading font-bold text-sm hover:bg-navy-light transition-colors"
           aria-label="WhatsApp Urban Shopfronts"
+          tabIndex={visible ? 0 : -1}
         >
           <WhatsAppIcon />
           WhatsApp
