@@ -89,7 +89,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 card-surface px-4 py-1.5 rounded-full mb-6 border border-gold/20">
                 <span className="text-gold text-xs font-bold tracking-widest uppercase">London & UK Specialists</span>
               </div>
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+              <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
                 Aluminium Shopfronts,
                 <br />
                 <span className="text-gradient-gold">Roller Shutters &amp; Security Doors</span>
