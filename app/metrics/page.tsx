@@ -73,7 +73,7 @@ const STATUS_DOT: Record<string, string> = {
 };
 
 const BAR_GRADIENTS: Record<string, [string, string]> = {
-  gold:    ['#00ff88', '#00cc6a'],
+  gold:    ['#f0b429', '#d4960f'],
   blue:    ['#3b82f6', '#2563eb'],
   emerald: ['#10b981', '#059669'],
   orange:  ['#f97316', '#ea580c'],

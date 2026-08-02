@@ -15,7 +15,7 @@ export default function AdminLayout({
         ['--color-navy' as string]: '#0f172a',
         ['--color-navy-light' as string]: '#1e293b',
         ['--color-charcoal' as string]: '#1e2533',
-        ['--color-gold' as string]: '#00ff88',
+        ['--color-gold' as string]: '#f0b429',
         ['--color-gold-light' as string]: '#44ffaa',
         ['--color-white' as string]: '#ffffff',
         ['--color-grey-50' as string]: '#f8fafc',

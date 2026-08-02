@@ -122,7 +122,7 @@ export default function HomePage() {
                 <Image src="/assets/shopfront-2.jpeg" alt="Modern aluminium shopfront by Urban Shopfronts" width={700} height={800} className="object-cover w-full h-[75vh]" priority sizes="50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/30 to-transparent" />
               </div>
-              <div className="absolute -bottom-6 -left-6 card-surface px-5 py-4 flex items-center gap-4 border border-gold/15 shadow-[0_0_20px_rgba(0,255,136,0.06)]">
+              <div className="absolute -bottom-6 -left-6 card-surface px-5 py-4 flex items-center gap-4 border border-gold/15 shadow-[0_0_20px_rgba(240,180,41,0.06)]">
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
                 </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Stats bar ────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-y border-white/[0.04]" style={{ background: 'linear-gradient(90deg, rgba(0,255,136,0.02) 0%, rgba(255,170,0,0.02) 50%, rgba(0,255,136,0.02) 100%)' }}>
+      <section className="relative overflow-hidden border-y border-white/[0.04]" style={{ background: 'linear-gradient(90deg, rgba(240,180,41,0.02) 0%, rgba(255,170,0,0.02) 50%, rgba(240,180,41,0.02) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
             {stats.map((s) => (
@@ -160,7 +160,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
-              <Link key={s.href} href={s.href} className="group card-aurora-border overflow-hidden hover:-translate-y-1.5 transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,255,136,0.06)]">
+              <Link key={s.href} href={s.href} className="group card-aurora-border overflow-hidden hover:-translate-y-1.5 transition-all duration-500 hover:shadow-[0_0_25px_rgba(240,180,41,0.06)]">
                 <div className="relative h-44 overflow-hidden">
                   <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent" />
@@ -275,7 +275,7 @@ export default function HomePage() {
                 {['Free site survey within 48 hours', 'Detailed written quotation', 'Response within 2 business hours', '24/7 emergency line available'].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00ff88" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#f0b429" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </div>
                     <span className="text-grey-600 text-sm">{item}</span>
                   </div>

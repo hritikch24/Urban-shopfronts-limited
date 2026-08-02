@@ -12,7 +12,7 @@ export default function ServiceCard({ title, description, image, href }: Service
   return (
     <Link
       href={href}
-      className="group block rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 card-aurora-border hover:shadow-[0_0_30px_rgba(0,255,136,0.08)]"
+      className="group block rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 card-aurora-border hover:shadow-[0_0_30px_rgba(240,180,41,0.08)]"
     >
       <div className="relative h-48 sm:h-52 overflow-hidden">
         <Image

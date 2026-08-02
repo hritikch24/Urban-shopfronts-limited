@@ -108,14 +108,14 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-obsidian/85 backdrop-blur-xl shadow-[0_1px_30px_rgba(0,255,136,0.04)] border-b border-gold/10'
+            ? 'bg-obsidian/85 backdrop-blur-xl shadow-[0_1px_30px_rgba(240,180,41,0.04)] border-b border-gold/10'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/" className="flex-shrink-0 group">
-              <span className="font-heading font-bold text-lg lg:text-xl tracking-[0.2em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(0,255,136,0.25)]">
+              <span className="font-heading font-bold text-lg lg:text-xl tracking-[0.2em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(240,180,41,0.25)]">
                 URBAN SHOPFRONTS
               </span>
             </Link>
@@ -205,7 +205,7 @@ export default function Header() {
               </a>
               <Link
                 href="/contact"
-                className="relative bg-gold hover:bg-gold-light text-obsidian font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(0,255,136,0.2)] hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] hover:-translate-y-0.5"
+                className="relative bg-gold hover:bg-gold-light text-obsidian font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(240,180,41,0.2)] hover:shadow-[0_0_30px_rgba(240,180,41,0.4)] hover:-translate-y-0.5"
               >
                 Get Free Quote
               </Link>
