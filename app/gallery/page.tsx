@@ -20,8 +20,16 @@ export const metadata: Metadata = {
 
 const images = [
   {
+    src: '/assets/shopfront-transform-1.jpeg',
+    alt: 'Before and after shopfront transformation by Urban Shopfronts',
+  },
+  {
     src: '/assets/shopfront-8.jpeg',
     alt: 'Bronze aluminium shopfront with full-height glazing panels',
+  },
+  {
+    src: '/assets/shopfront-night-1.jpeg',
+    alt: 'Aluminium shopfront with warm interior lighting at night',
   },
   {
     src: '/assets/shopfront-2.jpeg',

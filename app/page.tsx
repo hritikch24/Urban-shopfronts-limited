@@ -209,15 +209,19 @@ export default function HomePage() {
         <div className="flex gap-3 animate-[scroll_30s_linear_infinite] w-max">
           {[...Array(2)].flatMap((_, set) =>
             [
+              { file: 'shopfront-premium-1', alt: 'Premium aluminium shopfront on UK high street' },
               { file: 'shopfront-8', alt: 'Bronze aluminium shopfront with full-height glazing' },
               { file: 'shopfront-2', alt: 'Modern aluminium shopfront installation' },
+              { file: 'shopfront-interior-1', alt: 'Interior view through modern aluminium shopfront' },
               { file: 'shopfront-4', alt: 'Wide-span glazed shopfront for retail unit' },
               { file: 'shopfront-5', alt: 'Commercial shopfront with toughened glass' },
+              { file: 'roller-shutter-evening-1', alt: 'Commercial roller shutter at dusk' },
               { file: 'shopfront-6', alt: 'Floor-to-ceiling glass shopfront' },
               { file: 'shopfront-7', alt: 'Powder-coated aluminium shopfront at night' },
               { file: 'aluminium-shopfront-1', alt: 'Aluminium shopfront with tinted glass panels' },
               { file: 'roller-shutter-1', alt: 'Commercial roller shutter installation' },
               { file: 'roller-shutter-2', alt: 'Steel roller shutter on commercial unit' },
+              { file: 'security-door-steel-1', alt: 'Heavy-duty steel security door with multipoint lock' },
               { file: 'bifolding-door-1', alt: 'Bi-fold door system for restaurant frontage' },
               { file: 'venue-signage-1', alt: 'Venue signage and shopfront fitout' },
               { file: 'site-survey-1', alt: 'Engineer arriving for free site survey' },
