@@ -20,6 +20,10 @@ export const metadata: Metadata = {
 
 const images = [
   {
+    src: '/assets/shopfront-8.jpeg',
+    alt: 'Bronze aluminium shopfront with full-height glazing panels',
+  },
+  {
     src: '/assets/shopfront-2.jpeg',
     alt: 'Modern aluminium shopfront installation by Urban Shopfronts',
   },
@@ -38,6 +42,10 @@ const images = [
   {
     src: '/assets/roller-shutter-1.jpeg',
     alt: 'Integrated roller shutter shopfront installation',
+  },
+  {
+    src: '/assets/roller-shutter-2.jpeg',
+    alt: 'Steel roller shutter installation on commercial premises',
   },
   {
     src: '/assets/shopfront-7.jpeg',
