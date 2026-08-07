@@ -51,6 +51,7 @@ export const metadata: Metadata = {
     'frameless shopfronts',
     'commercial glazing',
     'toughened glass',
+    'toughened glass shopfronts',
     'shopfront repairs',
     'shop front design',
     'emergency shopfront callout',
