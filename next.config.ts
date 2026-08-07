@@ -44,13 +44,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/shopfronts-north-london',
+        source: '/shopfronts-north-london/:path*',
         destination: '/areas/london',
         permanent: true,
       },
       {
-        source: '/shopfronts-west-london',
+        source: '/shopfronts-west-london/:path*',
         destination: '/areas/london',
+        permanent: true,
+      },
+      {
+        source: '/thank-you.html',
+        destination: '/contact',
         permanent: true,
       },
     ];
