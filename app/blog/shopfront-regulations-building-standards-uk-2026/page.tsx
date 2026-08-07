@@ -60,7 +60,7 @@ export default function ShopfrontRegulationsPage() {
         }}
       />
 
-      <article className="section-padding bg-white">
+      <article className="section-padding bg-obsidian-light">
         <div className="container-max max-w-3xl">
           <Breadcrumbs
             items={[
@@ -70,7 +70,7 @@ export default function ShopfrontRegulationsPage() {
             ]}
           />
 
-          <h1 className="font-heading text-3xl md:text-4xl font-bold text-navy mt-4 mb-6">
+          <h1 className="font-heading text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
             UK Shopfront Regulations &amp; Building Standards: A 2026 Guide for Business Owners
           </h1>
 
@@ -81,7 +81,7 @@ export default function ShopfrontRegulationsPage() {
             This guide sets out the key regulations and standards that apply to shopfront installations in 2026, written in practical terms for business owners, property managers, and fit-out contractors. We cover what each regulation requires, when it applies, and how to ensure compliance from the outset.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">Building Regulations Part L: Thermal Performance</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Building Regulations Part L: Thermal Performance</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Approved Document L (Conservation of Fuel and Power) sets the thermal performance standards for all building elements, including shopfront glazing, frames, and solid panels. The 2025 update — which took effect in late 2025 and applies to all work in 2026 — tightened the requirements significantly compared to the previous edition.
           </p>
@@ -98,7 +98,7 @@ export default function ShopfrontRegulationsPage() {
             Compliance is demonstrated through the building control process. Your installer should provide U-value calculations for the proposed glazing and frame system, and building control will verify these as part of the sign-off. At Urban Shopfronts, our standard <Link href="/services/aluminium-shopfronts" className="text-gold font-medium hover:underline">aluminium shopfront systems</Link> use thermally broken profiles and high-performance glazing that meet Part L 2025 requirements as standard.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">Building Regulations Part M: Accessibility and DDA Compliance</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Building Regulations Part M: Accessibility and DDA Compliance</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Approved Document M (Access to and Use of Buildings) sets out accessibility requirements for commercial premises. For shopfronts, the key provisions relate to entrance doors, thresholds, and approach routes. These requirements overlap with — and are reinforced by — the Equality Act 2010 (which replaced the Disability Discrimination Act), which requires service providers to make reasonable adjustments to ensure disabled people can access their services.
           </p>
@@ -116,7 +116,7 @@ export default function ShopfrontRegulationsPage() {
             Non-compliance with Part M can result in building control refusing to sign off the installation. Non-compliance with the Equality Act can result in legal action from individuals who are unable to access the premises. Both are avoidable with proper design from the outset.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">Building Regulations Part B: Fire Safety</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Building Regulations Part B: Fire Safety</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Approved Document B (Fire Safety) applies to shopfronts where the shopfront forms part of a fire compartment boundary or where the premises is above or adjacent to a different occupancy. The requirements are complex and depend on the specific building configuration, but the most common implications for shopfronts are:
           </p>
@@ -130,7 +130,7 @@ export default function ShopfrontRegulationsPage() {
             Fire safety requirements are assessed on a building-by-building basis, and a fire risk assessment should inform the specification. For more on fire door ratings, see our guide on <Link href="/blog/fd30-vs-fd60-fire-door-commercial-premises" className="text-gold font-medium hover:underline">FD30 vs FD60 fire doors</Link>.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">Planning Permission Requirements</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Planning Permission Requirements</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Planning permission and building regulations are separate regimes. You may need one, the other, or both. Planning permission concerns the external appearance and use of the building; building regulations concern the technical performance of the construction.
           </p>
@@ -148,7 +148,7 @@ export default function ShopfrontRegulationsPage() {
             For a detailed walkthrough of the planning process, read our guide on <Link href="/blog/aluminium-shopfront-planning-permission-uk" className="text-gold font-medium hover:underline">aluminium shopfront planning permission</Link>.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">Conservation Areas and Listed Buildings</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Conservation Areas and Listed Buildings</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Conservation areas have additional controls over shopfront design. Permitted development rights are restricted, and any external alteration that affects the character or appearance of the building requires planning permission. Local planning authorities publish conservation area appraisals and, in many cases, shopfront design guides that set out acceptable materials, proportions, colours, and detailing.
           </p>
@@ -159,7 +159,7 @@ export default function ShopfrontRegulationsPage() {
             Modern thermally broken aluminium systems can be designed to be sympathetic to historic buildings — using slim profiles, heritage colours, and traditional proportions — while still achieving current Building Regulations performance standards. Early engagement with the local authority conservation officer is strongly recommended.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">PAS 24: Enhanced Security Performance</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">PAS 24: Enhanced Security Performance</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             PAS 24 (Enhanced Security Performance Requirements for Doorsets and Windows) is the British Standards Institution&rsquo;s specification for security testing. It assesses resistance to physical attack — including manipulation of the locking mechanism, levering of the frame, and impact on the glazing.
           </p>
@@ -170,7 +170,7 @@ export default function ShopfrontRegulationsPage() {
             For higher security requirements — particularly in high-crime areas or for premises with valuable stock — <Link href="/blog/what-is-lps-1175-security-rating" className="text-gold font-medium hover:underline">LPS 1175-rated products</Link> provide a higher level of tested resistance.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">BS EN 16005: Automatic Door Safety</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">BS EN 16005: Automatic Door Safety</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             BS EN 16005 is the European standard for the safety in use of power-operated pedestrian doorsets. It applies to all <Link href="/services/automatic-doors" className="text-gold font-medium hover:underline">automatic doors</Link> installed in commercial premises — including sliding, swing, and revolving types. The standard specifies requirements for sensor detection zones, closing forces, speed limitations, safety markings, and emergency breakout capability.
           </p>
@@ -188,7 +188,7 @@ export default function ShopfrontRegulationsPage() {
             Automatic doors must be installed by competent persons and commissioned with a full BS EN 16005 risk assessment and compliance certificate. Ongoing maintenance — including six-monthly safety checks — is recommended by the standard and is a practical requirement of most commercial insurance policies. For more on our <Link href="/faq" className="text-gold font-medium hover:underline">frequently asked questions</Link>, see our FAQ page.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">Getting It Right from the Start</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Getting It Right from the Start</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             The regulatory landscape for UK shopfronts is complex, but it is manageable when you work with an installer who understands it. The most expensive mistakes are retrospective ones — installing a shopfront that fails building control inspection, triggers enforcement action from the planning authority, or is rejected by the building insurer.
           </p>
@@ -198,11 +198,11 @@ export default function ShopfrontRegulationsPage() {
           </p>
 
           <section className="border-t border-grey-200 pt-10">
-            <h2 className="font-heading text-2xl font-semibold text-navy mb-6">Frequently Asked Questions</h2>
+            <h2 className="font-heading text-2xl font-semibold text-white mb-6">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {faqs.map((faq, i) => (
                 <div key={i}>
-                  <h3 className="font-heading text-lg font-medium text-navy mb-2">{faq.question}</h3>
+                  <h3 className="font-heading text-lg font-medium text-white mb-2">{faq.question}</h3>
                   <p className="text-charcoal leading-relaxed">{faq.answer}</p>
                 </div>
               ))}

@@ -216,7 +216,7 @@ export default function GalleryPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <p className="px-3 py-2 text-xs text-grey-500 bg-white leading-snug">{image.alt}</p>
+                <p className="px-3 py-2 text-xs text-grey-500 bg-grey-100 leading-snug">{image.alt}</p>
               </div>
             ))}
           </div>
@@ -226,7 +226,7 @@ export default function GalleryPage() {
       {/* Project Videos */}
       <section className="section-padding bg-grey-50">
         <div className="container-max">
-          <h2 className="text-3xl font-heading font-bold text-navy text-center mb-3">Project Videos</h2>
+          <h2 className="text-3xl font-heading font-bold text-white text-center mb-3">Project Videos</h2>
           <p className="text-grey-600 text-center max-w-xl mx-auto mb-10">See our team in action — from site surveys to completed installations.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -234,7 +234,7 @@ export default function GalleryPage() {
               { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment', slug: 'site-survey' },
               { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough', slug: 'completed-project' },
             ].map((v) => (
-              <div key={v.src} className="rounded-xl overflow-hidden shadow-md bg-white">
+              <div key={v.src} className="rounded-xl overflow-hidden shadow-md bg-obsidian-light">
                 <video controls preload="metadata" className="w-full aspect-video object-cover" playsInline>
                   <source src={v.src} type="video/mp4" />
                 </video>

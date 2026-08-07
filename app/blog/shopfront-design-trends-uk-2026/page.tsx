@@ -60,7 +60,7 @@ export default function ShopfrontDesignTrends2026Page() {
         }}
       />
 
-      <article className="section-padding bg-white">
+      <article className="section-padding bg-obsidian-light">
         <div className="container-max max-w-3xl">
           <Breadcrumbs
             items={[
@@ -70,7 +70,7 @@ export default function ShopfrontDesignTrends2026Page() {
             ]}
           />
 
-          <h1 className="font-heading text-3xl md:text-4xl font-bold text-navy mt-4 mb-6">
+          <h1 className="font-heading text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
             Shopfront Design Trends for 2026: What&rsquo;s Changing in UK Retail
           </h1>
 
@@ -81,7 +81,7 @@ export default function ShopfrontDesignTrends2026Page() {
             This guide covers the six most significant shopfront design trends we are seeing across the UK in 2026, based on the projects our team delivers and the specifications architects and designers are requesting. Each trend is practical, commercially relevant, and — critically — achievable within realistic budgets.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">1. Slimline Aluminium Profiles and Frameless Aesthetics</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">1. Slimline Aluminium Profiles and Frameless Aesthetics</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             The single biggest visual shift in shopfront design over the past two years has been the move towards ultra-slim aluminium profiles. Where traditional aluminium frames had sightlines of 50mm or more, the current generation of thermally broken systems can achieve sightlines as narrow as 20mm to 35mm. The result is a shopfront that appears almost entirely glass — maximising product visibility and natural light while maintaining full structural integrity.
           </p>
@@ -92,7 +92,7 @@ export default function ShopfrontDesignTrends2026Page() {
             Our <Link href="/services/aluminium-shopfronts" className="text-gold font-medium hover:underline">aluminium shopfront installations</Link> now use slimline thermally broken profiles as standard, and we offer frameless corner options across all our project specifications.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">2. Smart Glass and Switchable Privacy Glazing</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">2. Smart Glass and Switchable Privacy Glazing</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Smart glass technology — specifically PDLC (polymer-dispersed liquid crystal) switchable glass — has moved from a niche architectural product to a commercially viable shopfront option. At the touch of a button or via a smartphone app, the glass switches from fully transparent to frosted opaque in under one second. This gives business owners instant privacy control without roller shutters, blinds, or curtains.
           </p>
@@ -103,7 +103,7 @@ export default function ShopfrontDesignTrends2026Page() {
             Costs have fallen considerably. In 2024, switchable glass was priced at over £1,500 per square metre. By mid-2026, we are sourcing quality PDLC panels from £800 per square metre, making it a realistic upgrade for mid-range commercial fit-outs.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">3. Sustainability: Recycled Aluminium and Energy-Efficient Glazing</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">3. Sustainability: Recycled Aluminium and Energy-Efficient Glazing</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Sustainability is no longer a marketing buzzword in the shopfront industry — it is a regulatory and commercial requirement. The 2025 updates to Building Regulations Part L have tightened thermal performance requirements for replacement shopfronts, and landlords, developers, and franchise operators are increasingly specifying materials with verified environmental credentials.
           </p>
@@ -114,7 +114,7 @@ export default function ShopfrontDesignTrends2026Page() {
             On the glazing side, triple glazing and argon-filled double-glazed units with low-emissivity coatings are becoming standard for shopfront installations where Part L compliance is required. These units achieve U-values of 1.0 W/m2K or better, compared to 2.8 W/m2K or worse from older single-glazed shopfronts. The energy savings are substantial — and increasingly relevant as commercial energy costs remain elevated. See our <Link href="/cost-guide" className="text-gold font-medium hover:underline">cost guide</Link> for current glazing pricing.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">4. Bi-Fold and Open-Frontage Designs for Hospitality</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">4. Bi-Fold and Open-Frontage Designs for Hospitality</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             The hospitality sector has fundamentally changed how it uses shopfront space since 2020. Restaurants, cafes, bars, and street-food venues now prioritise open frontages that blur the boundary between indoor and outdoor seating. <Link href="/services/bi-fold-doors" className="text-gold font-medium hover:underline">Commercial bi-fold door systems</Link> are the primary mechanism for achieving this.
           </p>
@@ -125,7 +125,7 @@ export default function ShopfrontDesignTrends2026Page() {
             We are also seeing increased demand for sliding-folding hybrid systems, which combine the open-frontage capability of bi-folds with the slimmer profiles of sliding doors. These are especially popular for bar and restaurant frontages in urban areas where pavement space is limited and outward-opening panels would encroach on the public highway.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">5. LED-Integrated Shopfront Signage</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">5. LED-Integrated Shopfront Signage</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             Integrated LED signage — where the lighting is built into the aluminium shopfront framework rather than mounted externally — has become the preferred approach for new-build and refurbishment projects in 2026. Halo-lit fascia panels, LED channel letters recessed into the transom bar, and edge-lit glass panels create a clean, contemporary look that eliminates the clutter of externally mounted sign trays and projecting boxes.
           </p>
@@ -136,7 +136,7 @@ export default function ShopfrontDesignTrends2026Page() {
             LED technology itself continues to improve. Current LED strip and module systems offer colour temperatures from warm white (2700K) to daylight (6500K), dimming control, and lifespans exceeding 50,000 hours. Combined with automated timers or smart-building integration, shopfront signage can be programmed to adjust brightness based on ambient light conditions, reducing energy consumption and light pollution. Pairing LED-integrated signage with <Link href="/services/automatic-doors" className="text-gold font-medium hover:underline">automatic entrance doors</Link> creates a cohesive, modern customer experience from the street.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">6. Heritage-Sensitive Modern Shopfronts in Conservation Areas</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">6. Heritage-Sensitive Modern Shopfronts in Conservation Areas</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             One of the most technically demanding areas of shopfront design is the conservation area project — where a business needs a modern, high-performing shopfront but the local planning authority requires sensitivity to the historic character of the street. Getting this right involves balancing Building Regulations compliance (thermal performance, accessibility, fire safety) with planning requirements that may specify traditional proportions, specific materials, or particular colour palettes.
           </p>
@@ -147,7 +147,7 @@ export default function ShopfrontDesignTrends2026Page() {
             The key is early engagement with the local authority planning team. Many councils have published shopfront design supplementary planning documents (SPDs) that set out their expectations clearly. Where these exist, our design team works directly from them to ensure applications are approved first time. Where they do not, we prepare heritage impact statements and detailed design drawings that demonstrate sensitivity to the local context. Read our guide on <Link href="/blog/aluminium-shopfront-planning-permission-uk" className="text-gold font-medium hover:underline">shopfront planning permission</Link> for more detail on the application process.
           </p>
 
-          <h2 className="font-heading text-2xl font-semibold text-navy mt-10 mb-4">What This Means for Your Business</h2>
+          <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">What This Means for Your Business</h2>
           <p className="text-charcoal leading-relaxed mb-4">
             These trends are not passing fashions — they reflect fundamental shifts in building regulations, consumer expectations, and available technology. A shopfront installed in 2026 using slimline thermally broken aluminium, high-performance glazing, and integrated LED signage will outperform and outlast a shopfront installed to 2020 standards by a significant margin.
           </p>
@@ -157,11 +157,11 @@ export default function ShopfrontDesignTrends2026Page() {
           </p>
 
           <section className="border-t border-grey-200 pt-10">
-            <h2 className="font-heading text-2xl font-semibold text-navy mb-6">Frequently Asked Questions</h2>
+            <h2 className="font-heading text-2xl font-semibold text-white mb-6">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {faqs.map((faq, i) => (
                 <div key={i}>
-                  <h3 className="font-heading text-lg font-medium text-navy mb-2">{faq.question}</h3>
+                  <h3 className="font-heading text-lg font-medium text-white mb-2">{faq.question}</h3>
                   <p className="text-charcoal leading-relaxed">{faq.answer}</p>
                 </div>
               ))}

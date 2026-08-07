@@ -78,7 +78,7 @@ export default function ServicesPage() {
                   <Image src={`/assets/${service.image}`} alt={service.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                 </div>
                 <div className="p-5">
-                  <h2 className="font-heading font-bold text-navy text-lg group-hover:text-gold transition-colors mb-2">{service.name}</h2>
+                  <h2 className="font-heading font-bold text-white text-lg group-hover:text-gold transition-colors mb-2">{service.name}</h2>
                   <p className="text-grey-600 text-sm leading-relaxed mb-3">{service.desc}</p>
                   <span className="text-gold text-sm font-semibold inline-flex items-center gap-1">
                     Learn more

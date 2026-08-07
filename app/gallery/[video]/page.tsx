@@ -107,7 +107,7 @@ export default async function VideoPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-obsidian-light">
         <div className="max-w-4xl mx-auto px-4">
           <video
             controls

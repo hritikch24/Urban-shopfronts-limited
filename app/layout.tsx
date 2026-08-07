@@ -200,7 +200,7 @@ function gtag_report_conversion(url){var callback=function(){if(typeof url!=='un
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-body bg-white text-charcoal">
+      <body className="min-h-full flex flex-col font-body bg-obsidian text-charcoal">
         {gtmId && (
           <noscript>
             <iframe
