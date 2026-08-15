@@ -5,9 +5,9 @@ import ContactForm from '@/components/ContactForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Aluminium Shopfronts & Roller Shutters UK | Urban Shopfronts',
+  title: 'Affordable Shopfront Installation & Roller Shutters UK | Urban Shopfronts',
   description:
-    'London & UK shopfront specialists. Aluminium shopfronts, roller shutters, security doors, automatic doors & 24/7 emergency callout. Free site surveys.',
+    'Affordable shopfront installation across London & the UK. Aluminium shopfronts, roller shutters, security doors & automatic doors. Competitive prices, 24/7 emergency callout, free site surveys & no-obligation quotes.',
   alternates: { canonical: 'https://www.urbanshopfronts.co.uk' },
 };
 

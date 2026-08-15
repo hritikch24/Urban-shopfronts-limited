@@ -1941,7 +1941,7 @@ All aluminium window sections are powder-coated to BS EN 12206-1 in any RAL Clas
     name: 'Curtain Walling',
     shortDescription:
       'Aluminium curtain wall systems for commercial facades. Stick-built and unitised solutions with structural glazing, thermally broken mullions, and full weather testing to BS EN 13830.',
-    heroImage: 'sigma-front-wide.jpeg',
+    heroImage: 'shopfront-2.jpeg',
     primaryKeyword: 'curtain walling UK',
     metaTitle: 'Curtain Walling UK | Aluminium Facade Systems',
     metaDescription:

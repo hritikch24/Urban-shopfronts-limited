@@ -80,13 +80,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = 'https://www.urbanshopfronts.co.uk';
   const geo = cityGeo[citySlug] || { addressLocality: city.name, addressRegion: city.region, postalCode: '', latitude: 51.5074, longitude: -0.1278 };
 
+  const enhancedTitle = `Shopfront Installation ${city.name} | Affordable Prices | Urban Shopfronts`;
+  const enhancedDescription = `Affordable shopfront installation & repairs in ${city.name}. Aluminium shopfronts, roller shutters, security doors & more. Free site surveys, competitive prices. Call 07471 043827.`;
+
   return {
-    title: city.metaTitle,
-    description: city.metaDescription,
+    title: enhancedTitle,
+    description: enhancedDescription,
     alternates: { canonical: `${siteUrl}/areas/${citySlug}` },
     openGraph: {
-      title: city.metaTitle,
-      description: city.metaDescription,
+      title: enhancedTitle,
+      description: enhancedDescription,
       url: `${siteUrl}/areas/${citySlug}`,
       type: 'website',
       images: [{ url: '/assets/shopfront-2.jpeg', width: 1200, height: 630 }],
