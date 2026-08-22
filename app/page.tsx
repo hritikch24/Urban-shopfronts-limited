@@ -99,7 +99,11 @@ export default function HomePage() {
                 Professional aluminium shopfront installation, roller shutter fitting and security door supply for commercial premises across London and the UK. We handle the complete process from design and fabrication through to expert installation, with nationwide coverage and 24/7 emergency response available when you need it most.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Link href="/contact" className="btn-gold text-base px-7 py-3.5">
+                <Link href="/instant-quote" className="btn-gold text-base px-7 py-3.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+                  Get an Instant Price
+                </Link>
+                <Link href="/contact" className="btn-outline text-base px-7 py-3.5">
                   Get a Free Quote
                 </Link>
                 <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5">
@@ -179,6 +183,27 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      {/* ── Instant Price Estimate ──────────────────────────────────────── */}
+      <section className="section-padding bg-obsidian-light relative" aria-labelledby="instant-heading">
+        <div className="container-max">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-gold font-semibold text-sm tracking-[0.2em] uppercase mb-3">No waiting</p>
+            <h2 id="instant-heading" className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Know roughly what it costs — before you call
+            </h2>
+            <p className="text-grey-500 text-lg mb-8">
+              Answer a few quick questions about your premises and we will show you an indicative
+              price straight away, adjusted for your location and site conditions. It is a guide
+              price, not a formal quote — but it gives you a realistic starting point in under a
+              minute. No obligation.
+            </p>
+            <Link href="/instant-quote" className="btn-gold inline-flex text-base px-8 py-4">
+              Get My Instant Estimate
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ── Testimonials — grid layout ───────────────────────────────────── */}
       <section className="section-padding bg-obsidian-light relative">
