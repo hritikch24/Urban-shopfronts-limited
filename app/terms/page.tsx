@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | Urban Shopfronts',
+  title: 'Terms & Conditions',
   description:
     'Read the Terms and Conditions for Urban Shopfronts Limited. Our standard terms cover quotations, payment, installation, warranties, and your rights as a customer.',
   alternates: {

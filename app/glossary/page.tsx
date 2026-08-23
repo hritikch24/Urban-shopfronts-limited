@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Shopfront Glossary | Urban Shopfronts',
+  title: 'Shopfront Glossary',
   description:
     'Definitions of common shopfront industry terms including aluminium extrusion, thermal breaks, fire ratings, security standards, and glazing specifications. A reference guide from Urban Shopfronts.',
   alternates: {
