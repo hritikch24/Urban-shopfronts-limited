@@ -205,7 +205,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             )}
 
             {/* ── Line Items Table ── */}
-            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 8 }}>
+            <table className="doc-table" style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 8 }}>
               <thead>
                 <tr>
                   <th style={{ background: C.brand, color: '#fff', padding: '10px 14px', textAlign: 'left', fontSize: 11, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', width: 44 }}>#</th>
@@ -238,10 +238,10 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             )}
 
             {/* ── Totals + Terms ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 32, marginTop: 24, marginBottom: 32 }}>
+            <div className="doc-keep" style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 32, marginTop: 24, marginBottom: 32 }}>
               {/* Terms */}
               <div>
-                <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: C.brand, marginBottom: 8 }}>Terms &amp; Conditions</p>
+                <p className="doc-heading" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: C.brand, marginBottom: 8 }}>Terms &amp; Conditions</p>
                 <ol style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: C.textMuted, lineHeight: 1.8 }}>
                   {terms.map((t, i) => <li key={i}>{t}</li>)}
                 </ol>
@@ -285,7 +285,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             </div>
 
             {/* ── Bank details ── */}
-            <div style={{ padding: '16px 20px', background: C.rowAlt, border: `1px solid ${C.borderAlt}`, borderRadius: 8, marginBottom: 28 }}>
+            <div className="doc-keep" style={{ padding: '16px 20px', background: C.rowAlt, border: `1px solid ${C.borderAlt}`, borderRadius: 8, marginBottom: 28 }}>
               <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px', color: C.brand, marginBottom: 10, textAlign: 'center' }}>Bank Details for Payment</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 28px', fontSize: 13 }}>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account Name:</span> {BANK.accountName}</p>
