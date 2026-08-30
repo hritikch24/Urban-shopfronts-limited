@@ -1,153 +1,116 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { useCallback } from 'react';
+import { useExitIntent, useModalChrome } from '@/lib/exit-intent';
+
+/**
+ * Urban's re-engagement banner takes a third angle, distinct from the other
+ * two sites: Grewal leads on customer proof, Sigma on certification, and this
+ * one leads on response speed — 24/7 emergency cover is the stat this site
+ * already puts front and centre, and it is the argument that matters most to
+ * someone whose shutter has just failed.
+ *
+ * Presented as a response timeline rather than a quote card or a spec grid.
+ * The trigger logic in lib/exit-intent.ts is shared verbatim across all three.
+ */
+
+const TIMELINE = [
+  { when: 'Right now', what: 'See an indicative price in about a minute — no waiting on a callback.' },
+  { when: 'Within the hour', what: 'A real person calls to confirm the details and the access.' },
+  { when: 'Same or next day', what: 'Free site survey, booked around your trading hours.' },
+  { when: 'Emergency?', what: 'Boarding and make-safe around the clock, every day of the year.' },
+];
 
 export default function ExitIntentPopup() {
-  const [show, setShow] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-  const triggered = useRef(false);
-  const nameRef = useRef<HTMLInputElement>(null);
-  const phoneRef = useRef<HTMLInputElement>(null);
-  const serviceRef = useRef<HTMLSelectElement>(null);
-
-  useEffect(() => {
-    // Don't show if already dismissed this session
-    if (sessionStorage.getItem('exit_popup_dismissed')) return;
-
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !triggered.current) {
-        triggered.current = true;
-        setShow(true);
-      }
-    };
-
-    // Also show after 45s if user hasn't seen it
-    const timer = setTimeout(() => {
-      if (!triggered.current && !sessionStorage.getItem('exit_popup_dismissed')) {
-        triggered.current = true;
-        setShow(true);
-      }
-    }, 45000);
-
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      clearTimeout(timer);
-    };
-  }, []);
-
-  function dismiss() {
-    setShow(false);
-    sessionStorage.setItem('exit_popup_dismissed', '1');
-  }
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (sending) return;
-    setSending(true);
-
-    const name = nameRef.current?.value || '';
-    const phone = phoneRef.current?.value || '';
-    const service = serviceRef.current?.value || '';
-
-    // Send to WhatsApp as a pre-filled message
-    const msg = encodeURIComponent(
-      `Hi, I'd like a free site survey.\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\n\nFrom the website popup offer.`
-    );
-    window.open(`https://wa.me/447471043827?text=${msg}`, '_blank');
-    setSubmitted(true);
-    sessionStorage.setItem('exit_popup_dismissed', '1');
-    setSending(false);
-  }
+  const { show, dismiss } = useExitIntent();
+  const onClose = useCallback(() => dismiss(), [dismiss]);
+  useModalChrome(show, onClose);
 
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Special offer">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={dismiss} />
+    <div
+      className="fixed inset-0 z-[9998] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="exit-banner-title"
+    >
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
 
-      {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden animate-[slideUp_0.3s_ease-out]">
-        {/* Close */}
-        <button onClick={dismiss} className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-grey-100 hover:bg-grey-200 text-grey-600 transition-colors" aria-label="Close">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" /></svg>
+      <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-[#f0b429]/25 bg-[#0d0d1e] shadow-2xl">
+        <button
+          onClick={onClose}
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-[#a6a8c8] transition-colors hover:bg-white/10 hover:text-white"
+          aria-label="Close"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+          </svg>
         </button>
 
-        {/* Header */}
-        <div className="bg-navy px-6 py-5 text-center">
-          <div className="inline-flex items-center gap-2 bg-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full mb-3">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-            LIMITED OFFER
+        <div className="px-7 pt-8 pb-6">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#f0b429]/12 px-3 py-1.5">
+            <span className="relative flex h-2 w-2" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f0b429] opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f0b429]" />
+            </span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#f0b429]">
+              Covering 16 UK cities, 24/7
+            </span>
           </div>
-          <h2 className="font-heading text-xl font-bold text-white leading-tight">
-            Wait — Get a Free Site Survey<br />
-            <span className="text-gold">+ 10% Off Your First Install</span>
+
+          <h2
+            id="exit-banner-title"
+            className="font-heading text-[1.4rem] font-bold leading-snug text-[#eef0f6]"
+          >
+            You do not have to wait for a quote.
           </h2>
-          <p className="text-grey-300 text-sm mt-2">
-            Book this week and save. No obligation, no pressure.
+          <p className="mt-2.5 text-sm leading-relaxed text-[#8385a8]">
+            Most shopfront firms take days to come back to you. Here is how quickly this actually
+            moves if you start now.
           </p>
         </div>
 
-        {/* Body */}
-        <div className="p-6">
-          {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </div>
-              <h3 className="font-heading font-bold text-navy text-lg">We&apos;ll Be in Touch!</h3>
-              <p className="text-grey-600 text-sm mt-2">Our team will contact you within 2 hours to arrange your free survey.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div>
-                <input ref={nameRef} type="text" placeholder="Your name" required className="w-full px-4 py-3 rounded-xl border border-grey-200 bg-grey-50 text-sm text-charcoal placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" />
-              </div>
-              <div>
-                <input ref={phoneRef} type="tel" placeholder="Phone number" required className="w-full px-4 py-3 rounded-xl border border-grey-200 bg-grey-50 text-sm text-charcoal placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" />
-              </div>
-              <div>
-                <select ref={serviceRef} required className="w-full px-4 py-3 rounded-xl border border-grey-200 bg-grey-50 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent" defaultValue="">
-                  <option value="" disabled>What do you need?</option>
-                  <option value="Aluminium Shopfront">Aluminium Shopfront</option>
-                  <option value="Roller Shutters">Roller Shutters</option>
-                  <option value="Security Doors">Security Doors</option>
-                  <option value="Automatic Doors">Automatic Doors</option>
-                  <option value="Bi-Fold Doors">Bi-Fold Doors</option>
-                  <option value="Fire Doors">Fire Doors</option>
-                  <option value="Emergency Repair">Emergency Repair</option>
-                  <option value="Other">Other / Not Sure</option>
-                </select>
-              </div>
-              <button type="submit" disabled={sending} className="w-full bg-gold hover:bg-gold-light text-navy font-heading font-bold text-sm py-3 rounded-xl transition-colors disabled:opacity-50">
-                {sending ? 'Sending...' : 'Claim My Free Survey & 10% Off'}
-              </button>
-              <p className="text-grey-400 text-xs text-center">No spam. We&apos;ll only contact you about this quote.</p>
-            </form>
-          )}
-        </div>
+        {/* Response timeline — the structural device unique to this site's banner */}
+        <ol className="relative mx-7 mb-6 border-l border-[#f0b429]/25 pl-6">
+          {TIMELINE.map((row) => (
+            <li key={row.when} className="relative pb-4 last:pb-0">
+              <span
+                className="absolute -left-[1.72rem] top-1 flex h-3 w-3 items-center justify-center rounded-full border-2 border-[#f0b429] bg-[#0d0d1e]"
+                aria-hidden="true"
+              />
+              <p className="text-[13px] font-bold text-[#f0b429]">{row.when}</p>
+              <p className="mt-0.5 text-[13px] leading-snug text-[#a6a8c8]">{row.what}</p>
+            </li>
+          ))}
+        </ol>
 
-        {/* Trust signals */}
-        <div className="border-t border-grey-100 px-6 py-3 flex items-center justify-center gap-4 text-xs text-grey-500">
-          <span className="flex items-center gap-1">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-gold"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-            5.0 Rated
-          </span>
-          <span>|</span>
-          <span>Companies House Registered</span>
-          <span>|</span>
-          <span>Fully Insured</span>
+        <div className="border-t border-white/[0.07] px-7 py-6">
+          <div className="flex flex-col gap-2.5 sm:flex-row">
+            <Link
+              href="/instant-quote"
+              onClick={onClose}
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#f0b429] px-6 py-3.5 font-heading text-sm font-bold text-[#08081a] no-underline transition-colors hover:bg-[#f5c84c]"
+            >
+              Start with a price
+            </Link>
+            <a
+              href="tel:07471043827"
+              onClick={onClose}
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-[#d8dce8] px-6 py-3.5 font-heading text-sm font-bold text-[#d8dce8] no-underline transition-colors hover:bg-[#d8dce8] hover:text-[#08081a]"
+            >
+              Call 07471 043827
+            </a>
+          </div>
+          <button
+            onClick={onClose}
+            className="mt-3 w-full text-center text-xs text-[#8385a8] underline-offset-2 hover:underline"
+          >
+            No thanks, I&apos;m just browsing
+          </button>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px) scale(0.95); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-      `}</style>
     </div>
   );
 }

@@ -7,7 +7,12 @@
     "build": "prisma generate && prisma db push --skip-generate --accept-data-loss && next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "indexnow": "node scripts/indexnow.mjs",
+    "test:contamination": "node tests/contamination.test.mjs",
+    "test:sanity": "node tests/sanity.test.mjs",
+    "test:smoke": "node tests/smoke.test.mjs",
+    "test": "npm run test:contamination && npm run test:sanity"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

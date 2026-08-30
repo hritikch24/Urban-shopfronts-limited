@@ -57,7 +57,30 @@ interface MetricsData {
     bySource: { source: string; count: number }[];
     landings: { path: string; source: string; sessions: number }[];
   };
+  dropOff?: {
+    funnel: {
+      sessions: number;
+      engaged: number;
+      saw_offer: number;
+      reached_convert: number;
+      acted: number;
+    } | null;
+    exitPages: { path: string; views: number; exits: number }[];
+    entryPages: { path: string; sessions: number; bounced: number }[];
+  };
+  heatmaps?: {
+    views: HeatCell[];
+    leads: HeatCell[];
+    calls: HeatCell[];
+  };
 }
+
+interface HeatCell {
+  dow: number;
+  hour: number;
+  count: number;
+}
+
 
 /* ── Status styling (dark-mode safe) ────────────────────────────────── */
 const STATUS_COLORS: Record<string, string> = {
@@ -193,6 +216,158 @@ function SectionCard({ title, children, className = '' }: {
       </div>
       <div className="p-5">{children}</div>
     </GlassCard>
+  );
+}
+
+/* ── Drop-off ──────────────────────────────────────────────────────────
+   Every stage is counted per session, so these numbers describe people
+   rather than page loads. The gap between two bars is the leak.          */
+function Funnel({ funnel }: { funnel: NonNullable<NonNullable<MetricsData['dropOff']>['funnel']> }) {
+  const stages = [
+    { key: 'sessions', label: 'Visited the site', value: funnel.sessions, note: 'All sessions in this period' },
+    { key: 'engaged', label: 'Looked at a 2nd page', value: funnel.engaged, note: 'Did not bounce off the landing page' },
+    { key: 'saw_offer', label: 'Reached a service or area page', value: funnel.saw_offer, note: 'Found something relevant to them' },
+    { key: 'reached_convert', label: 'Opened quote or contact', value: funnel.reached_convert, note: 'Showed real intent' },
+    { key: 'acted', label: 'Tapped call or WhatsApp', value: funnel.acted, note: 'Actually made contact' },
+  ];
+  const top = Math.max(funnel.sessions, 1);
+
+  return (
+    <div className="space-y-1">
+      {stages.map((s, i) => {
+        const prev = i === 0 ? null : stages[i - 1].value;
+        const lost = prev === null ? 0 : prev - s.value;
+        const dropPct = prev && prev > 0 ? (lost / prev) * 100 : 0;
+        const widthPct = (s.value / top) * 100;
+        const ofTotal = top > 0 ? (s.value / top) * 100 : 0;
+        // Anything shedding more than half its remaining visitors is the story.
+        const severe = dropPct >= 50;
+
+        return (
+          <div key={s.key}>
+            {prev !== null && (
+              <div className="flex items-center gap-2 py-1 pl-1">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  strokeWidth="2.5" className={severe ? 'text-red-400' : 'text-zinc-500'} aria-hidden="true">
+                  <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+                <span className={`text-xs font-semibold ${severe ? 'text-red-400' : 'text-zinc-500'}`}>
+                  {lost.toLocaleString()} lost here ({dropPct.toFixed(0)}%)
+                </span>
+              </div>
+            )}
+            <div className="relative overflow-hidden rounded-lg border border-white/[0.07] bg-white/[0.02]">
+              <div
+                className="absolute inset-y-0 left-0 bg-gold/20"
+                style={{ width: `${Math.max(widthPct, 1.5)}%` }}
+                aria-hidden="true"
+              />
+              <div className="relative flex items-center justify-between gap-3 px-4 py-3">
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold text-white">{s.label}</p>
+                  <p className="truncate text-xs text-zinc-500">{s.note}</p>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <p className="font-heading text-lg font-bold text-white tabular-nums">
+                    {s.value.toLocaleString()}
+                  </p>
+                  <p className="text-[11px] text-zinc-500 tabular-nums">{ofTotal.toFixed(1)}% of all</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Weekday x hour grid. Row 0 is Sunday, matching Postgres EXTRACT(DOW). */
+function Heatmap({ cells, accent = 'gold' }: { cells: HeatCell[]; accent?: 'gold' | 'emerald' }) {
+  const grid = new Map<string, number>();
+  let max = 0;
+  for (const c of cells) {
+    grid.set(`${c.dow}-${c.hour}`, c.count);
+    if (c.count > max) max = c.count;
+  }
+  if (max === 0) return <p className="text-zinc-500 text-sm">No data for this period yet</p>;
+
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const base = accent === 'emerald' ? '#34d399' : 'var(--color-gold)';
+
+  return (
+    <div className="overflow-x-auto">
+      <div className="min-w-[560px]">
+        <div className="mb-1 flex gap-[2px] pl-9">
+          {Array.from({ length: 24 }, (_, h) => (
+            <div key={h} className="flex-1 text-center text-[9px] text-zinc-500 tabular-nums">
+              {h % 3 === 0 ? h : ''}
+            </div>
+          ))}
+        </div>
+        {days.map((day, d) => (
+          <div key={day} className="mb-[2px] flex items-center gap-[2px]">
+            <div className="w-9 flex-shrink-0 text-[10px] text-zinc-500">{day}</div>
+            {Array.from({ length: 24 }, (_, h) => {
+              const v = grid.get(`${d}-${h}`) ?? 0;
+              const intensity = v === 0 ? 0 : 0.12 + (v / max) * 0.88;
+              return (
+                <div
+                  key={h}
+                  className="h-6 flex-1 rounded-[2px] border border-white/[0.04]"
+                  style={{ background: v === 0 ? 'rgba(255,255,255,0.02)' : `color-mix(in srgb, ${base} ${(intensity * 100).toFixed(0)}%, transparent)` }}
+                  title={`${day} ${String(h).padStart(2, '0')}:00 — ${v}`}
+                />
+              );
+            })}
+          </div>
+        ))}
+        <div className="mt-2 flex items-center justify-end gap-2 text-[10px] text-zinc-500">
+          <span>0</span>
+          {[0.15, 0.35, 0.6, 0.85, 1].map((f) => (
+            <div key={f} className="h-3 w-5 rounded-[2px]" style={{ background: `color-mix(in srgb, ${base} ${f * 100}%, transparent)` }} />
+          ))}
+          <span className="tabular-nums">{max}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Pages ranked by how many sessions ended there. */
+function LeakTable({ rows }: { rows: { path: string; views: number; exits: number }[] }) {
+  if (!rows.length) return <p className="text-zinc-500 text-sm">Not enough data yet</p>;
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-left">
+        <thead>
+          <tr className="border-b border-white/[0.07]">
+            <th className="pb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Page</th>
+            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Views</th>
+            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Left here</th>
+            <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-zinc-500">Exit rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => {
+            const rate = r.views > 0 ? (r.exits / r.views) * 100 : 0;
+            const bad = rate >= 70 && r.views >= 10;
+            return (
+              <tr key={r.path} className="border-b border-white/[0.04]">
+                <td className="py-2 pr-3 text-sm text-zinc-300">
+                  <span className="block max-w-[280px] truncate" title={r.path}>{r.path}</span>
+                </td>
+                <td className="py-2 text-right text-sm text-zinc-400 tabular-nums">{r.views.toLocaleString()}</td>
+                <td className="py-2 text-right text-sm text-white tabular-nums">{r.exits.toLocaleString()}</td>
+                <td className={`py-2 text-right text-sm font-semibold tabular-nums ${bad ? 'text-red-400' : 'text-zinc-400'}`}>
+                  {rate.toFixed(0)}%
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -456,7 +631,7 @@ function LeadRow({ lead, onStatusChange, expanded, onToggle, apiKey }: {
                   </div>
                   <a
                     href={`mailto:${lead.email}?subject=${encodeURIComponent(aiReply.subject)}&body=${encodeURIComponent(aiReply.body)}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold text-white text-xs font-semibold hover:bg-gold-light transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold text-navy text-xs font-semibold hover:bg-gold-light transition-colors"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {icons.mail} Open in Email
@@ -499,7 +674,9 @@ export default function MetricsPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [data, setData] = useState<MetricsData | null>(null);
-  const [period, setPeriod] = useState('30d');
+  // Default to the last 24 hours — the dashboard is checked to see what is
+  // happening now, not to review the month.
+  const [period, setPeriod] = useState('24h');
   const [expandedLead, setExpandedLead] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>('overview');
 
@@ -596,7 +773,7 @@ export default function MetricsPage() {
           <button
             type="submit"
             disabled={!apiKey.trim() || loading}
-            className="w-full bg-gold hover:bg-gold-light text-white font-bold py-3.5 rounded-xl transition-all disabled:opacity-40 text-sm"
+            className="w-full bg-gold hover:bg-gold-light text-navy font-bold py-3.5 rounded-xl transition-all disabled:opacity-40 text-sm"
           >
             {loading ? (
               <span className="flex items-center justify-center gap-2">
@@ -657,7 +834,7 @@ export default function MetricsPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                     activeTab === tab
-                      ? 'bg-gold text-white shadow-lg shadow-gold/20'
+                      ? 'bg-gold text-navy shadow-lg shadow-gold/20'
                       : 'text-grey-500 hover:text-white'
                   }`}
                 >
@@ -731,6 +908,72 @@ export default function MetricsPage() {
               <StatCard label="Conversion" value={`${stats.convRate}%`} sub="Leads / Sessions" icon={icons.trend} accent />
               <StatCard label="Call Clicks" value={data.callClicks?.total || 0} sub="Phone taps" icon={icons.phone} />
             </div>
+
+            {/* Drop-off comes first: it is the question the dashboard exists
+                to answer, and it frames everything below it. */}
+            {data.dropOff?.funnel && (
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <div className="lg:col-span-3">
+                  <SectionCard title="Where people drop out">
+                    <Funnel funnel={data.dropOff.funnel} />
+                  </SectionCard>
+                </div>
+                <div className="lg:col-span-2">
+                  <SectionCard title="Biggest leaks — pages people leave from">
+                    <LeakTable rows={data.dropOff.exitPages} />
+                  </SectionCard>
+                </div>
+              </div>
+            )}
+
+            {data.heatmaps && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <SectionCard title="When people visit (UK time)">
+                  <Heatmap cells={data.heatmaps.views} />
+                </SectionCard>
+                <SectionCard title="When they actually make contact (UK time)">
+                  <Heatmap
+                    cells={[...(data.heatmaps.leads ?? []), ...(data.heatmaps.calls ?? [])]}
+                    accent="emerald"
+                  />
+                </SectionCard>
+              </div>
+            )}
+
+            {data.dropOff?.entryPages && data.dropOff.entryPages.length > 0 && (
+              <SectionCard title="Landing pages — how many leave without a second click">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-white/[0.07]">
+                        <th className="pb-2 text-[11px] font-semibold uppercase tracking-wider text-grey-500">Landing page</th>
+                        <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-grey-500">Sessions</th>
+                        <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-grey-500">Bounced</th>
+                        <th className="pb-2 text-right text-[11px] font-semibold uppercase tracking-wider text-grey-500">Bounce rate</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.dropOff.entryPages.map((r) => {
+                        const rate = r.sessions > 0 ? (r.bounced / r.sessions) * 100 : 0;
+                        const bad = rate >= 70 && r.sessions >= 10;
+                        return (
+                          <tr key={r.path} className="border-b border-white/[0.04]">
+                            <td className="py-2 pr-3 text-sm text-grey-300">
+                              <span className="block max-w-[420px] truncate" title={r.path}>{r.path}</span>
+                            </td>
+                            <td className="py-2 text-right text-sm text-grey-400 tabular-nums">{r.sessions.toLocaleString()}</td>
+                            <td className="py-2 text-right text-sm text-white tabular-nums">{r.bounced.toLocaleString()}</td>
+                            <td className={`py-2 text-right text-sm font-semibold tabular-nums ${bad ? 'text-red-400' : 'text-grey-400'}`}>
+                              {rate.toFixed(0)}%
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </SectionCard>
+            )}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <SectionCard title="Daily Page Views">

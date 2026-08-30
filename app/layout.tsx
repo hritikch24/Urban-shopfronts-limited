@@ -11,6 +11,7 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import Analytics from '@/components/Analytics';
 import CallTracker from '@/components/CallTracker';
 import SiteChrome from '@/components/SiteChrome';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 import { Suspense } from 'react';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -110,9 +111,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
-    languages: {
-      'en-GB': siteUrl,
-    },
   },
   metadataBase: new URL(siteUrl),
 };
@@ -140,7 +138,6 @@ export default function RootLayout({
         <meta name="geo.placename" content="Smethwick, West Midlands, United Kingdom" />
         <meta name="geo.position" content="52.4897;-1.9718" />
         <meta name="ICBM" content="52.4897, -1.9718" />
-        <link rel="alternate" hrefLang="en-gb" href="https://www.urbanshopfronts.co.uk" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/icon.png" />
@@ -235,6 +232,7 @@ function gtag_report_conversion(url){var callback=function(){if(typeof url!=='un
           <MobileStickyBar />
           <StickyDesktopCTA />
           <FloatingWhatsApp />
+          <ExitIntentPopup />
         </SiteChrome>
         <Suspense fallback={null}>
           <Analytics />

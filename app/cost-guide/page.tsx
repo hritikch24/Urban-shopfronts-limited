@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'Transparent UK shopfront installation prices for 2026. Aluminium shopfronts from £2,000, roller shutters from £800, security doors, automatic doors, bi-fold doors, and fire doors. Free quotes nationwide.',
   alternates: { canonical: 'https://www.urbanshopfronts.co.uk/cost-guide' },
   openGraph: {
-    title: 'How Much Does a Shopfront Cost in 2026? UK Price Guide',
+    title: 'How Much Does a Shopfront Cost in 2026? UK Price Guide | Urban Shopfronts',
     description: 'Detailed UK shopfront cost breakdown — aluminium fronts, roller shutters, security doors, automatic doors, bi-folds, and fire doors. Realistic 2026 prices from Urban Shopfronts.',
     url: 'https://www.urbanshopfronts.co.uk/cost-guide',
   },
@@ -81,6 +81,15 @@ export default function CostGuidePage() {
           <p className="text-grey-600 leading-relaxed">
             Whether you are fitting out a new retail unit, upgrading a tired fascia, or improving security after a break-in, the first question is always the same: <strong className="text-white">how much will it cost?</strong> Below we break down typical UK prices for every type of commercial shopfront product we install, the factors that push costs up or down, and regional variations you should be aware of. Every project is different, so treat these as guide prices — we always provide a detailed written quotation after a free site survey.
           </p>
+
+          <div className="mt-8 rounded-xl border border-gold bg-grey-100 p-6">
+            <h2 className="text-xl font-heading font-bold mb-2">Want a figure for your job specifically?</h2>
+            <p className="text-grey-600 text-sm mb-4">
+              Answer a few quick questions and we will show you an indicative price straight away,
+              adjusted for your location, quantity and site conditions. No obligation.
+            </p>
+            <Link href="/instant-quote" className="btn-gold">Get an instant estimate</Link>
+          </div>
         </div>
       </section>
 

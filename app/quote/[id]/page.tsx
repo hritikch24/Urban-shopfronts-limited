@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma';
 import DocumentView from '@/components/DocumentView';
 
 export const metadata: Metadata = {
-  title: 'Your Quote | Urban Shopfronts',
+  title: 'Your Quote',
   robots: { index: false, follow: false },
 };
 

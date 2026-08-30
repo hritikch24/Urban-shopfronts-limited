@@ -20,6 +20,12 @@ interface LineItem {
   description: string;
   qty: number;
   unitPrice: number;
+  /**
+   * Marks this line as an either/or alternative rather than an addition.
+   * Options are excluded from the subtotal — a quote offering single OR
+   * double glazing must not bill the customer for both.
+   */
+  isOption?: boolean;
 }
 
 export async function PATCH(
@@ -45,10 +51,13 @@ export async function PATCH(
         description: String(li.description || '').trim(),
         qty: Number(li.qty) || 0,
         unitPrice: Number(li.unitPrice) || 0,
+        isOption: Boolean(li.isOption),
       }));
 
       const rate = Number(vatRate) || 0;
-      const subtotal = cleanItems.reduce((sum, li) => sum + li.qty * li.unitPrice, 0);
+      const subtotal = cleanItems
+        .filter((li) => !li.isOption)
+        .reduce((sum, li) => sum + li.qty * li.unitPrice, 0);
       const vatAmount = subtotal * (rate / 100);
       const total = subtotal + vatAmount;
 

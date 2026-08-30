@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Urban Shopfronts',
+  title: 'Privacy Policy',
   description:
     'Read the Privacy Policy for Urban Shopfronts Limited. Learn how we collect, use, and protect your personal data in accordance with UK GDPR.',
   alternates: {

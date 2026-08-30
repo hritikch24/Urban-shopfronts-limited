@@ -29,7 +29,7 @@ const C = {
   rowAlt:    '#f7f8fb',
 };
 
-interface LineItem { description: string; qty: number; unitPrice: number }
+interface LineItem { description: string; qty: number; unitPrice: number; isOption?: boolean }
 interface DocumentMeta { projectReference?: string; scope?: string; specifications?: string; leadTime?: string; photoDrawing?: string }
 
 interface DocumentData {
@@ -64,6 +64,23 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
   const vat = doc.vatRate > 0;
   const deposit = isInvoice && doc.depositPercent && doc.depositPercent > 0 ? (doc.total * doc.depositPercent) / 100 : null;
   const balance = deposit !== null ? doc.total - deposit : null;
+
+  // Option lines are alternatives to each other, not additions. They stay out
+  // of the subtotal and are priced individually below, so a customer choosing
+  // between single and double glazing is never shown the sum of both.
+  const optionItems = doc.lineItems.filter((li) => li.isOption);
+  const baseItems = doc.lineItems.filter((li) => !li.isOption);
+  const hasOptions = optionItems.length > 0;
+  const optionLetter = (i: number) => String.fromCharCode(65 + i);
+  const optionTotal = (li: LineItem) => {
+    const net = doc.subtotal + li.qty * li.unitPrice;
+    const tax = net * (doc.vatRate / 100);
+    return { net, tax, gross: net + tax };
+  };
+  // With options there is no single VAT figure — each option carries its own,
+  // so the aggregate Subtotal/VAT rows are suppressed and VAT is shown against
+  // each option instead. The shared-items row only appears if there are any.
+  const hasSharedItems = baseItems.length > 0;
   const displayDate = doc.issueDate || doc.createdAt;
   const validityDays = doc.validUntil
     ? Math.max(1, Math.round((new Date(doc.validUntil).getTime() - new Date(displayDate).getTime()) / 86400000))
@@ -205,7 +222,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             )}
 
             {/* ── Line Items Table ── */}
-            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 8 }}>
+            <table className="doc-table" style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 8 }}>
               <thead>
                 <tr>
                   <th style={{ background: C.brand, color: '#fff', padding: '10px 14px', textAlign: 'left', fontSize: 11, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', width: 44 }}>#</th>
@@ -216,7 +233,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
                 </tr>
               </thead>
               <tbody>
-                {doc.lineItems.map((li, idx) => (
+                {baseItems.map((li, idx) => (
                   <tr key={idx} style={{ background: idx % 2 === 1 ? C.rowAlt : C.paper, borderBottom: `1px solid ${C.borderAlt}` }}>
                     <td style={{ padding: '12px 14px', fontWeight: 700, color: C.brand, fontSize: 14 }}>{idx + 1}</td>
                     <td style={{ padding: '12px 14px' }}>
@@ -230,6 +247,43 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
               </tbody>
             </table>
 
+            {hasOptions && (
+              <div className="doc-keep" style={{ marginTop: 18, marginBottom: 4 }}>
+                <p className="doc-heading" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px', color: C.brand, marginBottom: 2 }}>
+                  Choose one option
+                </p>
+                <p style={{ fontSize: 12, color: C.textMuted, marginTop: 0, marginBottom: 10 }}>
+                  These are alternatives — the price below is the full cost for that choice, not an addition.
+                </p>
+                <table className="doc-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
+                  <tbody>
+                    {optionItems.map((li, i) => {
+                      const t = optionTotal(li);
+                      return (
+                        <tr key={i} style={{ borderBottom: `1px solid ${C.borderAlt}` }}>
+                          <td style={{ padding: '12px 14px', width: 44, verticalAlign: 'top' }}>
+                            <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 26, height: 26, borderRadius: 13, background: C.brand, color: '#fff', fontSize: 13, fontWeight: 700 }}>
+                              {optionLetter(i)}
+                            </span>
+                          </td>
+                          <td style={{ padding: '12px 14px' }}>
+                            <p style={{ fontWeight: 600, color: C.brand, fontSize: 14, margin: 0 }}>{li.description}</p>
+                            {li.qty > 1 && (
+                              <p style={{ fontSize: 12, color: C.textMuted, margin: '2px 0 0' }}>{li.qty} × {gbp(li.unitPrice)}</p>
+                            )}
+                          </td>
+                          <td style={{ padding: '12px 14px', textAlign: 'right', whiteSpace: 'nowrap' }}>
+                            <p style={{ fontSize: 12, color: C.textMuted, margin: 0 }}>{gbp(t.net)}{vat ? ` + ${gbp(t.tax)} VAT` : ''}</p>
+                            <p style={{ fontSize: 17, fontWeight: 800, color: C.brand, margin: '2px 0 0' }}>{gbp(t.gross)}</p>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
             {/* Lead time */}
             {!isInvoice && meta.leadTime && (
               <p style={{ margin: '16px 0 24px', fontWeight: 600, color: C.brand, fontSize: 13 }}>
@@ -238,10 +292,10 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             )}
 
             {/* ── Totals + Terms ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 32, marginTop: 24, marginBottom: 32 }}>
+            <div className="doc-keep" style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 32, marginTop: 24, marginBottom: 32 }}>
               {/* Terms */}
               <div>
-                <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: C.brand, marginBottom: 8 }}>Terms &amp; Conditions</p>
+                <p className="doc-heading" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: C.brand, marginBottom: 8 }}>Terms &amp; Conditions</p>
                 <ol style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: C.textMuted, lineHeight: 1.8 }}>
                   {terms.map((t, i) => <li key={i}>{t}</li>)}
                 </ol>
@@ -255,20 +309,38 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
 
               {/* Totals box */}
               <div style={{ border: `1px solid ${C.border}`, borderRadius: 8, overflow: 'hidden' }}>
+                {(!hasOptions || hasSharedItems) && (
                 <div style={{ padding: '10px 16px', display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${C.borderAlt}` }}>
-                  <span style={{ fontSize: 13, color: C.textMuted }}>Subtotal</span>
+                  <span style={{ fontSize: 13, color: C.textMuted }}>{hasOptions ? 'Included in every option' : 'Subtotal'}</span>
                   <span style={{ fontSize: 13, fontWeight: 600 }}>{gbp(doc.subtotal)}</span>
                 </div>
-                {vat && (
+                )}
+                {vat && !hasOptions && (
                   <div style={{ padding: '10px 16px', display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${C.borderAlt}` }}>
                     <span style={{ fontSize: 13, color: C.textMuted }}>VAT ({doc.vatRate}%)</span>
                     <span style={{ fontSize: 13, fontWeight: 600 }}>{gbp(doc.vatAmount)}</span>
                   </div>
                 )}
+                {hasOptions ? (
+                  <>
+                    {optionItems.map((li, i) => {
+                      const t = optionTotal(li);
+                      return (
+                        <div key={i} style={{ padding: '12px 16px', background: C.brand, display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: i < optionItems.length - 1 ? '1px solid rgba(255,255,255,0.18)' : 'none' }}>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            Option {optionLetter(i)} {vat ? '(inc. VAT)' : ''}
+                          </span>
+                          <span style={{ fontSize: 18, fontWeight: 800, color: '#fff' }}>{gbp(t.gross)}</span>
+                        </div>
+                      );
+                    })}
+                  </>
+                ) : (
                 <div style={{ padding: '14px 16px', background: C.brand, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: 13, fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Total {vat ? '(Inc. VAT)' : ''}</span>
                   <span style={{ fontSize: 22, fontWeight: 800, color: '#fff' }}>{gbp(doc.total)}</span>
                 </div>
+                )}
                 {deposit !== null && balance !== null && (
                   <>
                     <div style={{ padding: '10px 16px', display: 'flex', justifyContent: 'space-between', background: C.accentBg, borderBottom: `1px solid ${C.borderAlt}` }}>
@@ -285,7 +357,7 @@ export default function DocumentView({ doc }: { doc: DocumentData }) {
             </div>
 
             {/* ── Bank details ── */}
-            <div style={{ padding: '16px 20px', background: C.rowAlt, border: `1px solid ${C.borderAlt}`, borderRadius: 8, marginBottom: 28 }}>
+            <div className="doc-keep" style={{ padding: '16px 20px', background: C.rowAlt, border: `1px solid ${C.borderAlt}`, borderRadius: 8, marginBottom: 28 }}>
               <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px', color: C.brand, marginBottom: 10, textAlign: 'center' }}>Bank Details for Payment</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 28px', fontSize: 13 }}>
                 <p><span style={{ fontWeight: 600, color: C.brand }}>Account Name:</span> {BANK.accountName}</p>
