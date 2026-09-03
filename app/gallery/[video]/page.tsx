@@ -42,7 +42,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!video) return {};
 
   return {
-    title: `${video.title} | Urban Shopfronts`,
+    // No brand — unlike the sibling sites there is no app/gallery/layout.tsx
+    // here, so the root title.template does reach these pages and was
+    // appending the brand a second time. The openGraph title below keeps
+    // it, since the template never applies to social tags.
+    title: `${video.title}`,
     description: video.description,
     alternates: { canonical: `https://www.urbanshopfronts.co.uk/gallery/${slug}` },
     openGraph: {
