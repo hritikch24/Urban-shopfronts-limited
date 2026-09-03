@@ -5,7 +5,10 @@ const COMPANY_ADDRESS = '31 Norton Close, Smethwick, England, B66 3JA';
 const COMPANY_PHONE = '07471 043827';
 const COMPANY_EMAIL = 'sales@urbanshopfronts.co.uk';
 const COMPANY_SITE = 'www.urbanshopfronts.co.uk';
-const LOGO_SRC = '/assets/urban-icon-512.png';
+/* A filename that has never been served. The old path is sent with
+   cache-control: immutable for a year, so replacing the bytes behind it
+   would never reach anyone who had already loaded the site. */
+const LOGO_SRC = '/assets/urban-appicon-512.png';
 const VAT_NUMBER = '506 3260 22';
 const REG_NUMBER = '16710475';
 const BANK = {

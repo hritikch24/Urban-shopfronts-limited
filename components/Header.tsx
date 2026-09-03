@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
   { label: 'Aluminium Shop Fronts', href: '/services/aluminium-shopfronts' },
@@ -115,7 +116,20 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link href="/" className="flex-shrink-0 group">
+            {/* Mark beside the wordmark rather than a single lockup image: the
+                artwork carries no lettering of its own, and keeping the name as
+                real text holds it crisp at every size and keeps the site's own
+                gradient treatment. */}
+            <Link href="/" className="flex-shrink-0 group flex items-center gap-2.5 sm:gap-3">
+              <Image
+                src="/assets/urban-appicon-512.png"
+                alt=""
+                width={512}
+                height={512}
+                priority
+                sizes="(max-width: 1023px) 32px, 38px"
+                className="h-8 w-8 lg:h-[38px] lg:w-[38px] rounded-[7px] transition-opacity duration-300 group-hover:opacity-85"
+              />
               <span className="font-heading font-bold text-lg lg:text-xl tracking-[0.2em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(240,180,41,0.25)]">
                 URBAN SHOPFRONTS
               </span>

@@ -84,10 +84,15 @@ export const metadata: Metadata = {
       'Affordable shopfront installation & shutter specialists across the UK. Aluminium shopfronts, roller shutters, security doors, automatic doors & emergency repairs. Competitive prices, free site surveys.',
     images: [
       {
-        url: `${siteUrl}/assets/shopfront-2.jpeg`,
+        // Was shopfront-2.jpeg, which is 1600x1200 despite being declared
+        // 1200x630 here, so shares were cropped to a shape nobody composed
+        // for. This card is genuinely 1200x630, cropped from the lower half
+        // of that photograph so the neighbouring unit's fascia -- another
+        // business's name and phone number -- stays out of frame.
+        url: `${siteUrl}/assets/urban-og.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Urban Shopfronts — Affordable Shopfront Installation UK',
+        alt: 'Urban Shopfronts — aluminium shopfronts, roller shutters and security doors, installed across the UK',
       },
     ],
   },
@@ -96,7 +101,7 @@ export const metadata: Metadata = {
     title: 'Urban Shopfronts | Affordable Shopfront Installation UK',
     description:
       'Affordable shopfront installation & shutter specialists across the UK. Aluminium shopfronts, roller shutters, security doors & emergency repairs. Free site surveys.',
-    images: [`${siteUrl}/assets/shopfront-2.jpeg`],
+    images: [`${siteUrl}/assets/urban-og.jpg`],
   },
   robots: {
     index: true,
@@ -139,10 +144,46 @@ export default function RootLayout({
         <meta name="geo.position" content="52.4897;-1.9718" />
         <meta name="ICBM" content="52.4897, -1.9718" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        {/* Sized files rather than one 512px icon for every slot: the artwork is
+            fine gold linework, and letting the browser squeeze it down to 16px
+            produced an unreadable smudge. Each size is rendered from the source
+            instead, after cropping the dead letterbox off the original. */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/urban-appicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/urban-appicon-16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/urban-appicon-180.png" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* The layout names this as the WebSite's publisher, the homepage names
+            it in `about`, and every city page names it as parentOrganization --
+            but nothing ever defined it, so all of those pointed at an entity
+            that did not exist. Defining it once here resolves every reference
+            and gives Google a logo to read for the knowledge panel. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              '@id': 'https://www.urbanshopfronts.co.uk/#organization',
+              name: 'Urban Shopfronts',
+              legalName: 'Urban Shopfronts Limited',
+              url: 'https://www.urbanshopfronts.co.uk',
+              telephone: '+447471043827',
+              email: 'sales@urbanshopfronts.co.uk',
+              logo: {
+                '@type': 'ImageObject',
+                '@id': 'https://www.urbanshopfronts.co.uk/#logo',
+                url: 'https://www.urbanshopfronts.co.uk/assets/urban-appicon-512.png',
+                width: 512,
+                height: 512,
+                caption: 'Urban Shopfronts',
+              },
+              image: { '@id': 'https://www.urbanshopfronts.co.uk/#logo' },
+              areaServed: { '@type': 'Country', name: 'United Kingdom' },
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

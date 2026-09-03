@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
   { label: 'Aluminium Shop Fronts', href: '/services/aluminium-shopfronts' },
@@ -73,7 +74,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4 group">
+            <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+              <Image
+                src="/assets/urban-appicon-512.png"
+                alt=""
+                width={512}
+                height={512}
+                sizes="44px"
+                className="h-11 w-11 rounded-lg transition-opacity duration-300 group-hover:opacity-85"
+              />
               <span className="font-heading font-bold text-xl tracking-[0.2em] text-gradient-aurora">
                 URBAN SHOPFRONTS
               </span>
