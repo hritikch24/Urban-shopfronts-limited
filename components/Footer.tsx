@@ -76,12 +76,12 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
               <Image
-                src="/assets/urban-appicon-512.png"
+                src="/assets/urban-logo-mark.png"
                 alt=""
                 width={512}
-                height={512}
+                height={203}
                 sizes="44px"
-                className="h-11 w-11 rounded-lg transition-opacity duration-300 group-hover:opacity-85"
+                className="h-10 w-auto transition-opacity duration-300 group-hover:opacity-85"
               />
               <span className="font-heading font-bold text-xl tracking-[0.2em] text-gradient-aurora">
                 URBAN SHOPFRONTS

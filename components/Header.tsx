@@ -122,13 +122,13 @@ export default function Header() {
                 gradient treatment. */}
             <Link href="/" className="flex-shrink-0 group flex items-center gap-2.5 sm:gap-3">
               <Image
-                src="/assets/urban-appicon-512.png"
+                src="/assets/urban-logo-mark.png"
                 alt=""
                 width={512}
-                height={512}
+                height={203}
                 priority
                 sizes="(max-width: 1023px) 32px, 38px"
-                className="h-8 w-8 lg:h-[38px] lg:w-[38px] rounded-[7px] transition-opacity duration-300 group-hover:opacity-85"
+                className="h-7 lg:h-9 w-auto transition-opacity duration-300 group-hover:opacity-85"
               />
               <span className="font-heading font-bold text-lg lg:text-xl tracking-[0.2em] text-gradient-aurora drop-shadow-[0_0_12px_rgba(240,180,41,0.25)]">
                 URBAN SHOPFRONTS

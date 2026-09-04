@@ -84,12 +84,11 @@ export const metadata: Metadata = {
       'Affordable shopfront installation & shutter specialists across the UK. Aluminium shopfronts, roller shutters, security doors, automatic doors & emergency repairs. Competitive prices, free site surveys.',
     images: [
       {
-        // Was shopfront-2.jpeg, which is 1600x1200 despite being declared
-        // 1200x630 here, so shares were cropped to a shape nobody composed
-        // for. This card is genuinely 1200x630, cropped from the lower half
-        // of that photograph so the neighbouring unit's fascia -- another
-        // business's name and phone number -- stays out of frame.
-        url: `${siteUrl}/assets/urban-og.jpg`,
+        // The brand lockup on the site's own ground, genuinely 1200x630.
+        // Replaces a photograph that was declared at this size while actually
+        // being 1600x1200, so every share was cropped to a shape nobody had
+        // composed for.
+        url: `${siteUrl}/assets/urban-og-v2.jpg`,
         width: 1200,
         height: 630,
         alt: 'Urban Shopfronts — aluminium shopfronts, roller shutters and security doors, installed across the UK',
@@ -101,7 +100,7 @@ export const metadata: Metadata = {
     title: 'Urban Shopfronts | Affordable Shopfront Installation UK',
     description:
       'Affordable shopfront installation & shutter specialists across the UK. Aluminium shopfronts, roller shutters, security doors & emergency repairs. Free site surveys.',
-    images: [`${siteUrl}/assets/urban-og.jpg`],
+    images: [`${siteUrl}/assets/urban-og-v2.jpg`],
   },
   robots: {
     index: true,
@@ -144,14 +143,15 @@ export default function RootLayout({
         <meta name="geo.position" content="52.4897;-1.9718" />
         <meta name="ICBM" content="52.4897, -1.9718" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Sized files rather than one 512px icon for every slot: the artwork is
-            fine gold linework, and letting the browser squeeze it down to 16px
-            produced an unreadable smudge. Each size is rendered from the source
-            instead, after cropping the dead letterbox off the original. */}
+        {/* Sized files rather than one large icon for every slot: the US
+            monogram is roughly 2.5:1, so letting the browser squash a 512px
+            file down to 16px loses it. Each size is rendered from the source
+            onto a tile, which also gives the icon a fixed silhouette on both
+            light and dark browser chrome. */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/urban-appicon-32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/urban-appicon-16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/urban-appicon-180.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/urban-usmark-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/urban-usmark-16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/urban-usmark-180.png" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* The layout names this as the WebSite's publisher, the homepage names
@@ -174,9 +174,9 @@ export default function RootLayout({
               logo: {
                 '@type': 'ImageObject',
                 '@id': 'https://www.urbanshopfronts.co.uk/#logo',
-                url: 'https://www.urbanshopfronts.co.uk/assets/urban-appicon-512.png',
-                width: 512,
-                height: 512,
+                url: 'https://www.urbanshopfronts.co.uk/assets/urban-logo-square-white.png',
+                width: 1024,
+                height: 1024,
                 caption: 'Urban Shopfronts',
               },
               image: { '@id': 'https://www.urbanshopfronts.co.uk/#logo' },

@@ -8,7 +8,7 @@ const COMPANY_SITE = 'www.urbanshopfronts.co.uk';
 /* A filename that has never been served. The old path is sent with
    cache-control: immutable for a year, so replacing the bytes behind it
    would never reach anyone who had already loaded the site. */
-const LOGO_SRC = '/assets/urban-appicon-512.png';
+const LOGO_SRC = '/assets/urban-usmark-512.png';
 const VAT_NUMBER = '506 3260 22';
 const REG_NUMBER = '16710475';
 const BANK = {
