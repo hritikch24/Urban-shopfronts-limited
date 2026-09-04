@@ -101,15 +101,18 @@ export default function HomePage() {
               <p className="hero-description text-grey-500 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
                 Professional aluminium shopfront installation, roller shutter fitting and security door supply for commercial premises across London and the UK. We handle the complete process from design and fabrication through to expert installation, with nationwide coverage and 24/7 emergency response available when you need it most.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Link href="/instant-quote" className="btn-gold text-base px-7 py-3.5">
+              {/* flex-wrap rather than a rigid row: three buttons in a half-width
+                  hero column were squeezed until each broke across two lines,
+                  splitting the phone number mid-digits. */}
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-10">
+                <Link href="/instant-quote" className="btn-gold text-base px-7 py-3.5 whitespace-nowrap">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                   Get an Instant Price
                 </Link>
-                <Link href="/contact" className="btn-outline text-base px-7 py-3.5">
+                <Link href="/contact" className="btn-outline text-base px-7 py-3.5 whitespace-nowrap">
                   Get a Free Quote
                 </Link>
-                <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5">
+                <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5 whitespace-nowrap">
                   Call 07471 043827
                 </a>
               </div>

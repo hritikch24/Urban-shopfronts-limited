@@ -138,7 +138,7 @@ export default function Header() {
             <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
               <Link
                 href="/"
-                className="px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded"
+                className="px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded whitespace-nowrap"
               >
                 Home
               </Link>
@@ -203,24 +203,24 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded"
+                  className="px-3 py-2 text-sm font-medium text-grey-600 hover:text-gold transition-colors rounded whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3 xl:gap-4">
               <a
                 href="tel:07471043827"
-                className="flex items-center gap-2 text-grey-500 hover:text-gold transition-colors text-sm font-medium"
+                className="flex items-center gap-2 text-grey-500 hover:text-gold transition-colors text-sm font-medium whitespace-nowrap"
               >
                 <PhoneIcon />
                 07471 043827
               </a>
               <Link
                 href="/contact"
-                className="relative bg-gold hover:bg-gold-light text-obsidian font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(240,180,41,0.2)] hover:shadow-[0_0_30px_rgba(240,180,41,0.4)] hover:-translate-y-0.5"
+                className="relative bg-gold hover:bg-gold-light text-obsidian font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(240,180,41,0.2)] hover:shadow-[0_0_30px_rgba(240,180,41,0.4)] hover:-translate-y-0.5 whitespace-nowrap"
               >
                 Get Free Quote
               </Link>
