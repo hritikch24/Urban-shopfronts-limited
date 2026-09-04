@@ -96,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const videoSlugs = ['shopfront-installation', 'site-survey', 'completed-project'];
+  const videoSlugs = ['shopfront-installation', 'completed-project'];
   const videoPages: MetadataRoute.Sitemap = videoSlugs.map((slug) => ({
     url: `${siteUrl}/gallery/${slug}`,
     lastModified: now,

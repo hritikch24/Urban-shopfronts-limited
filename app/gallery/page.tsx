@@ -151,7 +151,6 @@ export default function GalleryPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             { src: '/assets/project-video-1.mp4', name: 'Shopfront Installation in Progress', desc: 'Watch our team installing an aluminium shopfront for a commercial premises in the UK.' },
-            { src: '/assets/project-video-2.mp4', name: 'On-Site Survey and Assessment', desc: 'Urban Shopfronts engineer conducting a free site survey and taking measurements for a shopfront project.' },
             { src: '/assets/project-video-3.mp4', name: 'Completed Project Walkthrough', desc: 'A walkthrough of a recently completed shopfront installation by Urban Shopfronts.' },
           ].map((v) => ({
             '@context': 'https://schema.org',
@@ -231,7 +230,6 @@ export default function GalleryPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { src: '/assets/project-video-1.mp4', title: 'Shopfront installation in progress', slug: 'shopfront-installation' },
-              { src: '/assets/project-video-2.mp4', title: 'On-site survey and assessment', slug: 'site-survey' },
               { src: '/assets/project-video-3.mp4', title: 'Completed project walkthrough', slug: 'completed-project' },
             ].map((v) => (
               <div key={v.src} className="rounded-xl overflow-hidden shadow-md bg-obsidian-light">
