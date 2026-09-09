@@ -75,85 +75,112 @@ export default function HomePage() {
       />
 
       {/* ── Hero — split layout ──────────────────────────────────────────── */}
-      <section className="relative bg-obsidian overflow-hidden">
-        {/* Hex grid overlay */}
-        <div className="absolute inset-0 bg-hex-grid pointer-events-none opacity-40" aria-hidden="true" />
-        {/* Ambient nebula */}
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-gold/[0.04] blur-[120px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-amber/[0.03] blur-[100px] pointer-events-none" aria-hidden="true" />
-
+      {/* ── Hero — editorial ──────────────────────────────────────────────
+          Deliberately not the centred-text-over-a-glowing-blob arrangement the
+          other two sites use. This one is built like a broadsheet front page:
+          an uneven 7/5 split so the eye starts hard left, rules that actually
+          divide content rather than decorate it, and a headline set large
+          enough to carry the page on its own. The ambient blur circles that
+          used to sit behind this are gone — they were doing nothing except
+          making the page look machine-assembled. */}
+      <section className="relative bg-obsidian overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 lg:hidden" aria-hidden="true">
-          <Image src="/assets/shopfront-2.jpeg" alt="" fill priority className="object-cover opacity-25" sizes="100vw" />
-          <div className="absolute inset-0 bg-obsidian/90" />
+          <Image src="/assets/shopfront-2.jpeg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
+          <div className="absolute inset-0 bg-obsidian/92" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center min-h-[85vh] lg:min-h-[90vh] pt-24 pb-16 lg:pt-28 lg:pb-10">
-            <div className="relative z-10 lg:pr-12">
-              <div className="inline-flex items-center gap-2 card-surface px-4 py-1.5 rounded-full mb-6 border border-gold/20">
-                <span className="text-gold text-xs font-bold tracking-widest uppercase">London & UK Specialists</span>
+
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[86vh] pt-24 lg:pt-28">
+
+            {/* Masthead column — 7 of 12, with the rule carried down its edge */}
+            <div className="relative z-10 lg:col-span-7 lg:border-r lg:border-white/10 lg:pr-14 pb-14 flex flex-col justify-center">
+
+              {/* Eyebrow set as a dateline, not a pill */}
+              <div className="flex items-baseline gap-4 mb-9">
+                <span className="text-gold text-[11px] font-bold tracking-[0.28em] uppercase whitespace-nowrap">
+                  London &amp; UK Specialists
+                </span>
+                <span className="h-px flex-1 bg-white/15" aria-hidden="true" />
+                <span className="text-grey-500 text-[11px] tracking-[0.18em] uppercase whitespace-nowrap">Est. 2019</span>
               </div>
-              <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-                Aluminium Shopfronts,
-                <br />
-                <span className="text-gradient-gold">Roller Shutters &amp; Security Doors</span>
-                {' '}Across the UK
+
+              <h1 className="font-heading text-[2.6rem] sm:text-[3.9rem] lg:text-[4.6rem] xl:text-[5.4rem] font-extrabold text-white leading-[0.92] tracking-[-0.035em] mb-8">
+                Aluminium<br />
+                Shopfronts,<br />
+                <span className="text-gradient-gold">Roller Shutters</span><br />
+                &amp; Security Doors
               </h1>
-              <p className="hero-description text-grey-500 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
-                Professional aluminium shopfront installation, roller shutter fitting and security door supply for commercial premises across London and the UK. We handle the complete process from design and fabrication through to expert installation, with nationwide coverage and 24/7 emergency response available when you need it most.
+
+              {/* Standfirst — indented off a rule, the way a magazine sets one */}
+              <p className="hero-description text-grey-400 text-[1.02rem] lg:text-lg leading-[1.75] max-w-[46ch] mb-10 border-l-2 border-gold/40 pl-6">
+                Commercial shopfront installation, roller shutter fitting and security
+                door supply across London and the UK — design and fabrication through
+                to fitting, with 24/7 emergency cover.
               </p>
-              {/* flex-wrap rather than a rigid row: three buttons in a half-width
-                  hero column were squeezed until each broke across two lines,
-                  splitting the phone number mid-digits. */}
-              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-10">
+
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-12">
                 <Link href="/instant-quote" className="btn-gold text-base px-7 py-3.5 whitespace-nowrap">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                   Get an Instant Price
-                </Link>
-                <Link href="/contact" className="btn-outline text-base px-7 py-3.5 whitespace-nowrap">
-                  Get a Free Quote
                 </Link>
                 <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5 whitespace-nowrap">
                   Call 07471 043827
                 </a>
               </div>
-              <div className="flex items-center gap-6 text-grey-500 text-sm">
-                <span className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-gold"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                  Companies House Registered
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-amber"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  5.0 Rated
-                </span>
-              </div>
+
+              {/* Credentials as a ruled strip rather than centred stat cards */}
+              <dl className="grid grid-cols-3 border-t border-white/10 divide-x divide-white/10">
+                {[
+                  { t: 'Registered', d: 'Companies House' },
+                  { t: '24/7', d: 'Emergency cover' },
+                  { t: '15+', d: 'UK cities' },
+                ].map((c) => (
+                  <div key={c.t} className="pt-5 pr-4 first:pl-0 pl-5">
+                    <dt className="font-heading text-white text-lg font-bold leading-none">{c.t}</dt>
+                    <dd className="text-grey-500 text-[0.78rem] mt-1.5 tracking-wide">{c.d}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/[0.06]">
-                <Image src="/assets/shopfront-2.jpeg" alt="Modern aluminium shopfront by Urban Shopfronts" width={700} height={800} className="object-cover w-full h-[75vh]" priority sizes="50vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/30 to-transparent" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 card-surface px-5 py-4 flex items-center gap-4 border border-gold/15 shadow-[0_0_20px_rgba(240,180,41,0.06)]">
-                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                </div>
-                <div>
-                  <p className="font-heading font-bold text-white text-sm">Nationwide Coverage</p>
-                  <p className="text-grey-400 text-xs">15+ cities across the UK</p>
-                </div>
-              </div>
+
+            {/* Plate column — 5 of 12, square-cornered and full-bleed to the rule */}
+            <div className="relative hidden lg:block lg:col-span-5">
+              <figure className="relative h-full min-h-[86vh]">
+                <Image
+                  src="/assets/shopfront-2.jpeg"
+                  alt="Aluminium shopfront installed by Urban Shopfronts"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent" aria-hidden="true" />
+                <figcaption className="absolute bottom-10 left-0 right-10 border-l-2 border-gold bg-obsidian/85 backdrop-blur-[2px] pl-5 pr-6 py-4">
+                  <p className="font-heading font-bold text-white text-sm tracking-wide">Nationwide coverage</p>
+                  <p className="text-grey-400 text-xs mt-0.5">Installed across 15+ UK cities</p>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Stats bar ────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-y border-white/[0.04]" style={{ background: 'linear-gradient(90deg, rgba(240,180,41,0.02) 0%, rgba(255,170,0,0.02) 50%, rgba(240,180,41,0.02) 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center group">
-                <p className="font-heading text-3xl sm:text-4xl font-extrabold text-gold group-hover:text-glow-emerald transition-all">{s.value}</p>
-                <p className="text-grey-400 text-sm mt-1">{s.label}</p>
+      {/* ── Figures ───────────────────────────────────────────────────────
+          Set as a ruled ledger rather than four centred cards. The numbers are
+          left-aligned against dividers so they read as a table of record, which
+          is the register the rest of this page is written in. */}
+      <section className="relative bg-obsidian border-b border-white/10">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 lg:divide-x divide-white/10">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`group py-9 lg:py-11 ${i % 2 === 0 ? 'pr-6' : 'pl-6 lg:pl-8'} ${i > 1 ? 'border-t lg:border-t-0 border-white/10' : ''} ${i > 0 ? 'lg:pl-8' : ''}`}
+              >
+                <p className="font-heading text-[2.4rem] lg:text-[3rem] font-extrabold text-white leading-none tracking-[-0.03em] transition-colors duration-300 group-hover:text-gold">
+                  {s.value}
+                </p>
+                <p className="text-grey-500 text-[0.76rem] mt-2.5 tracking-[0.16em] uppercase">{s.label}</p>
               </div>
             ))}
           </div>
