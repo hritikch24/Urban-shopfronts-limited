@@ -7,7 +7,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 export const metadata: Metadata = {
   title: 'Contact Us — Free Shopfront Survey & Quote',
   description:
-    'Contact Urban Shopfronts for a free site survey and quotation. Call 07471 043827, WhatsApp +44 7471 043827, or email sales@urbanshopfronts.co.uk. West Midlands, UK.',
+    'Talk to us about a shopfront, shutter or security door in London and the UK. Free site survey and a written quote. Call 07471 043827.',
   alternates: {
     canonical: 'https://www.urbanshopfronts.co.uk/contact',
   },

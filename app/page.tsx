@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   // The root layout's title.template does NOT apply to this segment, so the
   // homepage must name the business itself. Stripping it here removes the
   // brand from the most important title on the site.
-  title: 'Affordable Shopfront Installation & Roller Shutters UK | Urban Shopfronts',
+  title: 'Shopfront Installers London & UK | Urban Shopfronts',
   description:
-    'Affordable shopfront installation across London & the UK. Aluminium shopfronts, roller shutters, security doors & automatic doors. Competitive prices, 24/7 emergency callout, free site surveys & no-obligation quotes.',
+    'Aluminium shopfronts, roller shutters and security doors fitted across London and the UK. Free survey, written quote, 24/7 emergency cover.',
   alternates: { canonical: 'https://www.urbanshopfronts.co.uk' },
 };
 
