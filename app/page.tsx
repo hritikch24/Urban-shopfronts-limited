@@ -85,7 +85,7 @@ export default function HomePage() {
           making the page look machine-assembled. */}
       <section className="relative bg-obsidian overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 lg:hidden" aria-hidden="true">
-          <Image src="/assets/shopfront-2.jpeg" alt="" fill priority className="object-cover opacity-20" sizes="100vw" />
+          <Image src="/assets/shopfront-night-1.jpeg" alt="" fill priority className="object-cover opacity-25" sizes="100vw" />
           <div className="absolute inset-0 bg-obsidian/92" />
         </div>
 
@@ -146,13 +146,21 @@ export default function HomePage() {
             {/* Plate column — 5 of 12, square-cornered and full-bleed to the rule */}
             <div className="relative hidden lg:block lg:col-span-5">
               <figure className="relative h-full min-h-[86vh]">
+                {/* shopfront-2.jpeg was here: a takeaway whose own fascia and
+                    phone number dominated the frame, in an orange that fought
+                    the gold palette. This is the same trade, photographed at
+                    dusk — the glazing and the frame are the subject, the warm
+                    interior matches the accent colour, and no other business is
+                    advertised on our own homepage. Focused right of centre so
+                    the tall crop lands on the lit doorway rather than brick. */}
                 <Image
-                  src="/assets/shopfront-2.jpeg"
-                  alt="Aluminium shopfront installed by Urban Shopfronts"
+                  src="/assets/shopfront-night-1.jpeg"
+                  alt="Aluminium shopfront with glazed entrance doors, lit at dusk, installed by Urban Shopfronts"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover"
+                  style={{ objectPosition: '42% center' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent" aria-hidden="true" />
                 <figcaption className="absolute bottom-10 left-0 right-10 border-l-2 border-gold bg-obsidian/85 backdrop-blur-[2px] pl-5 pr-6 py-4">
