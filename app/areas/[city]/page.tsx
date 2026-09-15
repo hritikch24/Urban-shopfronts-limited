@@ -93,12 +93,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // title.template appends it; sharing one string with openGraph below is what
   // produced the doubled brand. The social title must carry it itself, since
   // the template never applies there.
-  const enhancedTitle = `Shopfront Installation in ${city.name}`;
+  const enhancedTitle = `Shopfront Fitters in ${city.name}`;
   const socialTitle = `${enhancedTitle} | Urban Shopfronts`;
-  // Trimmed to fit the ~155 characters Google shows. The previous version
-  // ran to 174 and opened on "Affordable", which is a price signal rather
-  // than an answer to what was searched.
-  const enhancedDescription = `Shopfronts, roller shutters and security doors fitted in ${city.name}. Free site survey and a written quote. Call 07471 043827.`;
+  // Trimmed to fit the ~155 characters Google shows, and written in this
+  // site's own vocabulary: Urban's real demand is trade and repair work
+  // ("shop front fitters", "shutter repair", "shutter maintenance", "shop
+  // front cost"), so it leads on fitting and repairing rather than the
+  // generic line all three sites used to share word for word.
+  const enhancedDescription = `Shopfront fitters covering ${city.name} — installation, shutter repair and maintenance. Clear pricing and a free site survey. Call 07471 043827.`;
 
   return {
     title: enhancedTitle,

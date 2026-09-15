@@ -300,6 +300,24 @@ export async function generateStaticParams() {
   return params;
 }
 
+/**
+ * Google shows roughly 60 characters of a title. "Aluminium Shopfronts in
+ * Stoke-on-Trent" already spends 38 of them before the brand suffix, so a
+ * fixed qualifier pushes the longest combinations past the cut and the words
+ * that earn the click are what get dropped.
+ *
+ * So the qualifier is appended only when the finished title still fits. The
+ * wording here is deliberately this site's own: the same URL was publishing a
+ * byte-identical title on more than one domain, which is what Google
+ * deduplicates -- and one of those domains lost its rankings over it.
+ */
+const TITLE_QUALIFIER = ' | Fit & Repair';
+const BRAND_SUFFIX = ' | Urban Shopfronts';
+
+function cityTitle(base: string) {
+  return (base + TITLE_QUALIFIER + BRAND_SUFFIX).length <= 60 ? base + TITLE_QUALIFIER : base;
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, city: citySlug } = await params;
   const service = services.find((s) => s.slug === slug);
@@ -315,15 +333,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // produced the brand twice and pushed the title past the ~60 characters
     // Google shows, cutting off the words that earn the click. The openGraph
     // title below keeps it: the template never applies to social tags.
-    title: `${service.name} in ${city.name} | Affordable Prices`,
+    title: cityTitle(`${service.name} in ${city.name}`),
     // 219 characters against a ~155 cut, so the phone number and half the
     // sentence never appeared in results. Area list dropped: it pushed the
     // length out and is already on the page itself.
-    description: `${service.name} in ${city.name}. Supplied, fitted and maintained by our own team. Free site survey, written quote. Call 07471 043827.`,
+    description: `${service.name} fitted, repaired and maintained across ${city.name}. Experienced shopfront fitters, clear pricing, free survey. Call 07471 043827.`,
     alternates: { canonical: `${siteUrl}/services/${slug}/${citySlug}` },
     openGraph: {
-      title: `${service.name} in ${city.name} | Affordable Prices | Urban Shopfronts`,
-      description: `Affordable ${service.name.toLowerCase()} in ${city.name} — competitive prices, free site survey & no-obligation quotes. Covering ${topAreas} and surrounding areas.`,
+      title: `${service.name} in ${city.name} | Fit & Repair | Urban Shopfronts`,
+      description: `${service.name} fitted and repaired across ${city.name} by experienced shopfront fitters — clear pricing and a free site survey. Covering ${topAreas} and nearby.`,
       url: `${siteUrl}/services/${slug}/${citySlug}`,
       type: 'website',
       images: [{ url: `/assets/${service.heroImage}`, width: 1200, height: 630 }],
