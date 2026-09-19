@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 
 const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
+// Services with a hub page AND a /services/{slug}/{city} page for every city.
 const serviceSlugs = [
   'aluminium-shopfronts',
   'roller-shutters',
@@ -17,6 +18,16 @@ const serviceSlugs = [
   'aluminium-windows',
   'curtain-walling',
   'glass-shopfronts',
+];
+
+// Hub page only, deliberately excluded from the city cross-product below.
+// Office partitioning is won on drawings and fit-out programmes, not on
+// "<service> in <town>" searches, and this site already submits 656 URLs
+// against one external backlink. Keep these two as pages that say something,
+// rather than 82 that repeat it.
+const hubOnlyServiceSlugs = [
+  'aluminium-partitions',
+  'glass-partitions',
 ];
 
 // All cities — every service+city combo is now indexed
@@ -65,7 +76,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
-  const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
+  const servicePages: MetadataRoute.Sitemap = [
+    ...serviceSlugs,
+    ...hubOnlyServiceSlugs,
+  ].map((slug) => ({
     url: `${siteUrl}/services/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,

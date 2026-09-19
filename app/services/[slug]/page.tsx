@@ -394,6 +394,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       )}
 
+      {service.cityPages !== false && (
       <section className="section-padding">
         <div className="container-max">
           <h2 className="text-2xl font-heading font-bold mb-3">
@@ -417,6 +418,7 @@ export default async function ServicePage({ params }: PageProps) {
           </ul>
         </div>
       </section>
+      )}
 
       <section className="section-padding bg-gradient-dark">
         <div className="container-max">

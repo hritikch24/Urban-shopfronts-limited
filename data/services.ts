@@ -41,6 +41,14 @@ export interface Service {
   howItWorks?: HowItWorksStep[];
   pricingGuide?: PricingGuide;
   peopleAlsoAsk?: ServiceFaq[];
+  /**
+   * Whether this service also generates /services/{slug}/{city} pages.
+   * Defaults to true. Office partitioning is specification-led work won on
+   * drawings and fit-out programmes, not on "partitions in <town>" searches,
+   * so these two opt out rather than adding 82 thin location pages to a site
+   * that already has 656.
+   */
+  cityPages?: boolean;
 }
 
 export const services: Service[] = [
@@ -1627,7 +1635,7 @@ Where glass replacement requires the removal and refitting of glazing beads, cap
           'If the replacement is like-for-like, Building Regulations do not typically require an upgrade. However, if the work is part of a larger renovation or if the existing glass does not meet current safety standards (BS EN 12150 for toughened glass), it may be advisable or required to upgrade. We will advise on the regulatory position during the survey.',
       },
     ],
-    relatedServices: ['shopfront-repairs', 'aluminium-shopfronts', 'emergency-callout', 'automatic-doors'],
+    relatedServices: ['shopfront-repairs', 'glass-partitions', 'emergency-callout', 'automatic-doors'],
   },
 
   {
@@ -1777,7 +1785,7 @@ All aluminium door sections are powder-coated to BS EN 12206-1 in any RAL Classi
           'Standard aluminium doors are not fire-rated. Where a fire-rated entrance is required, we specify purpose-designed fire door assemblies tested to BS EN 1634-1. See our fire doors service page for details on FD30, FD60, and FD90 rated options.',
       },
     ],
-    relatedServices: ['aluminium-shopfronts', 'automatic-doors', 'security-doors', 'glass-replacement'],
+    relatedServices: ['aluminium-shopfronts', 'automatic-doors', 'aluminium-partitions', 'glass-replacement'],
   },
 
   {
@@ -1933,7 +1941,7 @@ All aluminium window sections are powder-coated to BS EN 12206-1 in any RAL Clas
           'Our commercial aluminium windows feature multi-point espagnolette locking with shoot bolts at top and bottom. For enhanced security, we offer PAS 24:2022 certified window assemblies with security glazing and reinforced frame profiles, meeting the requirements of most commercial insurers.',
       },
     ],
-    relatedServices: ['aluminium-shopfronts', 'aluminium-doors', 'glass-replacement', 'curtain-walling'],
+    relatedServices: ['aluminium-shopfronts', 'aluminium-doors', 'aluminium-partitions', 'curtain-walling'],
   },
 
   {
@@ -2093,7 +2101,7 @@ Where a curtain wall passes across a fire compartment boundary — typically at 
           'Yes, provided the existing structural frame can support the curtain wall brackets and the additional wind loads. Retrofit curtain walling is commonly used to modernise the appearance and thermal performance of older commercial buildings. We coordinate with a structural engineer to verify the frame capacity before design.',
       },
     ],
-    relatedServices: ['aluminium-shopfronts', 'aluminium-windows', 'aluminium-doors', 'glass-replacement'],
+    relatedServices: ['aluminium-shopfronts', 'aluminium-windows', 'glass-partitions', 'aluminium-doors'],
   },
 
   {
@@ -2247,4 +2255,359 @@ For existing shopfront replacements that do not trigger Part L requirements, sin
     ],
     relatedServices: ['aluminium-shopfronts', 'glass-replacement', 'automatic-doors', 'shopfront-repairs'],
   },
+  {
+    slug: 'aluminium-partitions',
+    name: 'Aluminium Partitions',
+    shortDescription:
+      'Demountable aluminium partition systems for offices and commercial interiors. Single and double glazed, acoustic rated, and reconfigurable as floorplates change.',
+    heroImage: 'aluminium-shopfront-1.jpeg',
+    primaryKeyword: 'aluminium partitions',
+    metaTitle: 'Aluminium Partitions UK | Demountable Office',
+    metaDescription:
+      'Demountable aluminium office partitions. Single and double glazed, acoustic rated to 45dB, DDA-compliant doorsets. Installed nationwide by our own fitters.',
+    description: `Aluminium partitioning is the framework most commercial interiors are divided with. The sections are slim, they carry glass without visible fixings, and — the part that matters to a facilities manager — the whole system comes apart and goes back together when the floorplate changes.
+
+Urban Shopfronts installs aluminium partition systems across offices, clinics, showrooms and back-of-house areas. The same aluminium fabrication and glazing skills that go into a shopfront apply here; the difference is the tolerances are tighter and the work happens inside an occupied building.
+
+**Why aluminium rather than stud**
+
+A plasterboard stud wall is cheaper per linear metre and that is usually where the comparison stops. But stud is destructive to remove, it blocks daylight completely, and it is written off the moment the layout changes. Aluminium partitioning is a capital asset that moves with you. Tenants leaving a fitted floor frequently take the partitioning to the next building.
+
+The systems we install are nominally demountable, meaning the head and base tracks, posts and glazing beads are mechanically fixed rather than bonded. A competent fitter can strike a run of glazed partitioning and reinstate it on a new grid line in a day.
+
+**Single glazed, double glazed and acoustic performance**
+
+Single-glazed partitions — one pane in a slim aluminium frame — suit meeting rooms, breakout areas and anywhere the privacy requirement is visual rather than acoustic. Expect around 28 to 32 dB Rw with a good perimeter seal, which is enough to take the edge off general office noise but not enough for a confidential conversation.
+
+Double-glazed partitions carry two panes in a wider frame with an air gap and independent glazing lines. Properly detailed, with acoustic seals at head and base and a full-height cavity closer, these reach 45 to 48 dB Rw. That is the specification for HR rooms, consulting rooms, director's offices and anywhere a conversation must not carry.
+
+The number on the system data sheet is a laboratory figure. What you get on site depends almost entirely on what happens above the ceiling and below the raised floor — an untreated plenum will leak sound straight over the top of a 48 dB partition. Where acoustic performance is a genuine requirement, we detail the partition to the structural slab, not to the ceiling grid.
+
+**Frames, finishes and integration**
+
+Standard frames are powder coated to any RAL colour; polyester powder coat to BS EN 12206 gives a durable finish that will not need redecorating. Anodised finishes are available where a metallic appearance is wanted. Slim-line systems reduce the visible frame to around 25 mm sightlines for a near-frameless appearance at lower cost than a true butt-jointed system.
+
+Partitions rarely stand alone. We coordinate with the ceiling grid, raised floor, lighting layout, sprinkler heads, small power and data containment, and the fire strategy. Getting that coordination right before fabrication is the difference between a clean installation and a fortnight of remedial work.
+
+**Doorsets and accessibility**
+
+Partition doorsets are specified as part of the system rather than bought in separately. We install single and double leaf, hinged and sliding, timber and fully glazed. Where a door forms part of an accessible route, Approved Document M applies: a minimum 800 mm clear opening width, manifestation on glazed leaves, opening forces within the 30 N threshold, and ironmongery operable with a closed fist.
+
+**Fire-rated partitioning**
+
+Where a partition forms part of a compartment line, it must be fire rated and certified as a complete system — frame, glass, seals and doorset tested together. We supply and install EI30 and EI60 rated glazed partitioning with the corresponding test evidence. Fire-rated glass is not interchangeable with toughened glass, and a fire-rated frame with the wrong glass in it provides no protection at all.
+
+**Installation in occupied buildings**
+
+Most of this work happens around people who are still trying to do their jobs. We work evenings and weekends where the programme requires it, dust-screen the work area, use extraction on cutting, and protect floor finishes and lift lobbies on the route in. Materials are delivered to suit the building's loading bay restrictions rather than ours.`,
+    benefits: [
+      {
+        title: 'Demountable and Reconfigurable',
+        description:
+          'Mechanically fixed rather than bonded, so a run of partitioning can be struck and reinstated on a new grid line without the mess and write-off of demolishing stud walls. The partitioning becomes an asset that survives the next churn.',
+      },
+      {
+        title: 'Acoustic Performance to 48 dB Rw',
+        description:
+          'Double-glazed systems with independent glazing lines and full perimeter seals reach 45 to 48 dB Rw — the range required for HR, consulting and director-level rooms where conversations must not carry.',
+      },
+      {
+        title: 'Daylight Through the Floorplate',
+        description:
+          'Glazed partitioning lets daylight reach the core of the floor rather than stopping it at the first wall. Occupiers consistently rate glazed offices better on wellbeing, and it reduces daytime lighting load.',
+      },
+      {
+        title: 'Slim Sightlines, Any RAL Colour',
+        description:
+          'Frames down to around 25 mm sightlines, powder coated to BS EN 12206 in any RAL colour or anodised. A durable factory finish that will not need redecorating on a churn cycle.',
+      },
+      {
+        title: 'Fire-Rated Systems Where Required',
+        description:
+          'EI30 and EI60 glazed partitioning supplied and installed as complete certified systems — frame, glass, seals and doorset tested together, with the test evidence to support the fire strategy.',
+      },
+      {
+        title: 'Installed Around Your Occupancy',
+        description:
+          'Evening and weekend working, dust screening, extraction on cutting, and protection to floor finishes and access routes. Most partitioning is installed in buildings that never stop trading.',
+      },
+    ],
+    howItWorks: [
+      {
+        step: 1,
+        title: 'Layout Review',
+        description:
+          'We work from your floor plan or space plan, checking the proposed grid against the ceiling layout, lighting, sprinklers and floor boxes before anything is priced.',
+      },
+      {
+        step: 2,
+        title: 'Site Survey',
+        description:
+          'Our surveyor measures slab-to-slab heights, checks floor level across the run, and confirms what sits in the ceiling void and floor cavity. Partitioning is unforgiving of assumed dimensions.',
+      },
+      {
+        step: 3,
+        title: 'Specification and Quote',
+        description:
+          'We confirm single or double glazed, acoustic target, frame finish, doorset schedule and any fire rating, then issue a written quotation against that specification.',
+      },
+      {
+        step: 4,
+        title: 'Fabrication and Programme',
+        description:
+          'Frames are cut and finished to survey dimensions and glass is toughened to size. We agree working hours, access and delivery windows with the building manager before mobilising.',
+      },
+      {
+        step: 5,
+        title: 'Installation and Handover',
+        description:
+          'Tracks set out from datum, posts plumbed, glass installed, doorsets hung and adjusted, seals fitted and the area cleaned. You receive the O&M information and any fire certification.',
+      },
+    ],
+    pricingGuide: {
+      heading: 'What Do Aluminium Partitions Cost?',
+      content:
+        'Partitioning is priced per linear metre of run at standard floor-to-ceiling height, with doorsets priced separately. The spread is driven mostly by whether the system is single or double glazed and what acoustic performance is required.',
+      ranges: [
+        { item: 'Single glazed partition (per linear metre)', price: '£190 – £320' },
+        { item: 'Double glazed acoustic partition (per linear metre)', price: '£340 – £560' },
+        { item: 'Fire-rated EI30 glazed partition (per linear metre)', price: '£480 – £780' },
+        { item: 'Single glazed doorset, complete', price: '£850 – £1,400' },
+        { item: 'Double doorset, complete', price: '£1,500 – £2,400' },
+        { item: 'Strike and reinstate existing partitioning (per linear metre)', price: '£60 – £110' },
+      ],
+      note: 'Guide ranges for planning only, excluding VAT. Occupied-building and out-of-hours working carries a premium. Every job is quoted from a site survey.',
+    },
+    faqs: [
+      {
+        question: 'What is the difference between single and double glazed partitions?',
+        answer:
+          'Single glazed carries one pane in a slim frame and gives roughly 28 to 32 dB Rw — adequate for meeting rooms and breakout space where the requirement is visual privacy. Double glazed carries two panes with an air gap and independent glazing lines, reaching 45 to 48 dB Rw, which is what a confidential conversation needs. Double glazed frames are wider and cost roughly 70 to 80 per cent more per linear metre.',
+      },
+      {
+        question: 'Can aluminium partitions really be moved later?',
+        answer:
+          'Yes, and this is the main reason they are specified over stud. The head and base tracks, posts and glazing beads are mechanically fixed rather than bonded, so a competent fitter can strike a run and reinstate it on a new grid line in about a day. Expect to replace seals and some trims, and to make good the floor and ceiling where the original track was fixed.',
+      },
+      {
+        question: 'Will a 48 dB partition actually give me 48 dB on site?',
+        answer:
+          'Only if the detailing above and below is right. The figure on the data sheet is a laboratory result for the partition alone. If the partition stops at a suspended ceiling and the plenum above is open, sound travels straight over the top and you may see little better than 35 dB in practice. Where acoustic performance genuinely matters, the partition needs detailing to the structural slab with the void closed.',
+      },
+      {
+        question: 'Do glazed partitions need manifestation?',
+        answer:
+          'Yes. Approved Document M requires that full-height glazing in a building people use is marked so it is apparent — typically a manifestation band or applied pattern at two heights, one between 850 and 1,000 mm and one between 1,400 and 1,600 mm above floor level. Frosted vinyl, etched film and printed graphics all satisfy this, and it is commonly used for branding at the same time.',
+      },
+      {
+        question: 'Can you install while our office is occupied?',
+        answer:
+          'Most of our partitioning work is in occupied buildings. We work evenings and weekends where the programme requires it, screen the work area, use extraction on cutting, and protect floors and access routes. The practical constraints are usually the building’s own — loading bay hours, lift bookings and security access — so we agree those with the building manager before mobilising.',
+      },
+      {
+        question: 'Do partitions affect the fire strategy or sprinklers?',
+        answer:
+          'They can. Subdividing a floor changes escape routes, sprinkler coverage and smoke detection zones. Where a partition falls on a compartment line it must be fire rated and certified as a complete system. Where it simply divides open-plan space, the sprinkler and detection layout may still need adjusting to maintain coverage in each new room. We flag this at layout review rather than after installation.',
+      },
+    ],
+    peopleAlsoAsk: [
+      {
+        question: 'How long does office partitioning take to install?',
+        answer:
+          'A straightforward glazed run of 10 to 15 linear metres with one doorset is typically a two to three day installation once materials are on site. Fabrication lead time is usually the longer element — two to four weeks from confirmed survey dimensions, depending on glass specification and frame finish.',
+      },
+      {
+        question: 'Are aluminium partitions better than glass partitions?',
+        answer:
+          'They are not alternatives — almost all glass office partitioning is held in an aluminium frame. The real choice is how much frame you want to see. Framed aluminium systems show a visible section around each pane and cost less; frameless butt-jointed glazing removes the intermediate posts for a cleaner look at higher cost and with more constraint on acoustic performance.',
+      },
+      {
+        question: 'Do I need planning permission for internal partitions?',
+        answer:
+          'Internal partitioning within an existing commercial unit does not normally require planning permission. Building Regulations can still apply — particularly Part B for fire, Part M for accessibility of doorsets, and Part E for sound insulation in some building types. Listed buildings are the exception, where internal alterations may need consent.',
+      },
+    ],
+    relatedServices: ['glass-partitions', 'aluminium-doors', 'glass-replacement', 'aluminium-windows'],
+    cityPages: false,
+  },
+  {
+    slug: 'glass-partitions',
+    name: 'Glass Partitions',
+    shortDescription:
+      'Frameless and slim-framed glass partitioning for offices. Butt-jointed single glazed, double glazed acoustic, and switchable privacy glass with full manifestation.',
+    heroImage: 'shopfront-3.jpeg',
+    primaryKeyword: 'glass partitions office',
+    metaTitle: 'Glass Partitions UK | Frameless & Acoustic',
+    metaDescription:
+      'Frameless and slim-framed glass office partitions. Butt-jointed, double glazed acoustic to 48dB, switchable privacy glass. Manifestation to Part M included.',
+    description: `Glass partitioning is what an office looks like when nobody wants to admit they are putting walls back in. It divides the floorplate without closing it, keeps daylight moving through the space, and gives managers offices without making the rest of the floor feel like a corridor.
+
+Urban Shopfronts installs frameless and slim-framed glass partitioning across commercial interiors. The glazing skill is the same one we apply to shopfronts — setting large panes accurately, sealing them properly, and making sure the glass specification actually matches what the building needs.
+
+**Frameless, butt-jointed and slim-framed**
+
+True frameless partitioning uses toughened glass panes set into a floor channel and head track, joined edge to edge with a clear structural silicone joint and no intermediate post. Visually it is the cleanest option available. It is also the most constrained: acoustic performance is limited by the silicone joint, and panel sizes are governed by what can be manufactured, transported and carried into the building.
+
+Slim-framed systems keep a narrow aluminium section — around 25 mm sightline — between panes. You lose a little of the seamlessness and gain a lot on acoustics, cost and buildability. For most offices this is the right compromise, and it is what we specify unless the brief is explicitly design-led.
+
+**Glass specification**
+
+All partition glass is toughened safety glass to BS EN 12150, which fractures into blunt granules rather than shards. Where glass sits in a location at particular risk of impact, or where overhead glazing is involved, laminated glass to BS EN 14449 is specified instead, because laminated glass stays in the frame when broken.
+
+Standard thickness is 10 mm or 12 mm toughened for single-glazed partitioning, depending on pane size. Acoustic double-glazed units use two panes of differing thickness — 8 mm and 10 mm, say — because matched panes resonate together and lose performance at exactly the frequencies human speech occupies.
+
+**Privacy without losing the light**
+
+Manifestation is required by Approved Document M on full-height glazing, and it is also the obvious place to do something considered rather than apply a strip of dots. Frosted vinyl bands, graduated gradients, etched film, and printed graphics all meet the requirement. A gradient band that is opaque at seated eye level and clears above works well for meeting rooms.
+
+Switchable privacy glass — laminated with a liquid crystal interlayer that turns from clear to opaque on a switch — is available where a room needs to be transparent most of the time and private occasionally. It is considerably more expensive than film and needs a power supply to each pane, so it is usually specified for one or two rooms rather than a whole floor.
+
+**Acoustics, honestly**
+
+Frameless butt-jointed glazing typically achieves around 32 to 36 dB Rw. A slim-framed double-glazed system with proper perimeter seals reaches 45 to 48 dB Rw. Anyone quoting a high figure on frameless single glazing is quoting the glass, not the installed system — the silicone joint between panes is the weak point and there is no practical way around it.
+
+As with any partitioning, the ceiling void matters more than the specification. A 48 dB partition stopping at a suspended ceiling with an open plenum above will perform nothing like its data sheet.
+
+**Doors**
+
+Glass partition doors are either frameless toughened leaves on patch fittings and floor springs, or framed leaves matching the partition system. Frameless suits the aesthetic and needs careful specification of the closer and the floor preparation for a spring. Framed doors are easier to seal acoustically and easier to fit accessible ironmongery to. Where a door forms part of an accessible route, Approved Document M applies in full.`,
+    benefits: [
+      {
+        title: 'Daylight Reaches the Whole Floor',
+        description:
+          'Glass divides the space without stopping light at the first wall. Perimeter daylight reaches the core, cellular offices stop feeling like boxes, and daytime lighting load drops.',
+      },
+      {
+        title: 'Frameless or Slim-Framed',
+        description:
+          'Butt-jointed frameless glazing with a clear silicone joint and no intermediate post for the cleanest possible appearance, or slim-framed systems at around 25 mm sightlines where acoustics and budget matter more than seamlessness.',
+      },
+      {
+        title: 'Acoustic Glazing to 48 dB Rw',
+        description:
+          'Double-glazed acoustic units using panes of differing thickness, so the two leaves do not resonate together and lose performance at speech frequencies. Detailed to slab where the brief demands genuine confidentiality.',
+      },
+      {
+        title: 'Manifestation as Design, Not Compliance',
+        description:
+          'Part M manifestation is required on full-height glazing anyway, so it is worth doing properly. Frosted bands, gradients, etched film and printed branding all satisfy the requirement and make the glazing visible.',
+      },
+      {
+        title: 'Switchable Privacy Glass',
+        description:
+          'Liquid crystal laminated glass that turns from clear to opaque on a switch, for rooms that need to be open most of the time and private occasionally. Specified per room rather than per floor.',
+      },
+      {
+        title: 'Toughened and Laminated to BS EN Standards',
+        description:
+          'Toughened safety glass to BS EN 12150 as standard, laminated to BS EN 14449 where impact risk or overhead glazing requires glass that stays in the frame when broken.',
+      },
+    ],
+    howItWorks: [
+      {
+        step: 1,
+        title: 'Brief and Layout',
+        description:
+          'We establish which rooms need acoustic separation and which simply need enclosure, because that decision drives whether the system is frameless or framed and roughly doubles the cost either way.',
+      },
+      {
+        step: 2,
+        title: 'Survey and Access Check',
+        description:
+          'We measure the runs and check floor level, but equally we check how large panes get into the building — lift dimensions, stair turns and door widths routinely govern maximum pane size.',
+      },
+      {
+        step: 3,
+        title: 'Glass and Manifestation Specification',
+        description:
+          'Thickness, toughened or laminated, single or acoustic double glazed, and the manifestation design confirmed and signed off before glass is ordered. Toughened glass cannot be cut after processing.',
+      },
+      {
+        step: 4,
+        title: 'Manufacture',
+        description:
+          'Glass is toughened to exact size and any frames finished to specification. This is typically two to four weeks and cannot be shortened, because toughening is a batch process.',
+      },
+      {
+        step: 5,
+        title: 'Installation and Sign-Off',
+        description:
+          'Channels set out, glass installed and levelled, joints siliconed, doors hung and closers adjusted, manifestation applied and the glazing cleaned. Certificates and O&M information issued on handover.',
+      },
+    ],
+    pricingGuide: {
+      heading: 'What Do Glass Office Partitions Cost?',
+      content:
+        'Glass partitioning is priced per linear metre at standard floor-to-ceiling height. The main cost driver is acoustic requirement — a double-glazed acoustic run costs roughly twice a single-glazed one.',
+      ranges: [
+        { item: 'Frameless butt-jointed single glazed (per linear metre)', price: '£280 – £450' },
+        { item: 'Slim-framed single glazed (per linear metre)', price: '£190 – £330' },
+        { item: 'Double glazed acoustic (per linear metre)', price: '£360 – £600' },
+        { item: 'Frameless glass door with patch fittings and floor spring', price: '£1,200 – £1,900' },
+        { item: 'Manifestation film (per linear metre)', price: '£35 – £90' },
+        { item: 'Switchable privacy glass (per m²)', price: '£750 – £1,300' },
+      ],
+      note: 'Guide ranges for planning only, excluding VAT. Occupied-building and out-of-hours working carries a premium. Every job is quoted from a site survey.',
+    },
+    faqs: [
+      {
+        question: 'How much sound do glass partitions actually block?',
+        answer:
+          'Frameless butt-jointed single glazing gives roughly 32 to 36 dB Rw — you will not make out words through it, but you will know someone is talking. Slim-framed double-glazed acoustic partitioning reaches 45 to 48 dB Rw, which is genuine confidentiality. If anyone quotes 45 dB on frameless single glazing, they are quoting the glass rather than the installed system.',
+      },
+      {
+        question: 'Is manifestation a legal requirement?',
+        answer:
+          'Approved Document M requires that full-height glazing in a building people use is made apparent, typically with marking at two heights — one between 850 and 1,000 mm and one between 1,400 and 1,600 mm above floor level. It exists so people do not walk into glass. Since it is required anyway, it is worth treating as a design and branding opportunity rather than a compliance box.',
+      },
+      {
+        question: 'What is switchable privacy glass and is it worth it?',
+        answer:
+          'It is laminated glass with a liquid crystal interlayer that turns from clear to opaque when switched. It is genuinely impressive and genuinely expensive — several times the cost of glass plus film, and each pane needs a power supply. It earns its place in a boardroom or a consulting room that must be open most of the time and private occasionally. For a whole floor, film is the sensible answer.',
+      },
+      {
+        question: 'Can glass partitions be fire rated?',
+        answer:
+          'Yes, but fire-rated glazed partitioning is a certified system rather than fire glass in an ordinary frame. EI30 and EI60 systems are tested as a complete assembly — glass, frame, seals and doorset together — and only that tested combination carries the rating. Fire-rated glass in a standard partition frame provides no certified protection.',
+      },
+      {
+        question: 'How big can a single pane be?',
+        answer:
+          'The limit is usually the building, not the glass. Toughening plants handle panes well over three metres, but the pane has to get through the loading bay, into the lift or up the stairs, and round the corners on your floor. We check the access route at survey and size the panes accordingly — it is a common reason a frameless scheme gains an extra joint.',
+      },
+      {
+        question: 'What happens if a pane breaks after installation?',
+        answer:
+          'Toughened glass cannot be cut or drilled after processing, so a broken pane is replaced with a new one made to the original dimensions. Fabrication is typically one to two weeks. We board or screen the opening in the meantime, and our emergency callout team covers make-safe if a pane fails out of hours.',
+      },
+    ],
+    peopleAlsoAsk: [
+      {
+        question: 'Are glass partitions cheaper than building walls?',
+        answer:
+          'Per linear metre, a plasterboard stud wall is cheaper to install. Over a building’s life the comparison often reverses, because glass partitioning is demountable and survives a churn while stud is demolished and written off. Tenants frequently remove and reuse partitioning when they relocate, which is not an option with stud.',
+      },
+      {
+        question: 'Do glass partitions make an office colder or noisier?',
+        answer:
+          'Neither, if specified properly. Internal partitioning is not part of the thermal envelope, so it has no meaningful effect on heating. Noise depends on the system: single glazed glass reflects sound and can make an open area livelier, which is why acoustic double glazing and soft finishes matter where the floorplate is busy.',
+      },
+      {
+        question: 'How long do glass office partitions last?',
+        answer:
+          'The glass and aluminium will outlast several occupancies — twenty years or more is normal. The parts that age are seals, door closers and floor springs, all of which are replaceable. In practice partitioning is usually reconfigured for a layout change long before anything wears out.',
+      },
+    ],
+    relatedServices: ['aluminium-partitions', 'glass-replacement', 'glass-shopfronts', 'aluminium-doors'],
+    cityPages: false,
+  },
 ];
+
+/**
+ * Services that also generate /services/{slug}/{city} pages.
+ *
+ * Every service/city consumer must read from this list rather than `services`,
+ * because `dynamicParams = false` means a link to a combination that is not in
+ * generateStaticParams is a hard 404, not a soft fallback.
+ */
+export const cityPageServices: Service[] = services.filter((s) => s.cityPages !== false);

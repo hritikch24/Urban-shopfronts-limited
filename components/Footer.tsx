@@ -13,6 +13,8 @@ const services = [
   { label: 'Emergency Callout', href: '/services/emergency-callout' },
   { label: 'Shutter Repair', href: '/services/shutter-repair' },
   { label: 'Glass Replacement', href: '/services/glass-replacement' },
+  { label: 'Aluminium Partitions', href: '/services/aluminium-partitions' },
+  { label: 'Glass Partitions', href: '/services/glass-partitions' },
 ];
 
 const areas = [

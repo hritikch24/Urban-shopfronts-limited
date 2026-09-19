@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cities } from '@/data/cities';
-import { services } from '@/data/services';
+import { services, cityPageServices } from '@/data/services';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -421,7 +421,7 @@ export default async function CityPage({ params }: PageProps) {
             Follow a link below for details, pricing and local coverage.
           </p>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
-            {services.map((service) => (
+            {cityPageServices.map((service) => (
               <li key={service.slug}>
                 <Link
                   href={`/services/${service.slug}/${city.slug}`}

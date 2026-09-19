@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { services } from '@/data/services';
+import { services, cityPageServices } from '@/data/services';
 import { cities } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQSection from '@/components/FAQSection';
@@ -292,7 +292,11 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const params: { slug: string; city: string }[] = [];
-  for (const service of services) {
+  // `cityPageServices`, not `services` — office partitioning is specified from
+  // drawings and won on fit-out programmes, not on "<service> in <town>"
+  // searches, so those two services stay hub-only rather than adding 82 more
+  // near-identical location pages to a site that already has 656.
+  for (const service of cityPageServices) {
     for (const city of cities) {
       params.push({ slug: service.slug, city: city.slug });
     }

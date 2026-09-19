@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { services } from '@/data/services';
+import { services, cityPageServices } from '@/data/services';
 import { cities } from '@/data/cities';
 
 const INDEXNOW_KEY = '7ce4a41892d54f238305d3a7ae5af32c';
@@ -34,7 +34,7 @@ export async function GET(request: Request) {
     urls.push(`${SITE_URL}/areas/${city.slug}`);
   }
 
-  for (const service of services) {
+  for (const service of cityPageServices) {
     for (const city of cities) {
       urls.push(`${SITE_URL}/services/${service.slug}/${city.slug}`);
     }
