@@ -117,6 +117,16 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   metadataBase: new URL(siteUrl),
+  // These were hard-coded <meta> tags in <head>, which append rather than
+  // replace: a city page emitted its own geo block and the page shipped two
+  // conflicting locations. Declared as metadata instead, so a child route's
+  // `other` overrides these by key rather than duplicating them.
+  other: {
+    'geo.region': 'GB',
+    'geo.placename': 'Smethwick, West Midlands, United Kingdom',
+    'geo.position': '52.4897;-1.9718',
+    'ICBM': '52.4897, -1.9718',
+  },
 };
 
 export const viewport: Viewport = {
@@ -125,7 +135,13 @@ export const viewport: Viewport = {
   themeColor: '#1a1a2e',
 };
 
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+// The production env var held the two-character string `""` — copied from
+// .env.example with its quotes. That is truthy, so the tag rendered as
+// `gtm.js?id=%22%22` and GTM never loaded. Strip quotes/whitespace and require
+// a real container id, so a malformed value disables the tag rather than
+// emitting a broken one.
+const rawGtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim().replace(/^["']|["']$/g, '');
+const gtmId = rawGtmId && /^GTM-[A-Z0-9]+$/i.test(rawGtmId) ? rawGtmId : undefined;
 
 export default function RootLayout({
   children,
@@ -138,10 +154,6 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${outfit.variable} h-full scroll-smooth antialiased`}
     >
       <head>
-        <meta name="geo.region" content="GB" />
-        <meta name="geo.placename" content="Smethwick, West Midlands, United Kingdom" />
-        <meta name="geo.position" content="52.4897;-1.9718" />
-        <meta name="ICBM" content="52.4897, -1.9718" />
         <link rel="manifest" href="/manifest.json" />
         {/* Sized files rather than one large icon for every slot: the US
             monogram is roughly 2.5:1, so letting the browser squash a 512px
