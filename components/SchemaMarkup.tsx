@@ -146,12 +146,14 @@ const defaultLocalBusiness = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Glass Replacement', url: 'https://www.urbanshopfronts.co.uk/services/glass-replacement' } },
     ],
   },
+  // Only live profiles belong here — sameAs is a claim Google can fetch and
+  // check. bark.com/en/gb/company/urban-shopfronts and the FreeIndex entry
+  // both returned 404 and were removed.
   sameAs: [
     'https://wa.me/447471043827',
+    'https://www.instagram.com/urbanshopfrontsuk/',
     'https://share.google/IvMAmHyNVnS6hMCdh',
     'https://www.yell.com/biz/urban-shopfronts-london/',
-    'https://www.bark.com/en/gb/company/urban-shopfronts/',
-    'https://www.freeindex.co.uk/profile(urban-shopfronts)/',
   ],
   knowsAbout: [
     'Aluminium shopfront installation',
@@ -202,12 +204,14 @@ const defaultOrganization = {
     addressCountry: 'GB',
     addressRegion: 'West Midlands',
   },
+  // Only live profiles belong here — sameAs is a claim Google can fetch and
+  // check. bark.com/en/gb/company/urban-shopfronts and the FreeIndex entry
+  // both returned 404 and were removed.
   sameAs: [
     'https://wa.me/447471043827',
+    'https://www.instagram.com/urbanshopfrontsuk/',
     'https://share.google/IvMAmHyNVnS6hMCdh',
     'https://www.yell.com/biz/urban-shopfronts-london/',
-    'https://www.bark.com/en/gb/company/urban-shopfronts/',
-    'https://www.freeindex.co.uk/profile(urban-shopfronts)/',
   ],
   knowsAbout: [
     'Aluminium shopfront installation',

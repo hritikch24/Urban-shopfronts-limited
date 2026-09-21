@@ -164,6 +164,7 @@ export default async function CityPage({ params }: PageProps) {
     },
     sameAs: [
       'https://wa.me/447471043827',
+      'https://www.instagram.com/urbanshopfrontsuk/',
       'https://share.google/IvMAmHyNVnS6hMCdh',
       'https://www.yell.com/biz/urban-shopfronts-london/',
     ],

@@ -193,6 +193,7 @@ export default function RootLayout({
               },
               image: { '@id': 'https://www.urbanshopfronts.co.uk/#logo' },
               areaServed: { '@type': 'Country', name: 'United Kingdom' },
+              sameAs: ['https://www.instagram.com/urbanshopfrontsuk/'],
             }),
           }}
         />
