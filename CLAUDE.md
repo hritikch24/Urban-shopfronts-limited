@@ -1,3 +1,7 @@
+> **Read `~/Projects/seo-plan/SESSION-HANDOFF.md` first.** It carries the
+> cross-site state as of 1 Oct 2026: the live deploy hold, open actions,
+> and the things already ruled out so they are not re-proposed.
+
 # Urban Shopfronts — agent notes
 
 Next.js 16 App Router · TypeScript · Tailwind v4 · Prisma + PostgreSQL · Vercel
