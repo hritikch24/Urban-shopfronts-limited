@@ -39,7 +39,7 @@ const citySlugs = [
   'stoke-on-trent', 'plymouth', 'bradford', 'swansea', 'oxford',
   'cambridge', 'york', 'bath', 'aberdeen', 'belfast', 'milton-keynes',
   'middlesbrough', 'bournemouth', 'portsmouth', 'norwich', 'exeter',
-  'chester', 'gloucester', 'peterborough',
+  'chester', 'gloucester', 'peterborough', 'newport', 'wrexham',
 ];
 
 const blogSlugs = [

@@ -2715,4 +2715,104 @@ Across Peterborough, we bring the same careful assessment to every project, reco
       },
     ],
   },
+  {
+    slug: 'newport',
+    name: 'Newport',
+    region: 'Wales',
+    areas: [
+      'Newport City Centre',
+      'Commercial Street',
+      'Friars Walk',
+      'Maindee',
+      'Caerleon',
+      'Rogerstone',
+      'Malpas',
+      'Bettws',
+      'Pill',
+      'Langstone',
+    ],
+    postcodeAreas: ['NP10', 'NP11', 'NP18', 'NP19', 'NP20'],
+    primaryKeyword: 'shopfronts Newport',
+    metaTitle: 'Shopfronts & Roller Shutters in Newport, South Wales',
+    metaDescription:
+      'Shopfront and roller shutter installation across Newport. Commercial Street, Friars Walk, Maindee and Caerleon. Aluminium frontages, security shutters, free survey.',
+    testimonials: [],
+    description: `Newport sits where the M4 corridor meets the Severn, which is why so much of its commercial property is occupied by businesses serving both South Wales and the West of England. Since the Severn crossing tolls were removed, the city has become a more viable base for operators who need reach in both directions, and the retail and trade frontages reflect that: a mix of long-established independents on Commercial Street, newer units around Friars Walk, and a steady spread of trade counters and light industrial frontages out towards Rogerstone and Langstone.
+
+Urban Shopfronts installs and repairs across Newport. The work here tends to split cleanly. In the city centre we are mostly dealing with older building stock — Victorian and Edwardian frontages where the structural opening is rarely square and the existing fascia has usually been altered more than once. Out on the trade parks and the retail parks the opposite applies: modern openings, tighter programmes, and specifications driven by the landlord's shopfitting guide rather than by planning.
+
+Newport City Council determines planning permission and advertisement consent. Several parts of the city centre sit within conservation areas, and the council publishes shopfront design guidance covering fascia proportion, materials and illumination. Signs that project, illuminate or exceed set dimensions need advertisement consent in their own right, which is a separate application from the shopfront itself and is the step most often missed.
+
+Welsh building regulations are devolved and diverge from England in places. We work to the Welsh requirements where they apply rather than assuming the English approved documents carry over.
+
+Practically, Newport is close enough to Cardiff and the Severn bridges that a survey and a return visit are straightforward, and far enough from our Midlands base that we schedule work in blocks rather than piecemeal. If you are planning a frontage here, tell us the unit size and whether the landlord has issued a shopfitting guide — those two things usually determine most of the specification before we have even measured.`,
+    faqs: [
+      {
+        question: 'Do I need planning permission for a new shopfront in Newport?',
+        answer:
+          'Almost always, yes. Replacing a shopfront is a material alteration to the external appearance of the building and Newport City Council will expect an application. If the unit is in a conservation area or the building is listed, the assessment is more detailed and the council’s shopfront design guidance applies. Illuminated and projecting signage needs advertisement consent as a separate application.',
+      },
+      {
+        question: 'Are Welsh building regulations different?',
+        answer:
+          'In places, yes. Building regulations are devolved in Wales and the Welsh approved documents diverge from the English ones, particularly around energy performance. We work to the Welsh requirements rather than assuming the English guidance carries across the border.',
+      },
+      {
+        question: 'How quickly can you get to Newport for a repair?',
+        answer:
+          'Newport is outside our same-day repair area, so we book repair visits in rather than promise immediate attendance. For a frontage that has been forced or a shutter that has failed open, we will tell you honestly when we can be there — and if a local contractor can reach you faster for an out-of-hours make-safe, we will say so.',
+      },
+    ],
+  },
+  {
+    slug: 'wrexham',
+    name: 'Wrexham',
+    region: 'Wales',
+    areas: [
+      'Wrexham City Centre',
+      'Hope Street',
+      'Regent Street',
+      'Eagles Meadow',
+      'Rhosddu',
+      'Acton',
+      'Gwersyllt',
+      'Rhosllanerchrugog',
+      'Coedpoeth',
+      'Wrexham Industrial Estate',
+    ],
+    postcodeAreas: ['LL11', 'LL12', 'LL13', 'LL14'],
+    primaryKeyword: 'shopfronts Wrexham',
+    metaTitle: 'Shopfronts & Roller Shutters in Wrexham, North Wales',
+    metaDescription:
+      'Shopfront and shutter installation across Wrexham. Hope Street, Regent Street, Eagles Meadow and the Industrial Estate. Aluminium frontages and security shutters.',
+    testimonials: [],
+    description: `Wrexham is the commercial centre of North Wales and it has changed character in the last few years. City status in 2022, sustained investment around the centre, and an unusual amount of international attention have all pushed footfall and occupancy up, and the frontages have followed — more hospitality, more independents taking units that had sat empty, and more landlords willing to spend on the shell.
+
+Urban Shopfronts covers Wrexham for installation and planned repair work. The town centre stock is mostly older: Hope Street and Regent Street carry a lot of Victorian frontage where the opening has been modified repeatedly and the surviving pilasters and corbels matter to the planning case. Eagles Meadow and the retail parks are the opposite — modern openings, landlord shopfitting guides, and programmes that have to fit around trading hours.
+
+Wrexham County Borough Council determines planning and advertisement consent. Parts of the centre are within conservation areas, and where original shopfront features survive the council will generally expect them retained or reinstated rather than covered. Illuminated and projecting signage requires advertisement consent separately from the shopfront application.
+
+Wrexham Industrial Estate is one of the largest in Europe and a meaningful share of our work here is not retail at all — roller shutters, personnel doors and security grilles on trade and light industrial units where the specification is about resistance and duty cycle rather than appearance.
+
+Building regulations are devolved in Wales and diverge from England in places. We work to the Welsh documents where they apply.
+
+For repairs, Wrexham is a scheduled visit rather than a same-day callout from our base. We would rather book a slot you can rely on than promise an hour we cannot hold.`,
+    faqs: [
+      {
+        question: 'Do conservation area rules apply in Wrexham city centre?',
+        answer:
+          'In parts of it, yes. Several areas of the centre carry conservation designation, and where original shopfront features survive — pilasters, corbels, stallrisers — Wrexham County Borough Council will generally expect them retained or reinstated rather than concealed behind a new fascia. We check the designation before we quote so the drawings reflect it.',
+      },
+      {
+        question: 'Do you fit shutters on the Wrexham Industrial Estate?',
+        answer:
+          'Yes, and it is a good share of our work there. Industrial units are specified differently from retail — duty cycle, resistance rating and opening speed matter more than appearance, and the opening is usually larger. We quote industrial shutters against the actual cycle count rather than fitting a retail product to an industrial opening.',
+      },
+      {
+        question: 'How quickly can you attend a repair in Wrexham?',
+        answer:
+          'We book repair visits in rather than promise same-day attendance this far from base. If your shutter has failed in the open position and the unit is insecure overnight, tell us when you call — that changes how we schedule it, and if a local contractor can make it safe sooner we will tell you.',
+      },
+    ],
+  },
 ];
