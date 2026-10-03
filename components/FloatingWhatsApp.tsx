@@ -28,7 +28,7 @@ export default function FloatingWhatsApp() {
       }`}
     >
       <a
-        href={`https://wa.me/447471043827?text=${msg}`}
+        href={`https://wa.me/447903680363?text=${msg}`}
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200"

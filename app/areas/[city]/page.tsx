@@ -163,7 +163,7 @@ export default async function CityPage({ params }: PageProps) {
       '@id': 'https://www.urbanshopfronts.co.uk/#organization',
     },
     sameAs: [
-      'https://wa.me/447471043827',
+      'https://wa.me/447903680363',
       'https://www.instagram.com/urbanshopfrontsuk/',
       'https://share.google/IvMAmHyNVnS6hMCdh',
       'https://www.yell.com/biz/urban-shopfronts-london/',
@@ -467,7 +467,7 @@ export default async function CityPage({ params }: PageProps) {
                   Call 07471 043827
                 </a>
                 <a
-                  href="https://wa.me/447471043827"
+                  href="https://wa.me/447903680363"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"

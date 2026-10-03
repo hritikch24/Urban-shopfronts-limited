@@ -771,7 +771,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                   Call 07471 043827
                 </a>
                 <a
-                  href="https://wa.me/447471043827"
+                  href="https://wa.me/447903680363"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"
