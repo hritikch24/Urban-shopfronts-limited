@@ -10,13 +10,23 @@
  * was a find-and-replace with no way to verify nothing had been missed.
  */
 
-/** Primary WhatsApp number — wa.me format, country code, no plus or spaces. */
+/**
+ * Primary WhatsApp. Every wa.me link on the site points here — the floating
+ * button, the sticky bar, the footer, the contact page, every template CTA.
+ */
 export const WHATSAPP = '447903680363';
-
-/** Display form of the WhatsApp number, for when it is shown rather than linked. */
 export const WHATSAPP_DISPLAY = '07903 680363';
 
-/** Voice number. Unchanged — this is the one that rings. */
+/**
+ * Secondary WhatsApp. The original number, kept reachable for anyone who
+ * already has it saved or is mid-conversation on it, but not used for any
+ * outbound link. If this ever needs a visible link, use whatsappLinkSecondary()
+ * explicitly rather than switching WHATSAPP — primary is primary.
+ */
+export const WHATSAPP_SECONDARY = '447471043827';
+export const WHATSAPP_SECONDARY_DISPLAY = '07471 043827';
+
+/** Voice number — the same handset as the secondary WhatsApp. */
 export const PHONE_TEL = '07471043827';
 export const PHONE_DISPLAY = '07471 043827';
 export const PHONE_E164 = '+447471043827';
@@ -30,5 +40,11 @@ export const EMAIL = 'sales@urbanshopfronts.co.uk';
  */
 export function whatsappLink(message?: string): string {
   const base = `https://wa.me/${WHATSAPP}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}
+
+/** Explicit opt-in to the secondary number. Not used by any default CTA. */
+export function whatsappLinkSecondary(message?: string): string {
+  const base = `https://wa.me/${WHATSAPP_SECONDARY}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }

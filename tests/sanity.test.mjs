@@ -64,6 +64,7 @@ function slugsFrom(file) {
     for (const c of cities) valid.add(`/services/${s}/${c}`);
   }
   for (const c of cities) valid.add('/areas/' + c);
+  for (const t of read('data/towns.ts').matchAll(/slug: '([a-z-]+)'/g)) valid.add('/towns/' + t[1]);
   for (const b of blog) valid.add('/blog/' + b);
 
   const dynamic = /^\/(api|admin|quote|invoice|metrics)(\/|$)/;

@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { towns } from '@/data/towns';
 
 const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
@@ -118,5 +119,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
+  const townPages: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/towns`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    ...towns.map((t) => ({
+      url: `${siteUrl}/towns/${t.slug}`,
+      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.75,
+    })),
+  ];
+
+  return [...townPages, ...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
 }

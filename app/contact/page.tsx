@@ -163,6 +163,11 @@ export default function ContactPage() {
                 </svg>
                 <span>Chat on WhatsApp</span>
               </a>
+              <p className="text-grey-600 mt-3 mb-0" style={{ fontSize: '0.85rem', lineHeight: 1.6 }}>
+                Also on WhatsApp:{' '}
+                <a href="https://wa.me/447471043827" className="link-underline">07471 043827</a>
+                {' '}— our original number, still monitored.
+              </p>
 
               {/* Google Map */}
               <div className="rounded-xl overflow-hidden border border-grey-200">
