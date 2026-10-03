@@ -38,7 +38,7 @@ const contactDetails = [
     ),
     label: 'WhatsApp',
     value: '+44 7471 043827',
-    href: 'https://wa.me/447471043827',
+    href: 'https://wa.me/447903680363',
   },
   {
     icon: (
@@ -153,7 +153,7 @@ export default function ContactPage() {
 
               {/* WhatsApp CTA */}
               <a
-                href="https://wa.me/447471043827"
+                href="https://wa.me/447903680363"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 w-full p-4 rounded-xl bg-[#25D366] text-white font-heading font-bold hover:bg-[#20ba5a] transition-colors"
@@ -163,6 +163,11 @@ export default function ContactPage() {
                 </svg>
                 <span>Chat on WhatsApp</span>
               </a>
+              <p className="text-grey-600 mt-3 mb-0" style={{ fontSize: '0.85rem', lineHeight: 1.6 }}>
+                Also on WhatsApp:{' '}
+                <a href="https://wa.me/447471043827" className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors">07471 043827</a>
+                {' '}— our original number, still monitored.
+              </p>
 
               {/* Google Map */}
               <div className="rounded-xl overflow-hidden border border-grey-200">

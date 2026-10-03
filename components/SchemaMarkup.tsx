@@ -150,7 +150,7 @@ const defaultLocalBusiness = {
   // check. bark.com/en/gb/company/urban-shopfronts and the FreeIndex entry
   // both returned 404 and were removed.
   sameAs: [
-    'https://wa.me/447471043827',
+    'https://wa.me/447903680363',
     'https://www.instagram.com/urbanshopfrontsuk/',
     'https://share.google/IvMAmHyNVnS6hMCdh',
     'https://www.yell.com/biz/urban-shopfronts-london/',
@@ -208,7 +208,7 @@ const defaultOrganization = {
   // check. bark.com/en/gb/company/urban-shopfronts and the FreeIndex entry
   // both returned 404 and were removed.
   sameAs: [
-    'https://wa.me/447471043827',
+    'https://wa.me/447903680363',
     'https://www.instagram.com/urbanshopfrontsuk/',
     'https://share.google/IvMAmHyNVnS6hMCdh',
     'https://www.yell.com/biz/urban-shopfronts-london/',
