@@ -244,3 +244,87 @@ rewriting, not removing.**
 Edinburgh, Reading, Middlesbrough, Bradford, London, Birmingham, Cardiff,
 Manchester. Repair intent converts where installation intent browses. That
 should drive which pages get rewritten first, here and on the sibling sites.
+
+---
+
+# Update — 3 October 2026
+
+## WhatsApp changed — this part IS live on main
+
+**Primary WhatsApp is now 07903 680363** (`447903680363`). Every outbound
+`wa.me` link points at it: floating button, mobile sticky bar, footer, contact
+page, instant quote form, city and service templates, LocalBusiness `sameAs`.
+
+**The original number 07471 043827 is kept as a labelled secondary**, on the
+contact page only, for anyone who already has it saved. No default CTA uses it.
+
+**The voice number is unchanged.** 07471 043827 still rings for calls and all
+`tel:` links are untouched. WhatsApp and voice are deliberately different
+handsets so an out-of-hours message does not depend on someone answering.
+
+`lib/contact.ts` is new and is **the only place a contact number may live**.
+There were 33 hardcoded references before it. It exports `whatsappLink()` and,
+separately, `whatsappLinkSecondary()` — so reaching for the old number is
+always deliberate rather than an accident of which constant was imported.
+
+`tests/site-config.mjs` carries the new number in Urban's markers across all
+three repos. That is what fails the build if a component carrying it is copied
+into a sibling.
+
+## Held on branch `urban-wales` — NOT live
+
+### Newport and Wrexham added as cities
+
+Written from scratch. 0.4% overlap with the siblings and with Urban's own
+existing cities. Both carry what the template cities do not: that building
+regulations are devolved in Wales and diverge from the English approved
+documents, and that advertisement consent is a separate application.
+
+Adding two cities also generates 28 city x service pages through the existing
+matrix.
+
+### 34 town pages at `/towns/{town}`
+
+22 across the Midlands within ~40 miles of Birmingham, plus 12 in Wales.
+Sitemap 688 -> 723.
+
+**Read this before editing `data/towns.ts`.**
+
+A sibling site in this portfolio now has town pages for **20 of the same
+Midlands towns** — Dudley, Walsall, West Bromwich, Solihull, Smethwick,
+Oldbury, Halesowen, Stourbridge, Tipton, Wednesbury, Cannock, Lichfield,
+Tamworth, Nuneaton, Redditch, Bromsgrove, Kidderminster, Worcester, Brierley
+Hill, Sutton Coldfield.
+
+That sibling's pages are written around **shutter repair**. These are written
+around **commercial fit-out, office partitioning and shopfront installation** —
+Urban's actual specialism, and one neither sibling offers.
+
+Measured 8-gram overlap against that sibling's town pages: **3.1%**. Against
+Urban's own city pages: **0.2%**.
+
+Same geography, different buyer. "emergency shutter repair Dudley" and "office
+partitions Dudley" are not the same search. Urban's Dudley leads with Castle
+Gate and Waterfront Business Park where landlords subdivide office suites; the
+sibling's leads with the hill-top retail core.
+
+**Do not reach for the sibling's wording when editing these.** The
+contamination test catches branding; it does not catch a paraphrase, and a
+paraphrase is what put 574 pages out of the index in August.
+
+The Welsh pages carry what the Midlands ones do not: devolved building
+regulations, and coastal exposure at Rhyl, Colwyn Bay, Barry and Port Talbot
+where weather and corrosion need specifying rather than assuming.
+
+## Urban has no `lib/site.ts`
+
+Sigma's origin refactor has **not** been applied here — this repo still
+hardcodes `https://www.urbanshopfronts.co.uk` in `app/sitemap.ts` and the new
+town pages declare it locally with a note. Worth doing properly; see Sigma's
+`lib/site.ts` for the pattern.
+
+## Classes are not portable between these repos
+
+`.link-underline` is a Sigma utility and is undefined here — it was used on the
+contact page and would have rendered unstyled. Caught before it shipped. Check
+`app/globals.css` before using a class you remember from another repo.
