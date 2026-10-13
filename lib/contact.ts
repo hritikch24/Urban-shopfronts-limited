@@ -1,9 +1,8 @@
 /**
  * Single source of truth for how customers reach this business.
  *
- * Phone and WhatsApp are deliberately different numbers. The landline-style
- * mobile is what rings for calls; WhatsApp sits on a separate handset so an
- * out-of-hours message does not depend on someone picking up a call.
+ * The primary office number handles both calls and WhatsApp. The original
+ * number remains available as the secondary mobile and WhatsApp contact.
  *
  * Nothing else in the codebase may hardcode a contact number. There were 33
  * hardcoded references before this file existed, which meant a number change
@@ -26,12 +25,22 @@ export const WHATSAPP_DISPLAY = '07903 680363';
 export const WHATSAPP_SECONDARY = '447471043827';
 export const WHATSAPP_SECONDARY_DISPLAY = '07471 043827';
 
-/** Voice number — the same handset as the secondary WhatsApp. */
-export const PHONE_TEL = '07471043827';
-export const PHONE_DISPLAY = '07471 043827';
-export const PHONE_E164 = '+447471043827';
+/** Primary office number — the same handset as primary WhatsApp. */
+export const PHONE_TEL = '07903680363';
+export const PHONE_DISPLAY = WHATSAPP_DISPLAY;
+export const PHONE_E164 = `+${WHATSAPP}`;
+export const PHONE_INTERNATIONAL_DISPLAY = '+44 7903 680363';
+
+/** Original number, retained as the secondary mobile contact. */
+export const PHONE_SECONDARY_DISPLAY = WHATSAPP_SECONDARY_DISPLAY;
+export const PHONE_SECONDARY_E164 = `+${WHATSAPP_SECONDARY}`;
 
 export const EMAIL = 'sales@urbanshopfronts.co.uk';
+
+/** Update visible contact instructions while preserving shared SEO data. */
+export function primaryContactText(text: string): string {
+  return text.replaceAll(PHONE_SECONDARY_DISPLAY, PHONE_DISPLAY);
+}
 
 /**
  * Build a wa.me link with an optional prefilled message.

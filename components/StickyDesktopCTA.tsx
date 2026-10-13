@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -41,12 +42,12 @@ export default function StickyDesktopCTA() {
 
           <div className="flex items-center gap-4">
             <a
-              href="tel:07471043827"
+              href={`tel:${PHONE_E164}`}
               className="flex items-center gap-2 text-gold-light hover:text-gold transition-colors text-sm font-medium"
               tabIndex={visible ? 0 : -1}
             >
               <PhoneIcon />
-              07471 043827
+              {PHONE_DISPLAY}
             </a>
             <Link
               href="/contact"

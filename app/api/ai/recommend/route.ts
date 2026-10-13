@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -59,7 +60,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
       secondary: "Shopfront Repairs",
       reason: "For urgent situations like break-ins or storm damage, our 24/7 emergency team can be on site within the hour to secure your premises, with full repairs following.",
       priceRange: "£300 – £2,000",
-      cta: "Call 07471 043827 now for immediate response.",
+      cta: `Call ${PHONE_DISPLAY} now for immediate response.`,
     };
   }
 
@@ -69,7 +70,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
       secondary: "Glass Replacement",
       reason: "Our same-day repair service covers glass, frames, shutters, and mechanisms. We carry common parts and can usually fix issues in a single visit.",
       priceRange: "£150 – £2,000",
-      cta: "Call 07471 043827 to arrange a same-day repair.",
+      cta: `Call ${PHONE_DISPLAY} to arrange a same-day repair.`,
     };
   }
 
@@ -79,7 +80,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
       secondary: "Roller Shutters",
       reason: "For maximum premises security, we recommend LPS 1175 rated steel doors paired with electric roller shutters for after-hours protection. This combination deters break-ins and keeps insurance premiums low.",
       priceRange: "£3,000 – £8,000",
-      cta: "Call 07471 043827 for a free security assessment.",
+      cta: `Call ${PHONE_DISPLAY} for a free security assessment.`,
     };
   }
 
@@ -89,7 +90,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
       secondary: "Bi-Fold Doors",
       reason: "Thermally broken aluminium with floor-to-ceiling glazing creates a striking, modern frontage that draws foot traffic. Powder-coated in any RAL colour to match your brand.",
       priceRange: "£2,800 – £7,000",
-      cta: "Call 07471 043827 for a free design consultation.",
+      cta: `Call ${PHONE_DISPLAY} for a free design consultation.`,
     };
   }
 
@@ -99,7 +100,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
       secondary: "Automatic Doors",
       reason: "Thermally broken aluminium profiles with double-glazed units significantly reduce heat loss. Adding automatic doors prevents warm air escaping through open entrances.",
       priceRange: "£3,500 – £10,000",
-      cta: "Call 07471 043827 for a free energy assessment.",
+      cta: `Call ${PHONE_DISPLAY} for a free energy assessment.`,
     };
   }
 
@@ -109,7 +110,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
       secondary: "Roller Shutters",
       reason: "A standard aluminium shopfront with a manual roller shutter offers excellent value — professional appearance with solid after-hours security, without the premium of automatic systems.",
       priceRange: "£2,800 – £5,000",
-      cta: "Call 07471 043827 for a free quote — we'll find a solution within your budget.",
+      cta: `Call ${PHONE_DISPLAY} for a free quote — we'll find a solution within your budget.`,
     };
   }
 
@@ -119,7 +120,7 @@ function getStaticRecommendation(answers: Answers): Recommendation {
     secondary: "Security Doors",
     reason: "Based on your requirements, a professionally installed aluminium shopfront provides the best balance of appearance, security, and durability for commercial premises.",
     priceRange: "£2,800 – £6,500",
-    cta: "Call 07471 043827 for a free site survey and exact quote.",
+    cta: `Call ${PHONE_DISPLAY} for a free site survey and exact quote.`,
   };
 }
 
@@ -168,7 +169,7 @@ Respond in JSON format only:
   "secondary": "name of a complementary service",
   "reason": "2-3 sentences explaining why these are the best fit for their specific situation. Be specific to their business type and needs. British English.",
   "priceRange": "indicative price range like £X,XXX – £X,XXX",
-  "cta": "A specific, helpful call-to-action mentioning phone 07471 043827"
+  "cta": "A specific, helpful call-to-action mentioning phone ${PHONE_DISPLAY}"
 }
 
 Available services: Aluminium Shopfronts (£2,800-£6,500), Roller Shutters (£1,200-£3,500), Security Doors (£1,800-£4,500), Automatic Doors (£3,500-£8,000), Bi-Fold Doors (£3,000-£7,000), Fire Doors (£450-£1,200/door), Shopfront Repairs (£300-£2,000), Emergency Callout (24/7), Shutter Repair (£150-£1,200), Glass Replacement (£200-£1,800).`;

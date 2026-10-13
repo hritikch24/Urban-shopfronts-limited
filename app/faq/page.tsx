@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -241,8 +242,8 @@ export default function FAQPage() {
             <Link href="/contact" className="btn-gold">
               Contact Us Today
             </Link>
-            <a href="tel:+447471043827" className="btn-outline">
-              Call 07471 043827
+            <a href={`tel:${PHONE_E164}`} className="btn-outline">
+              Call {PHONE_DISPLAY}
             </a>
           </div>
         </div>

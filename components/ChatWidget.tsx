@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import { useState, useRef, useEffect } from 'react';
 
 interface Message {
@@ -97,7 +98,7 @@ export default function ChatWidget() {
       if (!res.ok) throw new Error(data.error || 'Request failed');
       const assistantMsg: Message = {
         role: 'assistant',
-        content: data.message || 'Sorry, I couldn\'t get a response. Please call us on 07471 043827.',
+        content: data.message || `Sorry, I couldn\'t get a response. Please call us on ${PHONE_DISPLAY}.`,
       };
       setMessages((prev) => [...prev, assistantMsg]);
     } catch {
@@ -105,7 +106,7 @@ export default function ChatWidget() {
         ...prev,
         {
           role: 'assistant',
-          content: 'Sorry, something went wrong. Please call us on 07471 043827.',
+          content: `Sorry, something went wrong. Please call us on ${PHONE_DISPLAY}.`,
         },
       ]);
     } finally {
@@ -209,7 +210,7 @@ export default function ChatWidget() {
                       Chat limit reached. Please{' '}
                       <a href="/contact" className="text-gold underline">contact us</a>
                       {' '}or call{' '}
-                      <a href="tel:07471043827" className="text-gold underline">07471 043827</a>.
+                      <a href={`tel:${PHONE_E164}`} className="text-gold underline">{PHONE_DISPLAY}</a>.
                     </p>
                   )}
                   <div ref={messagesEndRef} />

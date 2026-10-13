@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -123,8 +124,8 @@ export default function HomePage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                   Get an Instant Price
                 </Link>
-                <a href="tel:07471043827" className="btn-outline text-base px-7 py-3.5 whitespace-nowrap">
-                  Call 07471 043827
+                <a href={`tel:${PHONE_E164}`} className="btn-outline text-base px-7 py-3.5 whitespace-nowrap">
+                  Call {PHONE_DISPLAY}
                 </a>
               </div>
 
@@ -349,7 +350,7 @@ export default function HomePage() {
               </div>
               <div className="card-surface p-5">
                 <p className="text-grey-400 text-xs uppercase tracking-wider mb-2 font-semibold">Prefer to talk?</p>
-                <a href="tel:07471043827" className="text-gold text-xl font-bold hover:text-gold-light transition-colors">07471 043827</a>
+                <a href={`tel:${PHONE_E164}`} className="text-gold text-xl font-bold hover:text-gold-light transition-colors">{PHONE_DISPLAY}</a>
                 <p className="text-grey-400 text-xs mt-1">Mon–Fri 8am–6pm &bull; Sat 9am–4pm &bull; Emergency 24/7</p>
               </div>
             </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { primaryContactText } from '@/lib/contact';
 
 interface FAQ {
   question: string;
@@ -89,7 +90,7 @@ export default function FAQSection({ faqs, title = 'Frequently Asked Questions' 
                   } overflow-hidden`}
                 >
                   <div className="px-6 pb-5 text-grey-600 text-sm sm:text-base leading-relaxed border-t border-grey-100">
-                    <p className="pt-4">{faq.answer}</p>
+                    <p className="pt-4">{primaryContactText(faq.answer)}</p>
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_INTERNATIONAL_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -50,30 +51,30 @@ function getStaticResponse(lastMessage: string): string {
   const lower = lastMessage.toLowerCase();
 
   if (lower.includes("emergency") || lower.includes("break-in") || lower.includes("broken") || lower.includes("urgent"))
-    return "For emergencies, please call us immediately on 07471 043827 — we offer 24/7 rapid response and can usually be on site within the hour.";
+    return `For emergencies, please call us immediately on ${PHONE_DISPLAY} — we offer 24/7 rapid response and can usually be on site within the hour.`;
 
   if (lower.includes("price") || lower.includes("cost") || lower.includes("quote") || lower.includes("how much"))
-    return "Every project is different, so we provide free no-obligation quotes after a site survey. You can use our online estimator at urbanshopfronts.co.uk/cost-guide or call 07471 043827 to arrange a free survey — usually within 48 hours.";
+    return `Every project is different, so we provide free no-obligation quotes after a site survey. You can use our online estimator at urbanshopfronts.co.uk/cost-guide or call ${PHONE_DISPLAY} to arrange a free survey — usually within 48 hours.`;
 
   if (lower.includes("area") || lower.includes("cover") || lower.includes("location") || lower.includes("where"))
     return "We cover the entire UK — London, Birmingham, Manchester, Leeds, Liverpool, Bristol, Sheffield, and 15+ more cities. Visit urbanshopfronts.co.uk/areas for the full list.";
 
   if (lower.includes("shutter") || lower.includes("roller"))
-    return "We supply and install steel and aluminium roller shutters — manual, electric, or remote-controlled. Prices typically range from £1,200 to £3,500 depending on size. Call 07471 043827 or fill in our quote form for an exact price.";
+    return `We supply and install steel and aluminium roller shutters — manual, electric, or remote-controlled. Prices typically range from £1,200 to £3,500 depending on size. Call ${PHONE_DISPLAY} or fill in our quote form for an exact price.`;
 
   if (lower.includes("security") || lower.includes("door"))
-    return "We install LPS 1175 rated security doors and composite doors for maximum premises security. Prices from around £1,800. Call 07471 043827 for a free site survey and quote.";
+    return `We install LPS 1175 rated security doors and composite doors for maximum premises security. Prices from around £1,800. Call ${PHONE_DISPLAY} for a free site survey and quote.`;
 
   if (lower.includes("automatic"))
-    return "We install sliding, swing, and revolving automatic door systems compliant with BS 7036. Prices from around £3,500. Call 07471 043827 for a free survey.";
+    return `We install sliding, swing, and revolving automatic door systems compliant with BS 7036. Prices from around £3,500. Call ${PHONE_DISPLAY} for a free survey.`;
 
   if (lower.includes("repair") || lower.includes("fix") || lower.includes("glass"))
-    return "We offer same-day repair services for shopfront glass, frames, shutters, and mechanisms. Call 07471 043827 and we can usually attend within a few hours.";
+    return `We offer same-day repair services for shopfront glass, frames, shutters, and mechanisms. Call ${PHONE_DISPLAY} and we can usually attend within a few hours.`;
 
   if (lower.includes("time") || lower.includes("long") || lower.includes("when") || lower.includes("schedule"))
-    return "Most standard installations take 1 to 3 days. We can usually arrange a free site survey within 48 hours of your enquiry. Call 07471 043827 to book.";
+    return `Most standard installations take 1 to 3 days. We can usually arrange a free site survey within 48 hours of your enquiry. Call ${PHONE_DISPLAY} to book.`;
 
-  return "I can help with information about our shopfront services, pricing estimates, or arranging a free site survey. What would you like to know? You can also call us on 07471 043827 or fill in the quote form on our contact page.";
+  return `I can help with information about our shopfront services, pricing estimates, or arranging a free site survey. What would you like to know? You can also call us on ${PHONE_DISPLAY} or fill in the quote form on our contact page.`;
 }
 
 /* ── System prompt ────────────────────────────────────────────────────── */
@@ -82,7 +83,7 @@ const SYSTEM_PROMPT = `You are the Urban Shopfronts AI assistant, powered by adv
 
 Company: Urban Shopfronts Limited (Companies House registered)
 Location: 31 Norton Close, Smethwick, West Midlands, B66 3NR
-Phone: 07471 043827 | WhatsApp: +44 7471 043827
+Phone: ${PHONE_DISPLAY} | WhatsApp: ${PHONE_INTERNATIONAL_DISPLAY}
 Email: sales@urbanshopfronts.co.uk
 Hours: Mon–Fri 8am–6pm, Sat 9am–4pm, Emergency 24/7
 Website: urbanshopfronts.co.uk
@@ -97,7 +98,7 @@ Services & typical price ranges (indicative only — exact quote after free surv
 • Shopfront Repairs: £300–£2,000 (same-day glass, frame & mechanism)
 • Shutter Repair: £150–£1,200 (spring, motor, curtain repairs)
 • Glass Replacement: £200–£1,800 (toughened, laminated, DGU)
-• Emergency Callout: 24/7 rapid response — call 07471 043827
+• Emergency Callout: 24/7 rapid response — call ${PHONE_DISPLAY}
 
 Coverage: London, Birmingham, Manchester, Leeds, Liverpool, Sheffield, Bristol, Leicester, Nottingham, Coventry, Glasgow, Edinburgh, Cardiff, Newcastle, and more — full UK nationwide.
 
@@ -105,12 +106,12 @@ Guidelines:
 - Be helpful, professional, concise (2–4 sentences per response)
 - Use British English spelling and tone
 - When a customer describes their needs, suggest the most appropriate service(s) and explain briefly why
-- Always try to capture their requirements and direct them to: call 07471 043827, WhatsApp, or fill in the contact form
+- Always try to capture their requirements and direct them to: call ${PHONE_DISPLAY}, WhatsApp, or fill in the contact form
 - If asked about pricing, give the indicative range above and emphasise that every project is different — free site survey gives the exact quote
-- For emergencies (break-in, broken shutter/glass), immediately give the emergency number: 07471 043827
+- For emergencies (break-in, broken shutter/glass), immediately give the emergency number: ${PHONE_DISPLAY}
 - Never fabricate information — if unsure, say you'll need the team to confirm and suggest they call
 - Do not use emojis
-- If the conversation is going well, suggest: "I'd recommend filling in our quick quote form or calling us on 07471 043827 — we can usually arrange a free site survey within 48 hours."`;
+- If the conversation is going well, suggest: "I'd recommend filling in our quick quote form or calling us on ${PHONE_DISPLAY} — we can usually arrange a free site survey within 48 hours."`;
 
 /* ── POST handler ─────────────────────────────────────────────────────── */
 

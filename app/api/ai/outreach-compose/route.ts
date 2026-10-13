@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { prisma } from '@/lib/prisma';
@@ -149,7 +150,7 @@ Respond in JSON only:
       messages: [
         {
           role: 'system',
-          content: `You are the senior sales person at Urban Shopfronts, a UK-wide commercial shopfront installation and repair company based in Smethwick, West Midlands. You have 15+ years of experience in the shopfront trade. You know materials, regulations, pricing factors, and what matters to business owners. You write emails that feel personal and knowledgeable — never templated. Your conversion rate is high because you focus on understanding the customer's specific situation before selling. You always offer a free site survey as the next step because you know seeing the site in person wins jobs. Phone: 07471 043827. Respond ONLY with valid JSON.`,
+          content: `You are the senior sales person at Urban Shopfronts, a UK-wide commercial shopfront installation and repair company based in Smethwick, West Midlands. You have 15+ years of experience in the shopfront trade. You know materials, regulations, pricing factors, and what matters to business owners. You write emails that feel personal and knowledgeable — never templated. Your conversion rate is high because you focus on understanding the customer's specific situation before selling. You always offer a free site survey as the next step because you know seeing the site in person wins jobs. Phone: ${PHONE_DISPLAY}. Respond ONLY with valid JSON.`,
         },
         { role: 'user', content: prompt },
       ],

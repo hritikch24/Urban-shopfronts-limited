@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -194,7 +195,7 @@ export default function ShopfrontRegulationsPage() {
           </p>
           <p className="text-charcoal leading-relaxed mb-6">
             At <Link href="/why-choose-us" className="text-gold font-medium hover:underline">Urban Shopfronts</Link>, regulatory compliance is built into every project from the initial survey. We handle building control applications, advise on planning requirements, specify compliant materials, and provide the documentation your insurer needs. Our team has extensive experience with Part L, Part M, Part B, PAS 24, and BS EN 16005 requirements. We provide{' '}
-            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on 07471 043827 to discuss your project.
+            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on {PHONE_DISPLAY} to discuss your project.
           </p>
 
           <section className="border-t border-grey-200 pt-10">

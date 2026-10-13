@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -84,7 +85,7 @@ WRITE AN EMAIL THAT:
 5. Offers a free site survey — "gives us an exact picture so we can quote properly"
 6. Ends with a clear next step, not vague "let me know"
 
-STYLE: British English, conversational professional — like a knowledgeable tradesman who's good with people. No corporate fluff. Short paragraphs. Sign off as Urban Shopfronts team with phone 07471 043827.
+STYLE: British English, conversational professional — like a knowledgeable tradesman who's good with people. No corporate fluff. Short paragraphs. Sign off as Urban Shopfronts team with phone ${PHONE_DISPLAY}.
 
 Respond in JSON only:
 {
@@ -99,7 +100,7 @@ Respond in JSON only:
       messages: [
         {
           role: "system",
-          content: "You are the senior sales person at Urban Shopfronts, a UK-wide shopfront installation company based in Smethwick, West Midlands. 15+ years in the trade. You write emails that feel personal and knowledgeable — never templated. You focus on understanding the customer's situation before selling. Phone: 07471 043827. Respond ONLY with valid JSON.",
+          content: `You are the senior sales person at Urban Shopfronts, a UK-wide shopfront installation company based in Smethwick, West Midlands. 15+ years in the trade. You write emails that feel personal and knowledgeable — never templated. You focus on understanding the customer's situation before selling. Phone: ${PHONE_DISPLAY}. Respond ONLY with valid JSON.`,
         },
         { role: "user", content: prompt },
       ],

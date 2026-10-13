@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -97,7 +98,7 @@ export default function ServicesPage() {
           <p className="text-grey-300 text-lg max-w-xl mx-auto mb-8">Tell us about your project for a detailed, no-obligation quotation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-gold">Request a Quote</Link>
-            <a href="tel:07471043827" className="btn-outline">Call 07471 043827</a>
+            <a href={`tel:${PHONE_E164}`} className="btn-outline">Call {PHONE_DISPLAY}</a>
           </div>
         </div>
       </section>

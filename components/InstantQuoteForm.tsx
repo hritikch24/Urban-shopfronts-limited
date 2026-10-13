@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { SERVICES, BUDGET_BANDS, formatGBP } from '@/lib/estimator';
@@ -202,9 +203,9 @@ export default function InstantQuoteForm() {
         {/* Styled inline rather than with .btn-outline-dark: that class only
             exists on one of the two themes, so it rendered unstyled elsewhere. */}
         <div className="flex flex-wrap gap-3">
-          <a href="tel:07471043827" className={ctaPrimary}>
+          <a href={`tel:${PHONE_E164}`} className={ctaPrimary}>
             <PhoneGlyph />
-            Call 07471 043827
+            Call {PHONE_DISPLAY}
           </a>
           <a
             href={`https://wa.me/447903680363?text=${encodeURIComponent(

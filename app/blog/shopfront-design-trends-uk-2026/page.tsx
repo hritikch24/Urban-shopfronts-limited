@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -153,7 +154,7 @@ export default function ShopfrontDesignTrends2026Page() {
           </p>
           <p className="text-charcoal leading-relaxed mb-6">
             At <Link href="/why-choose-us" className="text-gold font-medium hover:underline">Urban Shopfronts</Link>, we work with these materials and technologies every week. Our team can advise on the right specification for your premises, your budget, and your planning context. We provide{' '}
-            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on 07471 043827 to discuss your project.
+            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on {PHONE_DISPLAY} to discuss your project.
           </p>
 
           <section className="border-t border-grey-200 pt-10">

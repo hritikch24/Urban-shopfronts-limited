@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164, primaryContactText } from '@/lib/contact';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -508,8 +509,8 @@ export default async function ServiceCityPage({ params }: PageProps) {
               <Link href="/contact" className="btn-gold">
                 Get a Free Quote
               </Link>
-              <a href="tel:07471043827" className="btn-outline">
-                Call 07471 043827
+              <a href={`tel:${PHONE_E164}`} className="btn-outline">
+                Call {PHONE_DISPLAY}
               </a>
             </div>
           </div>
@@ -620,7 +621,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                     </div>
                     <div className="pt-2">
                       <h3 className="font-heading font-bold text-white text-lg">{step.title}</h3>
-                      <p className="text-grey-600 mt-1">{step.description}</p>
+                      <p className="text-grey-600 mt-1">{primaryContactText(step.description)}</p>
                     </div>
                   </div>
                 ))}
@@ -767,8 +768,8 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3">
-                <a href="tel:07471043827" className="btn-gold">
-                  Call 07471 043827
+                <a href={`tel:${PHONE_E164}`} className="btn-gold">
+                  Call {PHONE_DISPLAY}
                 </a>
                 <a
                   href="https://wa.me/447903680363"

@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -116,7 +117,7 @@ export default function BestShopfrontCompanyPage() {
           <h2 className="font-heading text-2xl font-semibold text-white mt-10 mb-4">Why Businesses Choose Urban Shopfronts</h2>
           <p className="text-charcoal leading-relaxed mb-6">
             At <Link href="/why-choose-us" className="text-gold font-medium hover:underline">Urban Shopfronts</Link>, we meet every criterion on this checklist. We are Companies House registered, fully insured, and our installation teams hold CSCS cards. Every project comes with a written workmanship guarantee, and our quotations are detailed, transparent, and valid for 30 days. Our staff collectively bring over 10 years of hands-on experience in the commercial shopfront industry, and we are happy to share references, insurance certificates, and photographs of completed projects before you commit. We provide{' '}
-            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on 07471 043827 to arrange yours.
+            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> with no obligation — call us on {PHONE_DISPLAY} to arrange yours.
           </p>
 
           <section className="border-t border-grey-200 pt-10">

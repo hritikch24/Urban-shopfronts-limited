@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164, PHONE_SECONDARY_DISPLAY, PHONE_SECONDARY_E164 } from '@/lib/contact';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -154,20 +155,20 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:07471043827"
+                  href={`tel:${PHONE_E164}`}
                   className="flex items-center gap-2 text-grey-400 hover:text-gold text-sm transition-colors"
                 >
                   <PhoneIcon />
-                  <span>07471 043827 (Office)</span>
+                  <span>{PHONE_DISPLAY} (Office)</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:07471043827"
+                  href={`tel:${PHONE_SECONDARY_E164}`}
                   className="flex items-center gap-2 text-grey-400 hover:text-gold text-sm transition-colors"
                 >
                   <PhoneIcon />
-                  <span>07471 043827 (Mobile)</span>
+                  <span>{PHONE_SECONDARY_DISPLAY} (Mobile)</span>
                 </a>
               </li>
               <li>

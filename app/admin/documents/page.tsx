@@ -1,5 +1,6 @@
 'use client';
 
+import { WHATSAPP } from '@/lib/contact';
 import { useState, useEffect, useCallback } from 'react';
 
 interface LineItem {
@@ -65,7 +66,7 @@ interface CustomerLite {
   location: string;
 }
 
-const WA_NUMBER = '447471043827';
+const WA_NUMBER = WHATSAPP;
 const SITE_URL = 'https://www.urbanshopfronts.co.uk';
 
 const QUOTE_STATUSES = [

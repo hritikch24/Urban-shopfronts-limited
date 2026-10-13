@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -185,7 +186,7 @@ export default function CommercialSecurityShuttersGuidePage() {
           </p>
           <p className="text-charcoal leading-relaxed mb-6">
             At <Link href="/why-choose-us" className="text-gold font-medium hover:underline">Urban Shopfronts</Link>, we supply and install the full range of commercial security shutters across the UK. Our team will assess your premises, review your insurance requirements, and recommend the most appropriate product and security rating. We provide{' '}
-            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> — call us on 07471 043827 to arrange yours.
+            <Link href="/contact" className="text-gold font-medium hover:underline">free site surveys</Link> — call us on {PHONE_DISPLAY} to arrange yours.
           </p>
 
           <section className="border-t border-grey-200 pt-10">

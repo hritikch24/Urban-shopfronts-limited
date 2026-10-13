@@ -51,8 +51,8 @@ export const SITES = {
     shortName: 'Urban',
     domain: 'www.urbanshopfronts.co.uk',
     origin: 'https://www.urbanshopfronts.co.uk',
-    phoneDisplay: '07471 043827',
-    phoneTel: '07471043827',
+    phoneDisplay: '07903 680363',
+    phoneTel: '07903680363',
     whatsapp: '447903680363',
     markers: [
       'urbanshopfronts',

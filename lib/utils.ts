@@ -1,3 +1,5 @@
+import { whatsappLink } from '@/lib/contact';
+
 /**
  * Merges class names, filtering out falsy values.
  * Lightweight alternative to clsx for simple use cases.
@@ -11,8 +13,8 @@ export function cn(...classes: (string | undefined | null | false)[]): string {
  * Handles both 07xxx and +447xxx formats.
  *
  * @example
- *   formatPhoneForDisplay("07397225530")  // "07471 043827"
- *   formatPhoneForDisplay("+447471043827") // "07471 043827"
+ *   formatPhoneForDisplay("07903680363")  // "07903 680 363"
+ *   formatPhoneForDisplay("+447903680363") // "07903 680 363"
  */
 export function formatPhoneForDisplay(phone: string): string {
   // Strip whitespace and dashes
@@ -37,15 +39,11 @@ export function formatPhoneForDisplay(phone: string): string {
   return phone;
 }
 
-const WHATSAPP_NUMBER = "447471043827";
-
 /**
  * Returns a wa.me deep-link for the UrbanShopfronts WhatsApp number.
  *
  * @param message - Optional pre-filled message text.
  */
 export function getWhatsAppLink(message?: string): string {
-  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
-  if (!message) return base;
-  return `${base}?text=${encodeURIComponent(message)}`;
+  return whatsappLink(message);
 }

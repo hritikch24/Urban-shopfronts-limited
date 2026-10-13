@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164, WHATSAPP } from '@/lib/contact';
 import { Resend } from "resend";
 
 function getResendClient() {
@@ -91,7 +92,7 @@ export async function sendLeadNotification(lead: LeadData): Promise<void> {
         </table>
 
         <div style="margin-top: 24px; text-align: center;">
-          <a href="https://wa.me/447471043827?text=Hi%20${encodeURIComponent(lead.name)}%2C%20thank%20you%20for%20your%20enquiry"
+          <a href="https://wa.me/${WHATSAPP}?text=Hi%20${encodeURIComponent(lead.name)}%2C%20thank%20you%20for%20your%20enquiry"
              style="display: inline-block; background: #25d366; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">
             Reply via WhatsApp
           </a>
@@ -143,10 +144,10 @@ export async function sendAutoReply(
 
         <div style="background: #f9fafb; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
           <p style="margin: 0 0 12px; font-size: 14px; color: #374151;">
-            📞 <a href="tel:+447471043827" style="color: #1a1a2e; font-weight: 600;">07471 043827</a>
+            📞 <a href="tel:${PHONE_E164}" style="color: #1a1a2e; font-weight: 600;">${PHONE_DISPLAY}</a>
           </p>
           <p style="margin: 0 0 12px; font-size: 14px; color: #374151;">
-            💬 <a href="https://wa.me/447471043827" style="color: #1a1a2e; font-weight: 600;">WhatsApp us</a>
+            💬 <a href="https://wa.me/${WHATSAPP}" style="color: #1a1a2e; font-weight: 600;">WhatsApp us</a>
           </p>
           <p style="margin: 0; font-size: 14px; color: #374151;">
             📧 <a href="mailto:sales@urbanshopfronts.co.uk" style="color: #1a1a2e; font-weight: 600;">sales@urbanshopfronts.co.uk</a>
@@ -254,11 +255,11 @@ export async function sendEstimateEmail(data: EstimateEmailData): Promise<void> 
         </p>
 
         <div style="text-align: center; margin-bottom: 20px;">
-          <a href="tel:+447471043827"
+          <a href="tel:${PHONE_E164}"
              style="display: inline-block; background: #f0b429; color: #1a1a2e; padding: 13px 26px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 15px; margin: 0 4px 8px;">
-            Call 07471 043827
+            Call ${PHONE_DISPLAY}
           </a>
-          <a href="https://wa.me/447471043827?text=${encodeURIComponent(`Hi, I just got an instant estimate${data.reference ? ` (ref ${data.reference})` : ""} for ${data.serviceName} and would like to discuss it.`)}"
+          <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I just got an instant estimate${data.reference ? ` (ref ${data.reference})` : ""} for ${data.serviceName} and would like to discuss it.`)}"
              style="display: inline-block; background: #25D366; color: #ffffff; padding: 13px 26px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 15px; margin: 0 4px 8px;">
             WhatsApp Us
           </a>

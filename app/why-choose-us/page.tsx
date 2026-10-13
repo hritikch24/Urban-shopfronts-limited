@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -169,7 +170,7 @@ export default function WhyChooseUsPage() {
       <section className="section-padding bg-gradient-dark" style={{ textAlign: 'center' }}>
         <div className="container-max" style={{ maxWidth: '36rem' }}>
           <h2 className="font-heading text-white" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ready to Work With the Best?</h2>
-          <p className="text-grey-300" style={{ marginBottom: '1.5rem' }}>Get a free, no-obligation site survey and quote. Call us on <a href="tel:07471043827" className="text-gold" style={{ textDecoration: 'underline' }}>07471 043827</a> or request a callback online.</p>
+          <p className="text-grey-300" style={{ marginBottom: '1.5rem' }}>Get a free, no-obligation site survey and quote. Call us on <a href={`tel:${PHONE_E164}`} className="text-gold" style={{ textDecoration: 'underline' }}>{PHONE_DISPLAY}</a> or request a callback online.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-gold">Get a Free Quote</Link>
             <Link href="/services" className="btn-outline">View Our Services</Link>

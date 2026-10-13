@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -97,8 +98,8 @@ export default function InstantQuotePage() {
                 <p className="text-grey-500 text-sm mb-4">
                   Call us and we will give you a ballpark over the phone.
                 </p>
-                <a href="tel:07471043827" className="btn-gold w-full text-center">
-                  Call 07471 043827
+                <a href={`tel:${PHONE_E164}`} className="btn-gold w-full text-center">
+                  Call {PHONE_DISPLAY}
                 </a>
               </div>
             </aside>

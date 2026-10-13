@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -214,11 +215,11 @@ export default function Header() {
 
             <div className="hidden lg:flex items-center gap-3 xl:gap-4">
               <a
-                href="tel:07471043827"
+                href={`tel:${PHONE_E164}`}
                 className="flex items-center gap-2 text-grey-500 hover:text-gold transition-colors text-sm font-medium whitespace-nowrap"
               >
                 <PhoneIcon />
-                07471 043827
+                {PHONE_DISPLAY}
               </a>
               <Link
                 href="/contact"
@@ -314,11 +315,11 @@ export default function Header() {
 
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="tel:07471043827"
+                href={`tel:${PHONE_E164}`}
                 className="flex items-center justify-center gap-2 py-3 px-4 border border-gold/30 text-gold rounded-lg text-base font-semibold hover:bg-gold/10 hover:border-gold transition-all"
               >
                 <PhoneIcon />
-                07471 043827
+                {PHONE_DISPLAY}
               </a>
               <Link
                 href="/contact"

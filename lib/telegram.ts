@@ -4,7 +4,6 @@
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-const BUSINESS_PHONE = "07471043827";
 
 interface LeadData {
   id: string;

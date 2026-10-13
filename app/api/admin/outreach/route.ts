@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { prisma } from '@/lib/prisma';
@@ -109,7 +110,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           ${htmlBody}
           <hr style="margin:28px 0;border:none;border-top:1px solid #e5e7eb;"/>
           <p style="font-size:12px;color:#9ca3af;text-align:center;margin:0;">
-            Urban Shopfronts · 07471 043827 · sales@urbanshopfronts.co.uk<br/>
+            Urban Shopfronts · ${PHONE_DISPLAY} · sales@urbanshopfronts.co.uk<br/>
             <a href="https://www.urbanshopfronts.co.uk" style="color:#9ca3af;">www.urbanshopfronts.co.uk</a>
           </p>
         </div>

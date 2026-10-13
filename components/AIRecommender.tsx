@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -95,7 +96,7 @@ function getStaticRecommendation(answers: Record<string, string>): Recommendatio
       secondary: 'Shopfront Repairs',
       reason: 'For urgent situations, our 24/7 emergency team can be on site within the hour to secure your premises, with full repairs following.',
       priceRange: '£300 – £2,000',
-      cta: 'Call 07471 043827 now for immediate response.',
+      cta: `Call ${PHONE_DISPLAY} now for immediate response.`,
     };
   }
   if (primaryNeed === 'repair') {
@@ -104,7 +105,7 @@ function getStaticRecommendation(answers: Record<string, string>): Recommendatio
       secondary: 'Glass Replacement',
       reason: 'Our same-day repair service covers glass, frames, shutters, and mechanisms. We carry common parts and can usually fix issues in a single visit.',
       priceRange: '£150 – £2,000',
-      cta: 'Call 07471 043827 to arrange a same-day repair.',
+      cta: `Call ${PHONE_DISPLAY} to arrange a same-day repair.`,
     };
   }
   if (priority === 'security') {
@@ -113,7 +114,7 @@ function getStaticRecommendation(answers: Record<string, string>): Recommendatio
       secondary: 'Roller Shutters',
       reason: 'LPS 1175 rated steel doors paired with electric roller shutters provide maximum protection and help keep insurance premiums low.',
       priceRange: '£3,000 – £8,000',
-      cta: 'Call 07471 043827 for a free security assessment.',
+      cta: `Call ${PHONE_DISPLAY} for a free security assessment.`,
     };
   }
   if (priority === 'aesthetics') {
@@ -122,7 +123,7 @@ function getStaticRecommendation(answers: Record<string, string>): Recommendatio
       secondary: 'Bi-Fold Doors',
       reason: 'Thermally broken aluminium with floor-to-ceiling glazing creates a striking modern frontage that draws foot traffic. Any RAL colour available.',
       priceRange: '£2,800 – £7,000',
-      cta: 'Call 07471 043827 for a free design consultation.',
+      cta: `Call ${PHONE_DISPLAY} for a free design consultation.`,
     };
   }
   if (priority === 'budget') {
@@ -131,7 +132,7 @@ function getStaticRecommendation(answers: Record<string, string>): Recommendatio
       secondary: 'Roller Shutters',
       reason: 'A standard aluminium shopfront with manual roller shutter offers excellent value — professional appearance with solid security.',
       priceRange: '£2,800 – £5,000',
-      cta: 'Call 07471 043827 — we will find a solution within your budget.',
+      cta: `Call ${PHONE_DISPLAY} — we will find a solution within your budget.`,
     };
   }
   return {
@@ -139,7 +140,7 @@ function getStaticRecommendation(answers: Record<string, string>): Recommendatio
     secondary: 'Security Doors',
     reason: 'A professionally installed aluminium shopfront provides the best balance of appearance, security, and durability for commercial premises.',
     priceRange: '£2,800 – £6,500',
-    cta: 'Call 07471 043827 for a free site survey and exact quote.',
+    cta: `Call ${PHONE_DISPLAY} for a free site survey and exact quote.`,
   };
 }
 
@@ -352,10 +353,10 @@ export default function AIRecommender() {
                     View {recommendation.primary}
                   </Link>
                   <a
-                    href="tel:07471043827"
+                    href={`tel:${PHONE_E164}`}
                     className="flex-1 bg-navy hover:bg-navy/90 text-white font-heading font-bold text-sm py-3 rounded-xl transition-colors text-center"
                   >
-                    Call 07471 043827
+                    Call {PHONE_DISPLAY}
                   </a>
                 </div>
 

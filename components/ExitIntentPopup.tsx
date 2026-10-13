@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import Link from 'next/link';
 import { useCallback } from 'react';
 import { useExitIntent, useModalChrome } from '@/lib/exit-intent';
@@ -96,11 +97,11 @@ export default function ExitIntentPopup() {
               Start with a price
             </Link>
             <a
-              href="tel:07471043827"
+              href={`tel:${PHONE_E164}`}
               onClick={onClose}
               className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-[#d8dce8] px-6 py-3.5 font-heading text-sm font-bold text-[#d8dce8] no-underline transition-colors hover:bg-[#d8dce8] hover:text-[#08081a]"
             >
-              Call 07471 043827
+              Call {PHONE_DISPLAY}
             </a>
           </div>
           {/* reassure: names what happens after the click. At the moment of

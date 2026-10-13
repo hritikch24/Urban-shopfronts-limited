@@ -1,5 +1,6 @@
 'use client';
 
+import { WHATSAPP } from '@/lib/contact';
 import { useState, useEffect, useCallback } from 'react';
 
 interface Customer {
@@ -27,7 +28,7 @@ interface Stats {
 }
 
 const COMPANY = 'Urban Shopfronts';
-const WA_NUMBER = '447471043827';
+const WA_NUMBER = WHATSAPP;
 
 const SERVICES = [
   'Aluminium Shopfront', 'Roller Shutter', 'Security Door', 'Automatic Door',

@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_E164 } from '@/lib/contact';
 import { useState, useEffect } from 'react';
 
 function PhoneIcon() {
@@ -37,7 +38,7 @@ export default function MobileStickyBar() {
     >
       <div className="bg-navy border-t border-navy-light grid grid-cols-2">
         <a
-          href="tel:07471043827"
+          href={`tel:${PHONE_E164}`}
           className="flex items-center justify-center gap-2 py-4 px-4 text-gold font-heading font-bold text-sm hover:bg-navy-light transition-colors border-r border-navy-light"
           aria-label="Call Urban Shopfronts"
           tabIndex={visible ? 0 : -1}

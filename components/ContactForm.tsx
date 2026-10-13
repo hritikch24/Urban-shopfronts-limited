@@ -1,5 +1,6 @@
 'use client';
 
+import { PHONE_DISPLAY, PHONE_E164 } from '@/lib/contact';
 import { useState, FormEvent } from 'react';
 import { getSessionId } from '@/lib/session';
 
@@ -127,7 +128,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
       setStatus('success');
     } catch {
       setStatus('error');
-      setErrorMsg('Something went wrong. Please try calling us on 07471 043827.');
+      setErrorMsg(`Something went wrong. Please try calling us on ${PHONE_DISPLAY}.`);
     }
   }
 
@@ -143,8 +144,8 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         <p className="text-grey-600 mb-1">Thank you! We&apos;ll be in touch within 2 hours.</p>
         <p className="text-grey-500 text-sm">
           For urgent enquiries call{' '}
-          <a href="tel:07471043827" className="text-gold font-semibold hover:underline">
-            07471 043827
+          <a href={`tel:${PHONE_E164}`} className="text-gold font-semibold hover:underline">
+            {PHONE_DISPLAY}
           </a>
         </p>
       </div>
@@ -376,8 +377,8 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
 
       <p className="text-center text-xs text-grey-400">
         Or call us directly:{' '}
-        <a href="tel:07471043827" className="text-gold font-semibold hover:underline">
-          07471 043827
+        <a href={`tel:${PHONE_E164}`} className="text-gold font-semibold hover:underline">
+          {PHONE_DISPLAY}
         </a>
       </p>
     </form>

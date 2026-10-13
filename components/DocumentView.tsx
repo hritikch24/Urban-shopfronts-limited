@@ -1,8 +1,9 @@
+import { PHONE_DISPLAY } from '@/lib/contact';
 import PrintButton from './PrintButton';
 
 const COMPANY_NAME = 'URBAN SHOPFRONTS LTD';
 const COMPANY_ADDRESS = '31 Norton Close, Smethwick, England, B66 3JA';
-const COMPANY_PHONE = '07471 043827';
+const COMPANY_PHONE = PHONE_DISPLAY;
 const COMPANY_EMAIL = 'sales@urbanshopfronts.co.uk';
 const COMPANY_SITE = 'www.urbanshopfronts.co.uk';
 /* A filename that has never been served. The old path is sent with
