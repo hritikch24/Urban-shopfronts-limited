@@ -33,7 +33,7 @@ export const garageDoors = {
     'Is there any emergency or same-day garage door repair? If not, the pages must not imply one.',
     'Does Urban motorise existing manual doors?',
     'Which manufacturers’ doors Urban supplies (name one only if Urban buys direct).',
-    'Typical prices: spring, cable and motor repairs; a single and a double door supplied and fitted.',
+    'Typical prices: spring, cable and motor repairs; single and double doors installed.',
     'Is servicing sold as a separate visit? What is checked and what does it cost?',
     'Photos of real garage door jobs, with town and month.',
   ],
@@ -126,7 +126,7 @@ export const repairsCopy: GarageCopy = {
     {
       heading: 'Noisy, Juddering or Off-Track Doors',
       paragraphs: [
-        'Grinding and squealing point to dry or worn rollers and hinges. Juddering usually means the door is out of balance or a track bracket has loosened. A door that has left its track is unevenly loaded and should not be pushed back by hand.',
+        'Grinding and squealing point to dry or worn rollers and hinges. Juddering usually comes from an unbalanced door or a loose track bracket. A door that has left its track is unevenly loaded and should not be pushed back by hand.',
       ],
     },
     {
@@ -162,8 +162,8 @@ export const repairsCopy: GarageCopy = {
   ],
   faqs: [
     {
-      question: 'How much does a garage door repair cost?',
-      answer: 'It depends on the failed part and the door. We have not yet published typical garage door repair prices. Send photos and we will price the repair before attending.',
+      question: 'How Are Garage Door Repairs Priced?',
+      answer: 'On the failed part and the door. We have not yet published typical garage door repair prices. Send photos and we will price the repair before attending.',
     },
     {
       question: 'Can you repair a garage door fitted by another company?',
@@ -276,8 +276,8 @@ export const installationCopy: GarageCopy = {
   ],
   faqs: [
     {
-      question: 'How much does a new garage door cost?',
-      answer: 'It depends on type, size, insulation, operator and finish. We have not yet published typical garage door prices. Send photos and rough sizes for a guide figure before survey.',
+      question: 'How Is a New Garage Door Priced?',
+      answer: 'On type, size, insulation, operator and finish. We have not yet published typical garage door prices. Send photos and rough sizes for a guide figure before survey.',
     },
     {
       question: 'How long does a garage door installation take?',
