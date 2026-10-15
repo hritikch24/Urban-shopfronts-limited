@@ -2,6 +2,7 @@ import { PHONE_DISPLAY, PHONE_INTERNATIONAL_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
+import { GROQ_MODEL, groqExtras } from '@/lib/ai/groq-model';
 /* ── Rate-limiter (in-memory, per-instance) ──────────────────────────── */
 
 interface RateLimitEntry {
@@ -162,8 +163,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   try {
     const response = await client.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
-      max_tokens: 350,
+      model: GROQ_MODEL,
+      ...groqExtras,
+      max_tokens: 900,
       temperature: 0.7,
       messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
     });

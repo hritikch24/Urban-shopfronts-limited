@@ -1,6 +1,7 @@
 import OpenAI from 'openai';
 import { calculateEstimate, findService, type EstimateOptions, type EstimateResult } from './estimator';
 
+import { GROQ_MODEL, groqExtras } from '@/lib/ai/groq-model';
 /**
  * AI-assisted pricing, with the rule-based engine as both fallback and guard.
  *
@@ -94,8 +95,9 @@ export async function estimateWithAI(opts: AiOptions): Promise<AiEstimateResult 
   try {
     const response = await client.chat.completions.create(
       {
-        model: 'llama-3.3-70b-versatile',
-        max_tokens: 150,
+        model: GROQ_MODEL,
+      ...groqExtras,
+        max_tokens: 700,
         temperature: 0.2,
         response_format: { type: 'json_object' },
         messages: [{ role: 'user', content: prompt }],

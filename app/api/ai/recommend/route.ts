@@ -2,6 +2,7 @@ import { PHONE_DISPLAY } from '@/lib/contact';
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
+import { GROQ_MODEL, groqExtras } from '@/lib/ai/groq-model';
 /* ── Rate limiter ─────────────────────────────────────────────────────── */
 
 interface RateLimitEntry { count: number; resetAt: number }
@@ -175,8 +176,9 @@ Respond in JSON format only:
 Available services: Aluminium Shopfronts (£2,800-£6,500), Roller Shutters (£1,200-£3,500), Security Doors (£1,800-£4,500), Automatic Doors (£3,500-£8,000), Bi-Fold Doors (£3,000-£7,000), Fire Doors (£450-£1,200/door), Shopfront Repairs (£300-£2,000), Emergency Callout (24/7), Shutter Repair (£150-£1,200), Glass Replacement (£200-£1,800).`;
 
     const response = await client.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
-      max_tokens: 400,
+      model: GROQ_MODEL,
+      ...groqExtras,
+      max_tokens: 1000,
       temperature: 0.6,
       messages: [
         {
