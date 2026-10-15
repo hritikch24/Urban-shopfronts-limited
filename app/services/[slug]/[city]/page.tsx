@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { services, cityPageServices } from '@/data/services';
-import { cities } from '@/data/cities';
+import { cities, matrixCities } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -297,8 +297,9 @@ export async function generateStaticParams() {
   // drawings and won on fit-out programmes, not on "<service> in <town>"
   // searches, so those two services stay hub-only rather than adding 82 more
   // near-identical location pages to a site that already has 656.
+  // `matrixCities`, not `cities` — cities added since Oct 2026 are hub-only.
   for (const service of cityPageServices) {
-    for (const city of cities) {
+    for (const city of matrixCities) {
       params.push({ slug: service.slug, city: city.slug });
     }
   }
@@ -381,7 +382,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
   const areasSubtitle = getAreasSubtitle(city.name, service.name, city.region);
 
   const otherServices = services.filter((s) => s.slug !== slug);
-  const otherCities = cities.filter((c) => c.slug !== citySlug).slice(0, 12);
+  const otherCities = matrixCities.filter((c) => c.slug !== citySlug).slice(0, 12);
 
   // --- Schema markup ---
 
@@ -727,7 +728,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
               </Link>
             ))}
           </div>
-          {cities.filter((c) => c.slug !== citySlug).length > 12 && (
+          {matrixCities.filter((c) => c.slug !== citySlug).length > 12 && (
             <div className="text-center mt-6">
               <Link href="/areas" className="text-gold hover:text-gold-dark font-medium text-sm inline-flex items-center gap-1 transition-colors">
                 View all locations

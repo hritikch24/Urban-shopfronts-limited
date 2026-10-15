@@ -425,11 +425,12 @@ export default async function CityPage({ params }: PageProps) {
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
             {cityPageServices.map((service) => (
               <li key={service.slug}>
+                {/* Hub-only cities have no /services/{service}/{city} page: link the service itself. */}
                 <Link
-                  href={`/services/${service.slug}/${city.slug}`}
+                  href={city.hubOnly ? `/services/${service.slug}` : `/services/${service.slug}/${city.slug}`}
                   className="text-charcoal hover:text-gold transition-colors text-sm"
                 >
-                  {service.name} in {city.name}
+                  {city.hubOnly ? service.name : `${service.name} in ${city.name}`}
                 </Link>
               </li>
             ))}

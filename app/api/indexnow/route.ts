@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { services, cityPageServices } from '@/data/services';
-import { cities } from '@/data/cities';
+import { cities, matrixCities } from '@/data/cities';
 
 const INDEXNOW_KEY = '7ce4a41892d54f238305d3a7ae5af32c';
 const SITE_URL = 'https://www.urbanshopfronts.co.uk';
@@ -35,7 +35,7 @@ export async function GET(request: Request) {
   }
 
   for (const service of cityPageServices) {
-    for (const city of cities) {
+    for (const city of matrixCities) {
       urls.push(`${SITE_URL}/services/${service.slug}/${city.slug}`);
     }
   }

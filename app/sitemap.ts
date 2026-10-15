@@ -43,6 +43,10 @@ const citySlugs = [
   'chester', 'gloucester', 'peterborough',
 ];
 
+// Cities with an /areas page only — no service × city pages (see `hubOnly`
+// in data/cities.ts). New cities go here, never into citySlugs.
+const hubOnlyCitySlugs = ['newport', 'wrexham'];
+
 const blogSlugs = [
   'how-to-maintain-commercial-roller-shutters',
   'aluminium-shopfront-planning-permission-uk',
@@ -97,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const cityPages: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
+  const cityPages: MetadataRoute.Sitemap = [...citySlugs, ...hubOnlyCitySlugs].map((slug) => ({
     url: `${siteUrl}/areas/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
@@ -129,5 +133,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...garagePages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
+  // One page for every town (anchors per town), never a page per town.
+  const townPages: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/towns`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+  ];
+
+  return [...staticPages, ...garagePages, ...servicePages, ...cityPages, ...townPages, ...serviceCityPages, ...blogPages, ...videoPages];
 }

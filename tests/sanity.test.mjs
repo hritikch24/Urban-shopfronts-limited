@@ -59,9 +59,17 @@ function slugsFrom(file) {
     if (seg.startsWith('[') || seg === 'api') continue;
     if (existsSync(join(ROOT, 'app', seg, 'page.tsx'))) valid.add('/' + seg);
   }
+  // Hub-only cities (data/cities.ts `hubOnly: true`) have an /areas page but no service × city pages.
+  const hubOnly = new Set(
+    read(join(ROOT, 'data/cities.ts'))
+      .split(/\n  \{\n/)
+      .filter((chunk) => /\n\s*hubOnly: true,/.test(chunk))
+      .map((chunk) => chunk.match(/slug: '([^']+)'/)?.[1])
+      .filter(Boolean),
+  );
   for (const s of services) {
     valid.add('/services/' + s);
-    for (const c of cities) valid.add(`/services/${s}/${c}`);
+    for (const c of cities) if (!hubOnly.has(c)) valid.add(`/services/${s}/${c}`);
   }
   for (const c of cities) valid.add('/areas/' + c);
   for (const b of blog) valid.add('/blog/' + b);

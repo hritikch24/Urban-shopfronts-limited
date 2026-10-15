@@ -39,6 +39,10 @@ export default function AreasPage() {
               </Link>
             ))}
           </div>
+          <p className="text-charcoal mt-8">
+            Looking for a town rather than a city?{' '}
+            <Link href="/towns" className="text-gold hover:underline">See the towns we cover across the Midlands and Wales</Link>.
+          </p>
         </div>
       </section>
       <section className="section-padding bg-gradient-dark">

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { services } from '@/data/services';
-import { cities } from '@/data/cities';
+import { matrixCities } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -406,7 +406,7 @@ export default async function ServicePage({ params }: PageProps) {
             local pricing, coverage areas and recent projects.
           </p>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
-            {cities.map((city) => (
+            {matrixCities.map((city) => (
               <li key={city.slug}>
                 <Link
                   href={`/services/${service.slug}/${city.slug}`}
