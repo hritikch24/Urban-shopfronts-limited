@@ -12,7 +12,8 @@
     "test:contamination": "node tests/contamination.test.mjs",
     "test:sanity": "node tests/sanity.test.mjs",
     "test:smoke": "node tests/smoke.test.mjs",
-    "test": "npm run test:contamination && npm run test:sanity"
+    "test": "npm run test:contamination && npm run test:sanity && npm run test:parse",
+    "test:parse": "node --no-warnings tests/document-parse.test.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
