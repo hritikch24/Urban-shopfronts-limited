@@ -20,6 +20,15 @@ const serviceOptions = [
   'Curtain Walling', 'Glass Shopfronts', 'Other',
 ];
 
+// Offered only on pages that pass `garage` (the garage door pages, once published).
+const garageOptions = ['Garage Door Repair', 'Garage Door Installation'];
+
+const doorTypeOptions = ['Roller', 'Sectional', 'Up-and-Over', 'Side-Hinged', 'Not sure'];
+
+const timingOptions = ['As soon as possible', 'Within a month', 'Planning ahead / budgeting'];
+
+const UK_POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+
 const hearAboutOptions = [
   'Google Search', 'Google Maps', 'Recommended by someone', 'Social Media',
   'Returning customer', 'Other',
@@ -34,6 +43,9 @@ interface FormData {
   service: string;
   message: string;
   hearAbout: string;
+  postcode: string;
+  timing: string;
+  doorType: string;
 }
 
 interface FormErrors {
@@ -43,23 +55,33 @@ interface FormErrors {
   location?: string;
   locationOther?: string;
   service?: string;
+  postcode?: string;
 }
 
 interface ContactFormProps {
   defaultCity?: string;
+  /** Pre-selects "Service Required". */
+  defaultService?: string;
+  /** Adds the garage door services to the list. */
+  garage?: boolean;
 }
 
-export default function ContactForm({ defaultCity }: ContactFormProps) {
+export default function ContactForm({ defaultCity, defaultService, garage = false }: ContactFormProps) {
   const [form, setForm] = useState<FormData>({
     fullName: '',
     email: '',
     phone: '',
     location: defaultCity || '',
     locationOther: '',
-    service: '',
+    service: defaultService || '',
     message: '',
     hearAbout: '',
+    postcode: '',
+    timing: '',
+    doorType: '',
   });
+  const options = garage ? [...serviceOptions.slice(0, -1), ...garageOptions, 'Other'] : serviceOptions;
+  const isGarage = form.service.startsWith('Garage Door');
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -82,6 +104,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
       e.locationOther = 'Please specify your location.';
     }
     if (!form.service) e.service = 'Please select a service.';
+    if (form.postcode.trim() && !UK_POSTCODE.test(form.postcode.trim())) e.postcode = 'Enter a UK postcode, or leave it blank.';
     return e;
   }
 
@@ -114,9 +137,17 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
           message: form.message || undefined,
           source: form.hearAbout || undefined,
           sessionId: getSessionId(),
+          postcode: form.postcode.trim() || undefined,
+          timing: form.timing || undefined,
+          doorType: isGarage ? form.doorType || undefined : undefined,
+          // The page path only, never the query string.
+          landingPage: window.location.pathname,
         }),
       });
       if (!res.ok) throw new Error('Server error');
+      // For GTM: the kind of job and the page, never anything the visitor typed.
+      const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+      w.dataLayer?.push({ event: 'enquiry_submitted', form: 'contact', service_type: form.service, page_path: window.location.pathname });
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('event', 'conversion', {
           send_to: 'AW-16801337867/TcCuCK3Jk7IcEIukwMs-',
@@ -151,6 +182,10 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
       </div>
     );
   }
+
+  // Optional selects never show an error state.
+  const plainSelect =
+    'w-full px-4 py-3 rounded-lg border border-grey-200 hover:border-grey-300 text-sm font-body bg-white text-navy focus:outline-none focus:ring-2 focus:ring-gold transition-colors cursor-pointer';
 
   const inputClass = (field: keyof FormErrors) =>
     `w-full px-4 py-3 rounded-lg border text-sm font-body bg-white text-navy placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-gold transition-colors ${
@@ -292,7 +327,7 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
             aria-describedby={errors.service ? 'service-error' : undefined}
           >
             <option value="">Select service...</option>
-            {serviceOptions.map((s) => (
+            {options.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>
@@ -305,6 +340,53 @@ export default function ContactForm({ defaultCity }: ContactFormProps) {
         {errors.service && (
           <p id="service-error" className="mt-1 text-xs text-red-500">{errors.service}</p>
         )}
+      </div>
+
+      {isGarage && (
+        <div>
+          <label htmlFor="doorType" className="block text-sm font-semibold text-navy mb-1.5">
+            Garage Door Type <span className="text-grey-400 font-normal">(optional)</span>
+          </label>
+          <select id="doorType" name="doorType" value={form.doorType} onChange={handleChange} className={plainSelect}>
+            <option value="">Select...</option>
+            {doorTypeOptions.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="postcode" className="block text-sm font-semibold text-navy mb-1.5">
+            Site Postcode <span className="text-grey-400 font-normal">(optional)</span>
+          </label>
+          <input
+            id="postcode"
+            name="postcode"
+            type="text"
+            autoComplete="postal-code"
+            placeholder="B66 3NR"
+            value={form.postcode}
+            onChange={handleChange}
+            className={inputClass('postcode')}
+            aria-describedby={errors.postcode ? 'postcode-error' : undefined}
+          />
+          {errors.postcode && (
+            <p id="postcode-error" className="mt-1 text-xs text-red-500">{errors.postcode}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="timing" className="block text-sm font-semibold text-navy mb-1.5">
+            When Is It Needed? <span className="text-grey-400 font-normal">(optional)</span>
+          </label>
+          <select id="timing" name="timing" value={form.timing} onChange={handleChange} className={plainSelect}>
+            <option value="">Select...</option>
+            {timingOptions.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div>

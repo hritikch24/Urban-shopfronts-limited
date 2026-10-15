@@ -38,6 +38,8 @@ model Lead {
   service   String
   message   String?
   source    String?
+  /// The page path the contact form was sent from, without any query string.
+  landingPage String? @map("landing_page")
   sessionId String?  @map("session_id")
   status    String   @default("new")
   createdAt DateTime @default(now())

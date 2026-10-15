@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { garageDoors } from '@/data/garage-doors';
 
 const siteUrl = 'https://www.urbanshopfronts.co.uk';
 
@@ -76,6 +77,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
+  // Hub pages only, listed once the owner confirms garage door work.
+  const garagePages: MetadataRoute.Sitemap = garageDoors.published
+    ? ['/garage-door-repairs', '/garage-door-installation'].map((p) => ({
+        url: `${siteUrl}${p}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      }))
+    : [];
+
   const servicePages: MetadataRoute.Sitemap = [
     ...serviceSlugs,
     ...hubOnlyServiceSlugs,
@@ -118,5 +129,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
+  return [...staticPages, ...garagePages, ...servicePages, ...cityPages, ...serviceCityPages, ...blogPages, ...videoPages];
 }
