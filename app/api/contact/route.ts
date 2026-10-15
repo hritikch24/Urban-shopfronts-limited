@@ -47,6 +47,9 @@ function cleanupExpiredEntries(): void {
 // Validation helpers
 // ---------------------------------------------------------------------------
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const UK_POSTCODE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+const DOOR_TYPES = ["Roller", "Sectional", "Up-and-Over", "Side-Hinged", "Not sure"];
+const TIMINGS = ["As soon as possible", "Within a month", "Planning ahead / budgeting"];
 
 function getClientIp(request: NextRequest): string {
   const forwarded = request.headers.get("x-forwarded-for");
@@ -86,7 +89,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   }
 
-  const { name, email, phone, location, service, message, source, sessionId } = body as {
+  const { name, email, phone, location, service, message, source, sessionId, postcode, timing, doorType, landingPage } = body as {
     name?: string;
     email?: string;
     phone?: string;
@@ -95,7 +98,20 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     message?: string;
     source?: string;
     sessionId?: string;
+    postcode?: string;
+    timing?: string;
+    doorType?: string;
+    landingPage?: string;
   };
+
+  // Optional structured details. Unknown values are dropped, not rejected, so
+  // an older cached form can never fail on them.
+  const details = [
+    typeof postcode === "string" && UK_POSTCODE.test(postcode.trim()) ? `Postcode: ${postcode.trim().toUpperCase()}` : null,
+    typeof doorType === "string" && DOOR_TYPES.includes(doorType) ? `Door type: ${doorType}` : null,
+    typeof timing === "string" && TIMINGS.includes(timing) ? `When: ${timing}` : null,
+  ].filter(Boolean);
+  const page = typeof landingPage === "string" && /^\/[a-z0-9\-/]{0,150}$/.test(landingPage) ? landingPage : undefined;
 
   // Required field validation
   const missingFields: string[] = [];
@@ -133,8 +149,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         phone: phone!.trim(),
         location: location!.trim(),
         service: service!.trim(),
-        message: message?.trim() || undefined,
+        message: [message?.trim(), details.join("\n")].filter(Boolean).join("\n\n") || undefined,
         source: source?.trim() || undefined,
+        landingPage: page,
         sessionId: sessionId?.trim().slice(0, 100) || undefined,
       },
     });

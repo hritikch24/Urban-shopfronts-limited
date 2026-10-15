@@ -1,6 +1,7 @@
 import { PHONE_DISPLAY, PHONE_E164, PHONE_SECONDARY_DISPLAY, PHONE_SECONDARY_E164 } from '@/lib/contact';
 import Link from 'next/link';
 import Image from 'next/image';
+import { garageDoors } from '@/data/garage-doors';
 
 const services = [
   { label: 'Aluminium Shop Fronts', href: '/services/aluminium-shopfronts' },
@@ -16,6 +17,13 @@ const services = [
   { label: 'Glass Replacement', href: '/services/glass-replacement' },
   { label: 'Aluminium Partitions', href: '/services/aluminium-partitions' },
   { label: 'Glass Partitions', href: '/services/glass-partitions' },
+  // Listed only once the owner confirms garage door work (data/garage-doors.ts).
+  ...(garageDoors.published
+    ? [
+        { label: 'Garage Door Repairs', href: '/garage-door-repairs' },
+        { label: 'Garage Door Installation', href: '/garage-door-installation' },
+      ]
+    : []),
 ];
 
 const areas = [

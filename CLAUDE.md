@@ -328,3 +328,33 @@ town pages declare it locally with a note. Worth doing properly; see Sigma's
 `.link-underline` is a Sigma utility and is undefined here — it was used on the
 contact page and would have rendered unstyled. Caught before it shipped. Check
 `app/globals.css` before using a class you remember from another repo.
+
+---
+
+## Garage doors — drafted 15 Oct 2026, NOT published
+
+`/garage-door-repairs` and `/garage-door-installation` are **hub pages only**
+(`app/garage-door-*`, copy in `data/garage-doors.ts`, layout in
+`components/GarageDoorPage.tsx`). Never add them to `data/services.ts`: that
+would generate 41 city pages each. Held behind `garageDoors.published`: until
+it is true both routes 404, stay out of the sitemap and footer, and the
+contact form does not offer garage services. `garageDoors.owed` lists what the
+owner must confirm. `URBAN_GARAGE_DRAFT=on` shows drafts on a preview
+deployment only. No servicing page (a section of the repairs page), no
+replacement/fitter variants.
+
+Equivalent pages already exist and were not duplicated: shopfront repairs
+`/services/shopfront-repairs`, shutter repairs `/services/shutter-repair`,
+shutter installation `/services/roller-shutters`, glass
+`/services/glass-replacement`. Signs, window graphics and respraying are not
+services on this site; no pages.
+
+Contact form: optional site postcode (UK format checked), "When is it
+needed?", and garage door type for garage services; the page path is sent and
+stored in the new nullable `leads.landing_page` column; postcode, timing and
+door type are appended to the message so email, Telegram and the lead hub see
+them unchanged. A `dataLayer` event `enquiry_submitted` carries the service
+and page path only. No photo upload on this form: photos go by WhatsApp.
+
+Pre-existing, not fixed here: `FAQSection`'s heading is `text-navy`
+(#08081a) on `bg-obsidian-light` (#0a0a12), invisible on every service page.
